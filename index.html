@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Shree Balaji e-Mitra Center | Sakhthali Khurd, Rajasthan</title>
+
+  <meta name="description" content="Shree Balaji e-Mitra Center, Sakhthali Khurd Rajasthan में सरकारी योजनाएं, ऑनलाइन फॉर्म, जन आधार, SSO, PAN, प्रिंट, स्कैन, बिल भुगतान, रिचार्ज, AEPS और अन्य डिजिटल सेवाएं।">
+
+  <meta name="keywords" content="Shree Balaji e-Mitra, e-Mitra Sakhthali Khurd, eMitra Rajasthan, Ankit Dangi, OP Dangi, 312615, online form, Rajasthan eMitra">
+
+  <meta name="author" content="Ankit Dangi, OP Dangi">
+
+  <meta name="theme-color" content="#2563eb">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #10b981;
+      --green: #16a34a;
+      --orange: #f97316;
+      --yellow: #facc15;
+      --red: #ef4444;
+      --dark: #172033;
+      --text: #334155;
+      --gray: #64748b;
+      --light: #f8fafc;
+      --white: #ffffff;
+      --border: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ================= HEADER ================= */
+
+    header {
+      background: rgba(255,255,255,0.97);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--dark);
+    }
+
+    .brand img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      border-radius: 50%;
+      border: 2px solid #e0e7ff;
+      background: white;
+    }
+
+    .brand h1 {
+      color: var(--primary);
+      font-size: 1.15rem;
+      line-height: 1.3;
+    }
+
+    .brand span {
+      color: var(--gray);
+      font-size: 0.78rem;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    nav a {
+      color: var(--dark);
+      font-weight: 600;
+      font-size: 0.92rem;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .btn-call-nav {
+      background: var(--primary);
+      color: white !important;
+      padding: 8px 16px;
+      border-radius: 25px;
+    }
+
+    .menu-btn {
+      display: none;
+      border: none;
+      background: var(--primary);
+      color: white;
+      font-size: 23px;
+      width: 43px;
+      height: 43px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      max-width: 1200px;
+      margin: auto;
+      padding: 55px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 45px;
+    }
+
+    .hero-content {
+      flex: 1 1 600px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: #e0e7ff;
+      color: var(--primary-dark);
+      padding: 6px 14px;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .hero h2 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.2;
+      margin: 18px 0;
+    }
+
+    .hero h2 span {
+      color: var(--primary);
+    }
+
+    .hero p {
+      color: var(--gray);
+      font-size: 1.05rem;
+      max-width: 650px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .btn {
+      padding: 11px 19px;
+      border-radius: 9px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      transition: 0.25s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-whatsapp {
+      background: #25d366;
+      color: white;
+    }
+
+    .btn-outline {
+      border: 1.5px solid var(--primary);
+      color: var(--primary);
+      background: white;
+    }
+
+    .hero-img {
+      flex: 0 1 390px;
+      text-align: center;
+    }
+
+    .hero-img img {
+      width: 100%;
+      max-width: 360px;
+      margin: auto;
+      border-radius: 25px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      background: white;
+    }
+
+    /* ================= HIGHLIGHTS ================= */
+
+    .highlights {
+      max-width: 1200px;
+      margin: 0 auto 20px;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .highlight {
+      background: white;
+      border-radius: 14px;
+      padding: 18px;
+      text-align: center;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+    }
+
+    .highlight-icon {
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+
+    .highlight h3 {
+      font-size: 1rem;
+    }
+
+    .highlight p {
+      color: var(--gray);
+      font-size: 0.8rem;
+    }
+
+    /* ================= SECTION ================= */
+
+    section {
+      scroll-margin-top: 80px;
+    }
+
+    .section {
+      padding: 70px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 700px;
+      margin: auto auto 38px;
+    }
+
+    .section-title h2 {
+      font-size: 2rem;
+      margin-bottom: 7px;
+    }
+
+    .section-title p {
+      color: var(--gray);
+    }
+
+    /* ================= SERVICES ================= */
+
+    .services-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 24px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+      transition: 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.09);
+    }
+
+    .card-icon {
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      background: #eff6ff;
+      font-size: 27px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 7px;
+      font-size: 1.08rem;
+    }
+
+    .card p {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    /* ================= SCHEMES ================= */
+
+    .schemes-box {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .scheme-panel {
+      background: white;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      border: 1px solid var(--border);
+    }
+
+    .scheme-panel h2 {
+      margin-bottom: 18px;
+    }
+
+    .scheme-item {
+      padding: 13px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .scheme-item:last-child {
+      border-bottom: none;
+    }
+
+    .scheme-item h4 {
+      margin-bottom: 3px;
+    }
+
+    .scheme-item p {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    /* ================= PAYMENT ================= */
+
+    .payment-section {
+      background: white;
+    }
+
+    .payment-box {
+      max-width: 420px;
+      margin: auto;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    }
+
+    .upi-id {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 10px;
+      border-radius: 8px;
+      margin: 12px 0;
+      font-weight: 700;
+    }
+
+    .payment-box img {
+      width: 220px;
+      height: 220px;
+      object-fit: contain;
+      margin: 15px auto;
+      border-radius: 10px;
+      background: white;
+    }
+
+    .payment-note {
+      color: var(--gray);
+      font-size: 0.85rem;
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact-grid {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .contact-card {
+      background: white;
+      border-radius: 18px;
+      padding: 28px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      border: 1px solid var(--border);
+    }
+
+    .contact-card h3 {
+      font-size: 1.3rem;
+    }
+
+    .phone-number {
+      color: var(--gray);
+      margin: 8px 0 16px;
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 9px;
+      flex-wrap: wrap;
+    }
+
+    /* ================= LOCATION ================= */
+
+    .location-box {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      border-radius: 18px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+
+    .location-box h2 {
+      margin-bottom: 8px;
+    }
+
+    .location-box p {
+      color: var(--gray);
+      margin-bottom: 18px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 55px 20px 85px;
+    }
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 35px;
+    }
+
+    .footer-grid h3 {
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    .footer-grid p {
+      margin: 5px 0;
+    }
+
+    .footer-grid a {
+      color: #cbd5e1;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 35px auto 0;
+      padding-top: 20px;
+      text-align: center;
+      border-top: 1px solid #334155;
+      font-size: 0.85rem;
+    }
+
+    /* ================= FLOATING BAR ================= */
+
+    .floating-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: none;
+      z-index: 2000;
+      box-shadow: 0 -3px 15px rgba(0,0,0,0.15);
+    }
+
+    .floating-bar a {
+      flex: 1;
+      text-align: center;
+      padding: 13px;
+      color: white;
+      font-weight: 700;
+    }
+
+    .float-call {
+      background: var(--primary);
+    }
+
+    .float-wa {
+      background: #25d366;
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 900px) {
+
+      .menu-btn {
+        display: block;
+      }
+
+      nav {
+        position: absolute;
+        top: 76px;
+        left: 15px;
+        right: 15px;
+        background: white;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px;
+        border-radius: 14px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav a {
+        padding: 12px;
+        margin: 0;
+        border-bottom: 1px solid #f1f5f9;
+      }
+
+      nav a:last-child {
+        border-bottom: none;
+      }
+
+      .hero {
+        padding-top: 40px;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero p {
+        margin: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .highlights {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .schemes-box {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .floating-bar {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .nav-container {
+        padding: 10px 14px;
+      }
+
+      .brand h1 {
+        font-size: 0.92rem;
+      }
+
+      .brand span {
+        font-size: 0.68rem;
+      }
+
+      .brand img {
+        width: 45px;
+        height: 45px;
+      }
+
+      .hero {
+        padding: 35px 15px;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 0.92rem;
+      }
+
+      .hero-img img {
+        max-width: 280px;
+      }
+
+      .section {
+        padding: 50px 15px;
+      }
+
+      .section-title h2 {
+        font-size: 1.65rem;
+      }
+
+      .highlights {
+        padding: 0 15px;
+        gap: 10px;
+      }
+
+      .highlight {
+        padding: 13px 8px;
+      }
+
+      .highlight-icon {
+        font-size: 24px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .payment-box {
+        padding: 20px;
+      }
+
+      .payment-box img {
+        width: 200px;
+        height: 200px;
+      }
+
+      .btn {
+        padding: 10px 14px;
+        font-size: 0.88rem;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+  <div class="nav-container">
+
+    <a href="#home" class="brand">
+
+      <img src="Logo.png" alt="Shree Balaji e-Mitra Center Logo">
+
+      <div>
+        <h1>Shree Balaji e-Mitra Center</h1>
+        <span>Ankit Dangi | OP Dangi</span>
+      </div>
+
+    </a>
+
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">
+      ☰
+    </button>
+
+    <nav id="mainNav">
+
+      <a href="#home" onclick="closeMenu()">Home</a>
+
+      <a href="#services" onclick="closeMenu()">Services</a>
+
+      <a href="#schemes" onclick="closeMenu()">Schemes</a>
+
+      <a href="#payment" onclick="closeMenu()">Payment</a>
+
+      <a href="#contact" onclick="closeMenu()">Contact</a>
+
+      <a href="tel:+918690653797" class="btn-call-nav">
+        📞 Call Now
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+  <div class="hero-content">
+
+    <span class="hero-tag">
+      🙏 आपकी सेवा, हमारा संकल्प
+    </span>
+
+    <h2>
+      Shree Balaji
+      <span>e-Mitra Center</span>
+    </h2>
+
+    <p>
+      सभी सरकारी एवं डिजिटल सेवाएं एक ही स्थान पर।
+      ऑनलाइन फॉर्म, दस्तावेज, सरकारी योजनाएं, प्रिंट,
+      स्कैन, बिल भुगतान, रिचार्ज, बैंकिंग एवं अन्य
+      नागरिक सेवाओं के लिए संपर्क करें।
+    </p>
+
+    <div class="hero-buttons">
+
+      <a href="tel:+918690653797" class="btn btn-primary">
+        📞 Call Ankit
+      </a>
+
+      <a href="tel:+919358276393" class="btn btn-outline">
+        📞 Call OP Dangi
+      </a>
+
+      <a href="https://wa.me/918690653797"
+         target="_blank"
+         rel="noopener"
+         class="btn btn-whatsapp">
+        💬 WhatsApp Ankit
+      </a>
+
+      <a href="https://wa.me/919358276393"
+         target="_blank"
+         rel="noopener"
+         class="btn btn-whatsapp">
+        💬 WhatsApp OP
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="hero-img">
+
+    <img
+      src="Logo.png"
+      alt="Shree Balaji e-Mitra Center"
+    >
+
+  </div>
+
+</section>
+
+
+<!-- ================= HIGHLIGHTS ================= -->
+
+<div class="highlights">
+
+  <div class="highlight">
+    <div class="highlight-icon">⚡</div>
+    <h3>तेज सेवा</h3>
+    <p>समय पर काम</p>
+  </div>
+
+  <div class="highlight">
+    <div class="highlight-icon">📋</div>
+    <h3>सही जानकारी</h3>
+    <p>उचित मार्गदर्शन</p>
+  </div>
+
+  <div class="highlight">
+    <div class="highlight-icon">💻</div>
+    <h3>डिजिटल सुविधा</h3>
+    <p>ऑनलाइन सेवाएं</p>
+  </div>
+
+  <div class="highlight">
+    <div class="highlight-icon">🤝</div>
+    <h3>आपका भरोसा</h3>
+    <p>हमारी जिम्मेदारी</p>
+  </div>
+
+</div>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="section" id="services">
+
+  <div class="section-title">
+
+    <h2>हमारी प्रमुख सेवाएं</h2>
+
+    <p>
+      आपके रोजमर्रा के जरूरी ऑनलाइन और डिजिटल काम
+      एक ही जगह
+    </p>
+
+  </div>
+
+
+  <div class="services-grid">
+
+
+    <div class="card">
+
+      <div class="card-icon">📄</div>
+
+      <h3>Document Services</h3>
+
+      <p>
+        प्रिंट, स्कैन, फोटो कॉपी, PDF, लैमिनेशन
+        एवं दस्तावेज संबंधी कार्य।
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="card-icon">🏛️</div>
+
+      <h3>Government Services</h3>
+
+      <p>
+        मूल निवास, जाति प्रमाण पत्र, जन आधार,
+        राशन कार्ड एवं अन्य सरकारी सेवाएं।
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="card-icon">🪪</div>
+
+      <h3>PAN & Online Documents</h3>
+
+      <p>
+        PAN Card एवं उपलब्ध अन्य ऑनलाइन
+        दस्तावेज सेवाओं में सहायता।
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="card-icon">📱</div>
+
+      <h3>Recharge & Bills</h3>
+
+      <p>
+        मोबाइल रिचार्ज, DTH, बिजली बिल,
+        पानी बिल एवं अन्य बिल भुगतान।
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="card-icon">₹</div>
+
+      <h3>Banking & AEPS</h3>
+
+      <p>
+        AEPS, बैलेंस चेक, मिनी स्टेटमेंट
+        एवं उपलब्ध बैंकिंग सेवाएं।
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="card-icon">👥</div>
+
+      <h3>Online Recruitment Forms</h3>
+
+      <p>
+        सरकारी भर्ती एवं प्रतियोगी परीक्षाओं
+        के ऑनलाइन फॉर्म भरने की सुविधा।
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="card-icon">🎓</div>
+
+      <h3>Scholarship</h3>
+
+      <p>
+        छात्रवृत्ति एवं शिक्षा से संबंधित
+        ऑनलाइन आवेदन में सहायता।
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="card-icon">🌾</div>
+
+      <h3>Kisan Services</h3>
+
+      <p>
+        PM किसान एवं उपलब्ध कृषि योजनाओं
+        के ऑनलाइन आवेदन में सहायता।
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="card-icon">🏠</div>
+
+      <h3>Social Security</h3>
+
+      <p>
+        पेंशन, पालनहार एवं उपलब्ध सामाजिक
+        सुरक्षा योजनाओं में सहायता।
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- ================= SCHEMES ================= -->
+
+<section class="section" id="schemes">
+
+  <div class="section-title">
+
+    <h2>सरकारी योजनाएं व सहायता</h2>
+
+    <p>
+      पात्रता के अनुसार विभिन्न योजनाओं के
+      ऑनलाइन आवेदन में सहायता
+    </p>
+
+  </div>
+
+
+  <div class="schemes-box">
+
+
+    <div class="scheme-panel">
+
+      <h2>📚 छात्र एवं युवा</h2>
+
+
+      <div class="scheme-item">
+
+        <h4>🎓 छात्रवृत्ति</h4>
+
+        <p>
+          छात्रवृत्ति एवं शिक्षा से संबंधित
+          ऑनलाइन आवेदन।
+        </p>
+
+      </div>
+
+
+      <div class="scheme-item">
+
+        <h4>📝 Recruitment Forms</h4>
+
+        <p>
+          सरकारी भर्ती एवं प्रतियोगी परीक्षाओं
+          के ऑनलाइन फॉर्म।
+        </p>
+
+      </div>
+
+
+      <div class="scheme-item">
+
+        <h4>💻 Online Applications</h4>
+
+        <p>
+          विभिन्न ऑनलाइन आवेदन एवं
+          डिजिटल सेवाओं में सहायता।
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="scheme-panel">
+
+      <h2>👨‍🌾 किसान एवं नागरिक</h2>
+
+
+      <div class="scheme-item">
+
+        <h4>🌾 किसान योजनाएं</h4>
+
+        <p>
+          PM किसान एवं उपलब्ध कृषि योजनाओं
+          के आवेदन में सहायता।
+        </p>
+
+      </div>
+
+
+      <div class="scheme-item">
+
+        <h4>🏠 सामाजिक सुरक्षा</h4>
+
+        <p>
+          वृद्धावस्था, विधवा, दिव्यांग पेंशन
+          एवं उपलब्ध योजनाओं में सहायता।
+        </p>
+
+      </div>
+
+
+      <div class="scheme-item">
+
+        <h4>🪪 नागरिक सेवाएं</h4>
+
+        <p>
+          जन आधार, प्रमाण पत्र, राशन कार्ड
+          एवं अन्य उपलब्ध सेवाएं।
+        </p>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- ================= PAYMENT ================= -->
+
+<section class="section payment-section" id="payment">
+
+  <div class="section-title">
+
+    <h2>💳 Online UPI Payment</h2>
+
+    <p>
+      सेवा शुल्क या भुगतान के लिए QR Code
+      या UPI ID का उपयोग करें
+    </p>
+
+  </div>
+
+
+  <div class="payment-box">
+
+    <h3>Shree Balaji e-Mitra Center</h3>
+
+    <div class="upi-id">
+      UPI ID: ankitdangi17@icici
+    </div>
+
+
+    <!-- IMPORTANT: File name is Qr.png -->
+
+    <img
+      src="Qr.png"
+      alt="Ankit Dangi UPI QR Code"
+    >
+
+
+    <p class="payment-note">
+      PhonePe, Google Pay, Paytm या अन्य
+      UPI App से QR स्कैन करके भुगतान करें।
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="section" id="contact">
+
+  <div class="section-title">
+
+    <h2>📞 संपर्क करें</h2>
+
+    <p>
+      किसी भी सेवा की जानकारी के लिए
+      Call या WhatsApp करें
+    </p>
+
+  </div>
+
+
+  <div class="contact-grid">
+
+
+    <div class="contact-card">
+
+      <h3>Ankit Dangi</h3>
+
+      <div class="phone-number">
+        📞 8690653797
+      </div>
+
+      <div class="contact-buttons">
+
+        <a
+          href="tel:+918690653797"
+          class="btn btn-primary">
+          📞 Call
+        </a>
+
+        <a
+          href="https://wa.me/918690653797"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-whatsapp">
+          💬 WhatsApp
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="contact-card">
+
+      <h3>OP Dangi</h3>
+
+      <div class="phone-number">
+        📞 9358276393
+      </div>
+
+      <div class="contact-buttons">
+
+        <a
+          href="tel:+919358276393"
+          class="btn btn-primary">
+          📞 Call
+        </a>
+
+        <a
+          href="https://wa.me/919358276393"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-whatsapp">
+          💬 WhatsApp
+        </a>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- ================= LOCATION ================= -->
+
+<section class="section">
+
+  <div class="location-box">
+
+    <h2>📍 हमारा स्थान</h2>
+
+    <p>
+      सखथली खुर्द, राजस्थान - 312615
+    </p>
+
+    <a
+      href="https://www.google.com/maps/search/?api=1&query=Sakhthali+Khurd+Rajasthan+312615"
+      target="_blank"
+      rel="noopener"
+      class="btn btn-outline">
+
+      🗺️ Google Maps पर देखें
+
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+  <div class="footer-grid">
+
+
+    <div>
+
+      <h3>Shree Balaji e-Mitra</h3>
+
+      <p>
+        🙏 आपकी सेवा, हमारा संकल्प
+      </p>
+
+      <p>
+        सखथली खुर्द, राजस्थान - 312615
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h3>Quick Contact</h3>
+
+      <p>
+        Ankit Dangi:
+        <a href="tel:+918690653797">
+          +91 8690653797
+        </a>
+      </p>
+
+      <p>
+        OP Dangi:
+        <a href="tel:+919358276393">
+          +91 9358276393
+        </a>
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h3>UPI Payment</h3>
+
+      <p>
+        ankitdangi17@icici
+      </p>
+
+      <p>
+        सोमवार - शनिवार: 08:00 AM - 08:00 PM
+      </p>
+
+      <p>
+        रविवार: 09:00 AM - 02:00 PM
+      </p>
+
+    </div>
+
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    © 2026 Shree Balaji e-Mitra Center
+    | All Rights Reserved.
+
+  </div>
+
+</footer>
+
+
+<!-- ================= MOBILE FLOATING BAR ================= -->
+
+<div class="floating-bar">
+
+  <a
+    href="tel:+918690653797"
+    class="float-call">
+
+    📞 Call Now
+
+  </a>
+
+
+  <a
+    href="https://wa.me/918690653797"
+    target="_blank"
+    rel="noopener"
+    class="float-wa">
+
+    💬 WhatsApp
+
+  </a>
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+  function toggleMenu() {
+
+    const nav = document.getElementById("mainNav");
+
+    nav.classList.toggle("active");
+
+  }
+
+
+  function closeMenu() {
+
+    const nav = document.getElementById("mainNav");
+
+    nav.classList.remove("active");
+
+  }
+
+
+  // Close mobile menu when clicking outside
+
+  document.addEventListener("click", function(event) {
+
+    const nav = document.getElementById("mainNav");
+    const menuBtn = document.querySelector(".menu-btn");
+
+    if (
+      nav.classList.contains("active") &&
+      !nav.contains(event.target) &&
+      !menuBtn.contains(event.target)
+    ) {
+
+      nav.classList.remove("active");
+
+    }
+
+  });
+
+</script>
+
+
+</body>
+    </html>
