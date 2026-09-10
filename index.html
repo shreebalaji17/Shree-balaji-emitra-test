@@ -510,7 +510,7 @@
       margin-bottom: 18px;
     }
 
-    /* ================= FOOTER ================= */
+    /* ================= FOOTER & POLICIES ================= */
     footer {
       background: #0f172a;
       color: #94a3b8;
@@ -521,21 +521,31 @@
       max-width: 1200px;
       margin: auto;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 35px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
     }
 
     .footer-grid h3 {
       color: white;
       margin-bottom: 12px;
+      font-size: 1.05rem;
     }
 
     .footer-grid p {
       margin: 5px 0;
+      font-size: 0.9rem;
     }
 
     .footer-grid a {
       color: #cbd5e1;
+      display: block;
+      margin: 6px 0;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .footer-grid a:hover {
+      color: var(--primary);
     }
 
     .footer-bottom {
@@ -572,6 +582,68 @@
 
     .float-wa {
       background: #25d366;
+    }
+
+    /* ================= POLICY MODAL (POPUP) ================= */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 3000;
+      padding: 20px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-box {
+      background: white;
+      border-radius: 16px;
+      max-width: 750px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 30px 25px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 18px;
+      font-size: 28px;
+      cursor: pointer;
+      color: var(--gray);
+      background: none;
+      border: none;
+    }
+
+    .modal-content h3 {
+      margin-bottom: 12px;
+      color: var(--primary);
+    }
+
+    .modal-content h4 {
+      margin: 14px 0 6px;
+      color: var(--dark);
+    }
+
+    .modal-content p, .modal-content ul {
+      color: var(--text);
+      font-size: 0.92rem;
+      margin-bottom: 10px;
+    }
+
+    .modal-content ul {
+      padding-left: 20px;
     }
 
     /* ================= RESPONSIVE ================= */
@@ -1001,26 +1073,37 @@
   </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
+<!-- ================= FOOTER WITH MANDATORY RAZORPAY POLICIES ================= -->
 <footer>
   <div class="footer-grid">
     <div>
       <h3>Shree Balaji e-Mitra</h3>
       <p>🙏 आपकी सेवा, हमारा संकल्प</p>
-      <p>साखथली खुर्द, राजस्थान - 312615</p>
+      <p>साखथली खुर्द, तहसील - छोटी सादड़ी, जिला - प्रतापगढ़, राजस्थान - 312615</p>
+      <p style="margin-top: 10px; font-size: 0.85rem; color: #38bdf8;">प्रमाणित नागरिक सेवा केंद्र</p>
     </div>
 
     <div>
       <h3>Quick Contact</h3>
-      <p>Ankit Dangi: <a href="tel:+918690653797">+91 8690653797</a></p>
-      <p>OP Dangi: <a href="tel:+919358276393">+91 9358276393</a></p>
+      <p>Ankit Dangi: <a href="tel:+918690653797" style="display:inline;">+91 8690653797</a></p>
+      <p>OP Dangi: <a href="tel:+919358276393" style="display:inline;">+91 9358276393</a></p>
+      <p>Email: <a href="mailto:ankitdangi17@gmail.com" style="display:inline;">ankitdangi17@gmail.com</a></p>
     </div>
 
     <div>
-      <h3>UPI Payment</h3>
-      <p>ankitdangi17@icici</p>
+      <h3>Payment & Timing</h3>
+      <p>UPI ID: ankitdangi17@icici</p>
       <p>सोमवार - शनिवार: 08:00 AM - 08:00 PM</p>
       <p>रविवार: 09:00 AM - 08:00 PM</p>
+    </div>
+
+    <div>
+      <h3>Legal & Policies</h3>
+      <a onclick="openPolicy('terms')">⚖️ Terms & Conditions</a>
+      <a onclick="openPolicy('privacy')">🔒 Privacy Policy</a>
+      <a onclick="openPolicy('refund')">🔄 Refund & Cancellation</a>
+      <a onclick="openPolicy('shipping')">📦 Service Delivery Policy</a>
+      <a onclick="openPolicy('contact')">🏢 Contact Us</a>
     </div>
   </div>
 
@@ -1029,10 +1112,20 @@
   </div>
 </footer>
 
-<!-- ================= MOBILE FLOATING BAR ================= -->
+<!-- ================= FLOATING BAR ================= -->
 <div class="floating-bar">
   <a href="tel:+918690653797" class="float-call">📞 Call Now</a>
   <a href="https://wa.me/918690653797" target="_blank" rel="noopener" class="float-wa">💬 WhatsApp</a>
+</div>
+
+<!-- ================= POLICY POPUP MODAL ================= -->
+<div class="modal-overlay" id="policyModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closePolicy()">&times;</button>
+    <div class="modal-content" id="policyContent">
+      <!-- Policy content loaded via JS -->
+    </div>
+  </div>
 </div>
 
 <!-- ================= JAVASCRIPT ================= -->
@@ -1056,6 +1149,79 @@
       !menuBtn.contains(event.target)
     ) {
       nav.classList.remove("active");
+    }
+  });
+
+  // Razorpay Policy Modal Texts
+  const policies = {
+    terms: `
+      <h3>Terms & Conditions (नियम एवं शर्तें)</h3>
+      <p><strong>अंतिम अपडेट: 2026</strong></p>
+      <h4>1. परिचय</h4>
+      <p>यह वेबसाइट Shree Balaji e-Mitra Center द्वारा संचालित है। हमारी सेवाओं का उपयोग करके आप हमारे नियमों और शर्तों का पालन करने के लिए सहमत होते हैं।</p>
+      <h4>2. सेवाएं</h4>
+      <p>हम सरकारी योजनाओं के आवेदन, प्रतियोगी परीक्षा फॉर्म, जन आधार, पैन कार्ड, प्रमाण पत्र, यूटिलिटी बिल भुगतान और अन्य डिजिटल नागरिक सेवाएं प्रदान करते हैं।</p>
+      <h4>3. ग्राहक का दायित्व</h4>
+      <p>ग्राहक द्वारा फॉर्म या सेवाओं के लिए दी गई सभी व्यक्तिगत जानकारी और दस्तावेज पूरी तरह सही और वैध होने चाहिए। गलत जानकारी के लिए ग्राहक स्वयं उत्तरदायी होगा।</p>
+      <h4>4. सेवा शुल्क</h4>
+      <p>सरकारी शुल्क एवं परामर्श शुल्क काम शुरू होने से पहले या काम पूरा होने पर देय होगा। सभी ऑनलाइन भुगतान Razorpay गेटवे या UPI द्वारा सुरक्षित प्रोसेस किए जाते हैं।</p>
+      <h4>5. विवाद क्षेत्राधिकार</h4>
+      <p>किसी भी कानूनी विवाद का क्षेत्राधिकार स्थानीय न्यायालय (राजस्थान) के अधीन होगा।</p>
+    `,
+    privacy: `
+      <h3>Privacy Policy (गोपनीयता नीति)</h3>
+      <p><strong>अंतिम अपडेट: 2026</strong></p>
+      <h4>1. सूचना संग्रह</h4>
+      <p>सरकारी फॉर्म और ई-मित्र सेवाओं को पूरा करने के लिए हम आवश्यक व्यक्तिगत जानकारी (जैसे नाम, मोबाइल, पहचान पत्र और शैक्षणिक दस्तावेज) प्राप्त करते हैं।</p>
+      <h4>2. जानकारी का उपयोग</h4>
+      <p>आपकी व्यक्तिगत जानकारी का उपयोग केवल संबंधित सरकारी विभाग, पोर्टल या सेवा प्रदाता पर आवेदन जमा करने के लिए किया जाता है। हम आपका डेटा किसी थर्ड पार्टी को नहीं बेचते।</p>
+      <h4>3. डेटा सुरक्षा एवं ऑनलाइन भुगतान</h4>
+      <p>ऑनलाइन भुगतान Razorpay के 128-bit एन्क्रिप्टेड सिक्योर गेटवे द्वारा प्रोसेस होते हैं। हम ग्राहकों के संवेदनशील कार्ड या बैंकिंग पासवर्ड स्टोर नहीं करते हैं।</p>
+      <h4>4. संपर्क</h4>
+      <p>गोपनीयता से संबंधित किसी भी प्रश्न के लिए आप हमें ankitdangi17@gmail.com पर संपर्क कर सकते हैं।</p>
+    `,
+    refund: `
+      <h3>Refund & Cancellation Policy (रिफंड व रद्दीकरण नीति)</h3>
+      <h4>1. डिजिटल सेवाएं</h4>
+      <p>ई-मित्र केंद्र पर दी जाने वाली सेवाएं डिजिटल होती हैं। एक बार जब कोई सरकारी टोकन, फॉर्म या बिल भुगतान सफलतापूर्वक सबमिट हो जाता है, तो उसे रद्द नहीं किया जा सकता।</p>
+      <h4>2. रिफंड की शर्तें</h4>
+      <p>• यदि भुगतान कट गया हो लेकिन तकनीकी खराबी के कारण सेवा पूरी न हो पाई हो, तो पूरी राशि वापस कर दी जाएगी।<br>
+      • यदि ग्राहक के खाते से पैसे कट गए और गेटवे पर विफल (Failed) हो गए, तो वह राशि बैंक द्वारा 3 से 5 कार्य दिवसों में ग्राहक के खाते में स्वतः लौट आती है।</p>
+      <h4>3. रिफंड प्रक्रिया</h4>
+      <p>स्वीकृत रिफंड 5 से 7 कार्य दिवसों (Working Days) के भीतर ग्राहक के मूल भुगतान खाते में भेज दिया जाएगा।</p>
+    `,
+    shipping: `
+      <h3>Service Delivery Policy (सेवा वितरण नीति)</h3>
+      <h4>1. डिजिटल डिलीवरी</h4>
+      <p>हम किसी भी प्रकार का भौतिक उत्पाद (Physical Item) कूरियर द्वारा नहीं भेजते। हमारी सभी सेवाएं ऑनलाइन और डिजिटल माध्यम से पूरी की जाती हैं।</p>
+      <h4>2. वितरण का समय व माध्यम</h4>
+      <p>• ऑनलाइन फॉर्म रसीद, टोकन और बिल पावती तुरंत (10 मिनट से 24 घंटे में) WhatsApp, ईमेल या सेंटर पर प्रिंट आउट के रूप में सौंप दी जाती है।<br>
+      • सरकारी प्रमाण पत्रों (जैसे मूल निवास, जाति) का जारी होना संबंधित सरकारी विभाग की स्वीकृति अवधि पर निर्भर करता है।</p>
+    `,
+    contact: `
+      <h3>Contact Us (संपर्क सूत्र)</h3>
+      <p><strong>व्यावसायिक नाम:</strong> Shree Balaji e-Mitra Center</p>
+      <p><strong>संचालक:</strong> Ankit Dangi & OP Dangi</p>
+      <p><strong>पता:</strong> ग्राम - साखथली खुर्द, तहसील - छोटी सादड़ी, जिला - प्रतापगढ़, राजस्थान, पिन कोड - 312615</p>
+      <p><strong>मोबाइल:</strong> +91 8690653797, +91 9358276393</p>
+      <p><strong>ईमेल:</strong> ankitdangi17@gmail.com</p>
+      <p><strong>कार्य समय:</strong> सोमवार से शनिवार: 08:00 AM - 08:00 PM | रविवार: 09:00 AM - 08:00 PM</p>
+    `
+  };
+
+  function openPolicy(type) {
+    document.getElementById('policyContent').innerHTML = policies[type];
+    document.getElementById('policyModal').classList.add('active');
+  }
+
+  function closePolicy() {
+    document.getElementById('policyModal').classList.remove('active');
+  }
+
+  // Close modal when clicking outside box
+  document.getElementById('policyModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+      closePolicy();
     }
   });
 
@@ -1093,18 +1259,15 @@
         "color": "#2563eb"
       },
       "handler": function (response) {
-        // Form hide and show Success Box
         document.getElementById('paymentFormArea').style.display = 'none';
         document.getElementById('paymentSuccessArea').style.display = 'block';
         document.getElementById('successPayId').innerText = response.razorpay_payment_id;
 
-        // WhatsApp Link generate
         const msg = `नमस्ते Ankit जी, मैंने Shree Balaji e-Mitra पर ऑनलाइन भुगतान कर दिया है।\n\n👤 नाम: ${name}\n📱 मोबाइल: ${phone}\n💰 रकम: ₹${amount}\n🆔 Payment ID: ${response.razorpay_payment_id}\n\n(भुगतान का स्क्रीनशॉट संलग्न है)`;
         const waUrl = `https://wa.me/918690653797?text=${encodeURIComponent(msg)}`;
         
         document.getElementById('waSendBtn').href = waUrl;
 
-        // Auto open WhatsApp
         setTimeout(function() {
           window.open(waUrl, '_blank');
         }, 1200);
