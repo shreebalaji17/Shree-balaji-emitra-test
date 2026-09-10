@@ -389,38 +389,74 @@
       background: white;
     }
 
-    .payment-box {
+    .payment-container {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .pay-card {
+      flex: 1 1 320px;
       max-width: 420px;
-      margin: auto;
       background: #f8fafc;
       border: 1px solid var(--border);
       border-radius: 20px;
-      padding: 28px;
+      padding: 30px 22px;
       text-align: center;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-    .upi-id {
+    .pay-card-icon {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    .pay-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 6px;
+      color: var(--dark);
+    }
+
+    .pay-card-desc {
+      color: var(--gray);
+      font-size: 0.88rem;
+      margin-bottom: 20px;
+    }
+
+    .upi-badge {
+      background: white;
+      border: 1px dashed var(--border);
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--dark);
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .qr-img {
+      width: 175px;
+      height: 175px;
+      object-fit: contain;
+      margin: 0 auto;
+      border-radius: 12px;
       background: white;
       border: 1px solid var(--border);
-      padding: 10px;
-      border-radius: 8px;
-      margin: 12px 0;
-      font-weight: 700;
+      padding: 6px;
     }
 
-    .payment-box img {
-      width: 220px;
-      height: 220px;
-      object-fit: contain;
-      margin: 15px auto;
-      border-radius: 10px;
-      background: white;
-    }
-
-    .payment-note {
-      color: var(--gray);
+    .payment-badge {
+      color: #10b981;
       font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 15px;
     }
 
     /* ================= CONTACT ================= */
@@ -686,15 +722,6 @@
       .footer-grid {
         grid-template-columns: 1fr;
         gap: 25px;
-      }
-
-      .payment-box {
-        padding: 20px;
-      }
-
-      .payment-box img {
-        width: 200px;
-        height: 200px;
       }
 
       .btn {
@@ -1111,38 +1138,19 @@
 <section class="section payment-section" id="payment">
 
   <div class="section-title">
-
-    <h2>💳 Online UPI Payment</h2>
-
-    <p>
-      सेवा शुल्क या भुगतान के लिए QR Code
-      या UPI ID का उपयोग करें
-    </p>
-
-  </div>
-
-
-  <div class="payment-box">
-
-    <h3>Shree Balaji e-Mitra Center</h3>
-<!-- ================= PAYMENT ================= -->
-
-<section class="section payment-section" id="payment">
-
-  <div class="section-title">
     <h2>💳 ऑनलाइन भुगतान (Online Payment)</h2>
-    <p>अपनी सुविधानुसार Razorpay ऑनलाइन गेटवे या डायरेक्ट UPI QR Code से भुगतान करें</p>
+    <p>अपनी सुविधानुसार सुरक्षित Razorpay गेटवे या UPI QR Code से भुगतान करें</p>
   </div>
 
-  <div style="max-width: 850px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; padding: 0 15px;">
+  <div class="payment-container">
 
-    <!-- Option 1: Razorpay Card -->
-    <div style="background: #ffffff; border: 1px solid var(--border); border-radius: 18px; padding: 28px 20px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between;">
+    <!-- 1. Razorpay Gateway Card -->
+    <div class="pay-card">
       <div>
-        <div style="font-size: 2rem; margin-bottom: 8px;">💳</div>
-        <h3 style="font-size: 1.2rem; color: var(--dark); margin-bottom: 6px;">ऑनलाइन पेमेंट गेटवे</h3>
-        <p style="color: var(--gray); font-size: 0.85rem; margin-bottom: 20px;">
-          डेबिट कार्ड, क्रेडिट कार्ड, नेट बैंकिंग या अन्य वॉलेट से सीधा भुगतान करें
+        <div class="pay-card-icon">💳</div>
+        <h3>Razorpay ऑनलाइन गेटवे</h3>
+        <p class="pay-card-desc">
+          डेबिट कार्ड, क्रेडिट कार्ड, नेट बैंकिंग या वॉलेट द्वारा सीधा भुगतान करें
         </p>
       </div>
 
@@ -1150,40 +1158,42 @@
         <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_TaQH1iffsFcUqj" async> </script> </form>
       </div>
 
-      <p style="color: #10b981; font-size: 0.8rem; font-weight: 600; margin-top: 10px;">
+      <p class="payment-badge">
         🔒 100% सुरक्षित एवं प्रमाणित Razorpay
       </p>
     </div>
 
-    <!-- Option 2: UPI QR Card -->
-    <div style="background: #ffffff; border: 1px solid var(--border); border-radius: 18px; padding: 28px 20px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between;">
+    <!-- 2. UPI QR Card -->
+    <div class="pay-card">
       <div>
-        <div style="font-size: 2rem; margin-bottom: 8px;">📱</div>
-        <h3 style="font-size: 1.2rem; color: var(--dark); margin-bottom: 6px;">UPI QR स्कैन</h3>
-        <p style="color: var(--gray); font-size: 0.85rem; margin-bottom: 12px;">
-          PhonePe, Google Pay, Paytm या अन्य UPI ऐप से स्कैन करें
+        <div class="pay-card-icon">📱</div>
+        <h3>UPI QR कोड स्कैन</h3>
+        <p class="pay-card-desc">
+          PhonePe, Google Pay, Paytm या अन्य UPI ऐप से तुरंत स्कैन करके भेजें
         </p>
       </div>
 
-      <div style="margin: auto;">
+      <div>
         <img
           src="Qr.png"
           alt="Ankit Dangi UPI QR Code"
-          style="width: 175px; height: 175px; object-fit: contain; margin: 0 auto 10px; border-radius: 10px; border: 1px solid var(--border); padding: 5px; background: white;"
+          class="qr-img"
         >
-        <div style="background: #f8fafc; border: 1px dashed var(--border); padding: 6px 12px; border-radius: 8px; font-weight: 700; font-size: 0.85rem; color: var(--dark); display: inline-block;">
+        <br>
+        <div class="upi-badge">
           UPI ID: ankitdangi17@icici
         </div>
       </div>
 
-      <p style="color: var(--gray); font-size: 0.78rem; margin-top: 12px;">
-        स्कैन करें और तुरंत ट्रांसफर करें
+      <p style="color: var(--gray); font-size: 0.82rem; margin-top: 15px;">
+        स्कैन करें और तुरंत भुगतान करें
       </p>
     </div>
 
   </div>
 
 </section>
+
 
 <!-- ================= CONTACT ================= -->
 
@@ -1276,7 +1286,7 @@
     <h2>📍 हमारा स्थान</h2>
 
     <p>
-      साखथली खुर्द, राजस्थान - 312615
+      सखथली खुर्द, राजस्थान - 312615
     </p>
 
     <a
@@ -1310,7 +1320,7 @@
       </p>
 
       <p>
-        साखथली खुर्द, राजस्थान - 312615
+        सखथली खुर्द, राजस्थान - 312615
       </p>
 
     </div>
@@ -1350,7 +1360,7 @@
       </p>
 
       <p>
-        रविवार: 09:00 AM - 08:00 PM
+        रविवार: 09:00 AM - 02:00 PM
       </p>
 
     </div>
@@ -1440,4 +1450,4 @@
 
 
 </body>
-    </html>
+</html>
