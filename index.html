@@ -227,44 +227,6 @@
       background: white;
     }
 
-    /* ================= ABOUT US ================= */
-    .about-container {
-      max-width: 1050px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 35px;
-      align-items: center;
-    }
-
-    .about-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-    }
-
-    .stat-card {
-      background: white;
-      padding: 22px 16px;
-      border-radius: 14px;
-      text-align: center;
-      border: 1px solid var(--border);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-    }
-
-    .stat-num {
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: var(--primary);
-    }
-
-    .stat-text {
-      color: var(--gray);
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-top: 4px;
-    }
-
     /* ================= HIGHLIGHTS ================= */
     .highlights {
       max-width: 1200px;
@@ -551,6 +513,50 @@
       margin-bottom: 18px;
     }
 
+    /* ================= ABOUT US (POSITIONED AT BOTTOM) ================= */
+    .about-section {
+      background: #f1f5f9;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-container {
+      max-width: 1050px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 22px 16px;
+      border-radius: 14px;
+      text-align: center;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    }
+
+    .stat-num {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .stat-text {
+      color: var(--gray);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
     /* ================= FOOTER & POLICIES ================= */
     footer {
       background: #0f172a;
@@ -834,11 +840,11 @@
 
     <nav id="mainNav">
       <a href="#home" onclick="closeMenu()">Home</a>
-      <a href="#about" onclick="closeMenu()">About</a>
       <a href="#services" onclick="closeMenu()">Services</a>
       <a href="#schemes" onclick="closeMenu()">Schemes</a>
       <a href="#payment" onclick="closeMenu()">Payment</a>
       <a href="#contact" onclick="closeMenu()">Contact</a>
+      <a href="#about" onclick="closeMenu()">About</a>
       <a href="tel:+918690653797" class="btn-call-nav">📞 Call Now</a>
     </nav>
   </div>
@@ -870,61 +876,8 @@
   </div>
 </section>
 
-<!-- ================= ABOUT US ================= -->
-<section class="section" id="about" style="background: white; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
-  <div class="section-title">
-    <h2>🏢 हमारे बारे में (About Us)</h2>
-    <p>ग्रामीण क्षेत्र में पारदर्शी, त्वरित और विश्वसनीय डिजिटल सेवाएं</p>
-  </div>
-
-  <div class="about-container">
-    <div class="about-text">
-      <h3 style="color: var(--primary); font-size: 1.35rem; margin-bottom: 12px;">
-        श्री बालाजी ई-मित्र केंद्र, साखथली खुर्द
-      </h3>
-      <p style="color: var(--text); margin-bottom: 14px; font-size: 0.95rem;">
-        हमारा उद्देश्य ग्राम साखथली खुर्द (तहसील - अरनोद) और आस-पास के सभी नागरिकों को सरकारी योजनाओं, ऑनलाइन फॉर्म, बैंकिंग और आवश्यक डिजिटल सेवाओं का सीधा लाभ पहुँचाना है, ताकि किसी को भी छोटे-छोटे कार्यों के लिए दूर न जाना पड़े।
-      </p>
-      <p style="color: var(--text); margin-bottom: 16px; font-size: 0.95rem;">
-        केंद्र का संचालन <strong>Ankit Dangi</strong> और <strong>OP Dangi</strong> द्वारा पूरी निष्ठा, उचित मार्गदर्शन और समय पर कार्य पूरा करने के संकल्प के साथ किया जाता है।
-      </p>
-
-      <div style="display: flex; flex-direction: column; gap: 8px;">
-        <div style="display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 0.92rem;">
-          <span style="color: #10b981;">✔</span> 100% अधिकृत एवं सुरक्षित ऑनलाइन सेवाएं
-        </div>
-        <div style="display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 0.92rem;">
-          <span style="color: #10b981;">✔</span> योजनाओं की सटीक व सही जानकारी
-        </div>
-        <div style="display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 0.92rem;">
-          <span style="color: #10b981;">✔</span> आसान व त्वरित डिजिटल भुगतान सुविधा
-        </div>
-      </div>
-    </div>
-
-    <div class="about-stats">
-      <div class="stat-card">
-        <div class="stat-num">50+</div>
-        <div class="stat-text">डिजिटल सेवाएं</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">100%</div>
-        <div class="stat-text">विश्वसनीय कार्य</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">त्वरित</div>
-        <div class="stat-text">ऑनलाइन रसीद</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">सक्रिय</div>
-        <div class="stat-text">नागरिक सहायता</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ================= HIGHLIGHTS ================= -->
-<div class="highlights" style="margin-top: 35px;">
+<div class="highlights">
   <div class="highlight">
     <div class="highlight-icon">⚡</div>
     <h3>तेज सेवा</h3>
@@ -1169,6 +1122,59 @@
     <a href="https://www.google.com/maps/search/?api=1&query=Sakhthali+Khurd+Rajasthan+312615" target="_blank" rel="noopener" class="btn btn-outline">
       🗺️ Google Maps पर देखें
     </a>
+  </div>
+</section>
+
+<!-- ================= ABOUT US (NOW PLACED AT THE BOTTOM) ================= -->
+<section class="section about-section" id="about">
+  <div class="section-title">
+    <h2>🏢 हमारे बारे में (About Us)</h2>
+    <p>ग्रामीण क्षेत्र में पारदर्शी, त्वरित और विश्वसनीय डिजिटल सेवाएं</p>
+  </div>
+
+  <div class="about-container">
+    <div class="about-text">
+      <h3 style="color: var(--primary); font-size: 1.35rem; margin-bottom: 12px;">
+        श्री बालाजी ई-मित्र केंद्र, साखथली खुर्द
+      </h3>
+      <p style="color: var(--text); margin-bottom: 14px; font-size: 0.95rem;">
+        हमारा उद्देश्य ग्राम साखथली खुर्द (तहसील - अरनोद) और आस-पास के सभी नागरिकों को सरकारी योजनाओं, ऑनलाइन फॉर्म, बैंकिंग और आवश्यक डिजिटल सेवाओं का सीधा लाभ पहुँचाना है, ताकि किसी को भी छोटे-छोटे कार्यों के लिए दूर न जाना पड़े।
+      </p>
+      <p style="color: var(--text); margin-bottom: 16px; font-size: 0.95rem;">
+        केंद्र का संचालन <strong>Ankit Dangi</strong> और <strong>OP Dangi</strong> द्वारा पूरी निष्ठा, उचित मार्गदर्शन और समय पर कार्य पूरा करने के संकल्प के साथ किया जाता है।
+      </p>
+
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 0.92rem;">
+          <span style="color: #10b981;">✔</span> 100% अधिकृत एवं सुरक्षित ऑनलाइन सेवाएं
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 0.92rem;">
+          <span style="color: #10b981;">✔</span> योजनाओं की सटीक व सही जानकारी
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 0.92rem;">
+          <span style="color: #10b981;">✔</span> आसान व त्वरित डिजिटल भुगतान सुविधा
+        </div>
+      </div>
+    </div>
+
+    <div class="about-stats">
+      <div class="stat-card">
+        <div class="stat-num">50+</div>
+        <div class="stat-text">डिजिटल सेवाएं</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">100%</div>
+        <div class="stat-text">विश्वसनीय कार्य</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">त्वरित</div>
+        <div class="stat-text">ऑनलाइन रसीद</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">सक्रिय</div>
+        <div class="stat-text">नागरिक सहायता</div>
+      </div>
+    </div>
   </div>
 </section>
 
