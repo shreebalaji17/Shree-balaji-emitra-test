@@ -148,32 +148,29 @@
     /* ================= HERO ================= */
 
     .hero {
-      max-width: 1200px;
+      max-width: 900px;
       margin: auto;
-      padding: 55px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 45px;
+      padding: 60px 20px 45px;
+      text-align: center;
     }
 
     .hero-content {
-      flex: 1 1 600px;
+      width: 100%;
     }
 
     .hero-tag {
       display: inline-block;
       background: #e0e7ff;
       color: var(--primary-dark);
-      padding: 6px 14px;
+      padding: 6px 16px;
       border-radius: 25px;
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       font-weight: 700;
     }
 
     .hero h2 {
-      font-size: clamp(2rem, 5vw, 3.4rem);
-      line-height: 1.2;
+      font-size: clamp(2.1rem, 5vw, 3.4rem);
+      line-height: 1.25;
       margin: 18px 0;
     }
 
@@ -184,14 +181,16 @@
     .hero p {
       color: var(--gray);
       font-size: 1.05rem;
-      max-width: 650px;
+      max-width: 700px;
+      margin: 0 auto;
     }
 
     .hero-buttons {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 12px;
-      margin-top: 25px;
+      margin-top: 28px;
     }
 
     .btn {
@@ -222,20 +221,6 @@
     .btn-outline {
       border: 1.5px solid var(--primary);
       color: var(--primary);
-      background: white;
-    }
-
-    .hero-img {
-      flex: 0 1 390px;
-      text-align: center;
-    }
-
-    .hero-img img {
-      width: 100%;
-      max-width: 360px;
-      margin: auto;
-      border-radius: 25px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
       background: white;
     }
 
@@ -620,20 +605,6 @@
         border-bottom: none;
       }
 
-      .hero {
-        padding-top: 40px;
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .hero p {
-        margin: auto;
-      }
-
-      .hero-buttons {
-        justify-content: center;
-      }
-
       .highlights {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -684,10 +655,6 @@
 
       .hero p {
         font-size: 0.92rem;
-      }
-
-      .hero-img img {
-        max-width: 280px;
       }
 
       .section {
@@ -826,16 +793,6 @@
       </a>
 
     </div>
-
-  </div>
-
-
-  <div class="hero-img">
-
-    <img
-      src="Logo.png"
-      alt="Shree Balaji e-Mitra Center"
-    >
 
   </div>
 
