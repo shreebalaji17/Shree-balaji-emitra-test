@@ -6,13 +6,16 @@
 
   <title>Shree Balaji e-Mitra Center | Sakhthali Khurd, Rajasthan</title>
 
-  <meta name="description" content="Shree Balaji e-Mitra Center, Sakhthali Khurd Rajasthan में सरकारी योजनाएं, ऑनलाइन फॉर्म, जन आधार, SSO, PAN, प्रिंट, स्कैन, बिल भुगतान, रिचार्ज, AEPS और अन्य डिजिटल सेवाएं।">
-
-  <meta name="keywords" content="Shree Balaji e-Mitra, e-Mitra Sakhthali Khurd, eMitra Rajasthan, Ankit Dangi, OP Dangi, 312615, online form, Rajasthan eMitra">
-
+  <meta name="description" content="Shree Balaji e-Mitra Center, साखथली खुर्द (अरनोद, प्रतापगढ़) में सरकारी योजनाएं, ऑनलाइन फॉर्म, जन आधार, पैन कार्ड, बैंकिंग, AEPS एवं अन्य डिजिटल नागरिक सेवाएं।">
+  <meta name="keywords" content="Shree Balaji e-Mitra, e-Mitra Sakhthali Khurd, Arnod, Pratapgarh, Ankit Dangi, OP Dangi, 312615, online form, Rajasthan eMitra">
   <meta name="author" content="Ankit Dangi, OP Dangi">
-
   <meta name="theme-color" content="#2563eb">
+
+  <!-- OpenGraph Meta Tags (WhatsApp Link Preview) -->
+  <meta property="og:title" content="Shree Balaji e-Mitra Center | साखथली खुर्द">
+  <meta property="og:description" content="सभी सरकारी योजनाएं, ऑनलाइन फॉर्म, बिल भुगतान व डिजिटल बैंकिंग सेवाएं।">
+  <meta property="og:image" content="Logo.png">
+  <meta property="og:type" content="website">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -222,6 +225,44 @@
       border: 1.5px solid var(--primary);
       color: var(--primary);
       background: white;
+    }
+
+    /* ================= ABOUT US ================= */
+    .about-container {
+      max-width: 1050px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 22px 16px;
+      border-radius: 14px;
+      text-align: center;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    }
+
+    .stat-num {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .stat-text {
+      color: var(--gray);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 4px;
     }
 
     /* ================= HIGHLIGHTS ================= */
@@ -681,6 +722,10 @@
         border-bottom: none;
       }
 
+      .about-container {
+        grid-template-columns: 1fr;
+      }
+
       .highlights {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -789,6 +834,7 @@
 
     <nav id="mainNav">
       <a href="#home" onclick="closeMenu()">Home</a>
+      <a href="#about" onclick="closeMenu()">About</a>
       <a href="#services" onclick="closeMenu()">Services</a>
       <a href="#schemes" onclick="closeMenu()">Schemes</a>
       <a href="#payment" onclick="closeMenu()">Payment</a>
@@ -824,8 +870,61 @@
   </div>
 </section>
 
+<!-- ================= ABOUT US ================= -->
+<section class="section" id="about" style="background: white; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="section-title">
+    <h2>🏢 हमारे बारे में (About Us)</h2>
+    <p>ग्रामीण क्षेत्र में पारदर्शी, त्वरित और विश्वसनीय डिजिटल सेवाएं</p>
+  </div>
+
+  <div class="about-container">
+    <div class="about-text">
+      <h3 style="color: var(--primary); font-size: 1.35rem; margin-bottom: 12px;">
+        श्री बालाजी ई-मित्र केंद्र, साखथली खुर्द
+      </h3>
+      <p style="color: var(--text); margin-bottom: 14px; font-size: 0.95rem;">
+        हमारा उद्देश्य ग्राम साखथली खुर्द (तहसील - अरनोद) और आस-पास के सभी नागरिकों को सरकारी योजनाओं, ऑनलाइन फॉर्म, बैंकिंग और आवश्यक डिजिटल सेवाओं का सीधा लाभ पहुँचाना है, ताकि किसी को भी छोटे-छोटे कार्यों के लिए दूर न जाना पड़े।
+      </p>
+      <p style="color: var(--text); margin-bottom: 16px; font-size: 0.95rem;">
+        केंद्र का संचालन <strong>Ankit Dangi</strong> और <strong>OP Dangi</strong> द्वारा पूरी निष्ठा, उचित मार्गदर्शन और समय पर कार्य पूरा करने के संकल्प के साथ किया जाता है।
+      </p>
+
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 0.92rem;">
+          <span style="color: #10b981;">✔</span> 100% अधिकृत एवं सुरक्षित ऑनलाइन सेवाएं
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 0.92rem;">
+          <span style="color: #10b981;">✔</span> योजनाओं की सटीक व सही जानकारी
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 0.92rem;">
+          <span style="color: #10b981;">✔</span> आसान व त्वरित डिजिटल भुगतान सुविधा
+        </div>
+      </div>
+    </div>
+
+    <div class="about-stats">
+      <div class="stat-card">
+        <div class="stat-num">50+</div>
+        <div class="stat-text">डिजिटल सेवाएं</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">100%</div>
+        <div class="stat-text">विश्वसनीय कार्य</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">त्वरित</div>
+        <div class="stat-text">ऑनलाइन रसीद</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">सक्रिय</div>
+        <div class="stat-text">नागरिक सहायता</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= HIGHLIGHTS ================= -->
-<div class="highlights">
+<div class="highlights" style="margin-top: 35px;">
   <div class="highlight">
     <div class="highlight-icon">⚡</div>
     <h3>तेज सेवा</h3>
@@ -1066,7 +1165,7 @@
 <section class="section">
   <div class="location-box">
     <h2>📍 हमारा स्थान</h2>
-    <p>साखथली खुर्द, राजस्थान - 312615</p>
+    <p>साखथली खुर्द, तहसील - अरनोद, जिला - प्रतापगढ़, राजस्थान - 312615</p>
     <a href="https://www.google.com/maps/search/?api=1&query=Sakhthali+Khurd+Rajasthan+312615" target="_blank" rel="noopener" class="btn btn-outline">
       🗺️ Google Maps पर देखें
     </a>
@@ -1079,7 +1178,7 @@
     <div>
       <h3>Shree Balaji e-Mitra</h3>
       <p>🙏 आपकी सेवा, हमारा संकल्प</p>
-      <p>साखथली खुर्द, तहसील - अरनोद , जिला - प्रतापगढ़, राजस्थान - 312615</p>
+      <p>साखथली खुर्द, तहसील - अरनोद, जिला - प्रतापगढ़, राजस्थान - 312615</p>
       <p style="margin-top: 10px; font-size: 0.85rem; color: #38bdf8;">प्रमाणित नागरिक सेवा केंद्र</p>
     </div>
 
@@ -1166,7 +1265,7 @@
       <h4>4. सेवा शुल्क</h4>
       <p>सरकारी शुल्क एवं परामर्श शुल्क काम शुरू होने से पहले या काम पूरा होने पर देय होगा। सभी ऑनलाइन भुगतान Razorpay गेटवे या UPI द्वारा सुरक्षित प्रोसेस किए जाते हैं।</p>
       <h4>5. विवाद क्षेत्राधिकार</h4>
-      <p>किसी भी कानूनी विवाद का क्षेत्राधिकार स्थानीय न्यायालय (राजस्थान) के अधीन होगा।</p>
+      <p>किसी भी कानूनी विवाद का क्षेत्राधिकार स्थानीय न्यायालय (अरनोद/प्रतापगढ़, राजस्थान) के अधीन होगा।</p>
     `,
     privacy: `
       <h3>Privacy Policy (गोपनीयता नीति)</h3>
@@ -1218,7 +1317,6 @@
     document.getElementById('policyModal').classList.remove('active');
   }
 
-  // Close modal when clicking outside box
   document.getElementById('policyModal').addEventListener('click', function(e) {
     if (e.target === this) {
       closePolicy();
