@@ -14,13 +14,15 @@
 
   <meta name="theme-color" content="#2563eb">
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
+  <!-- Razorpay Checkout Library -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
+  <style>
     :root {
       --primary: #2563eb;
       --primary-dark: #1d4ed8;
@@ -64,7 +66,6 @@
     }
 
     /* ================= HEADER ================= */
-
     header {
       background: rgba(255,255,255,0.97);
       box-shadow: 0 2px 15px rgba(0,0,0,0.08);
@@ -90,9 +91,9 @@
     }
 
     .brand img {
-      width: 52px;
-      height: 52px;
-      object-fit: contain;
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
       border-radius: 50%;
       border: 2px solid #e0e7ff;
       background: white;
@@ -146,11 +147,10 @@
     }
 
     /* ================= HERO ================= */
-
     .hero {
       max-width: 900px;
       margin: auto;
-      padding: 60px 20px 45px;
+      padding: 65px 20px 50px;
       text-align: center;
     }
 
@@ -194,7 +194,7 @@
     }
 
     .btn {
-      padding: 11px 19px;
+      padding: 11px 20px;
       border-radius: 9px;
       font-weight: 700;
       display: inline-flex;
@@ -225,7 +225,6 @@
     }
 
     /* ================= HIGHLIGHTS ================= */
-
     .highlights {
       max-width: 1200px;
       margin: 0 auto 20px;
@@ -258,7 +257,6 @@
     }
 
     /* ================= SECTION ================= */
-
     section {
       scroll-margin-top: 80px;
     }
@@ -283,7 +281,6 @@
     }
 
     /* ================= SERVICES ================= */
-
     .services-grid {
       max-width: 1200px;
       margin: auto;
@@ -329,7 +326,6 @@
     }
 
     /* ================= SCHEMES ================= */
-
     .schemes-box {
       max-width: 1200px;
       margin: auto;
@@ -368,8 +364,7 @@
       font-size: 0.9rem;
     }
 
-    /* ================= PAYMENT ================= */
-
+    /* ================= PAYMENT SECTION ================= */
     .payment-section {
       background: white;
     }
@@ -411,7 +406,22 @@
     .pay-card-desc {
       color: var(--gray);
       font-size: 0.88rem;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
+    }
+
+    .payment-input {
+      padding: 11px 14px;
+      border-radius: 9px;
+      border: 1px solid var(--border);
+      font-size: 0.95rem;
+      width: 100%;
+      outline: none;
+      transition: 0.2s;
+    }
+
+    .payment-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
     }
 
     .upi-badge {
@@ -445,7 +455,6 @@
     }
 
     /* ================= CONTACT ================= */
-
     .contact-grid {
       max-width: 900px;
       margin: auto;
@@ -482,7 +491,6 @@
     }
 
     /* ================= LOCATION ================= */
-
     .location-box {
       max-width: 900px;
       margin: auto;
@@ -503,7 +511,6 @@
     }
 
     /* ================= FOOTER ================= */
-
     footer {
       background: #0f172a;
       color: #94a3b8;
@@ -541,7 +548,6 @@
     }
 
     /* ================= FLOATING BAR ================= */
-
     .floating-bar {
       position: fixed;
       bottom: 0;
@@ -568,10 +574,8 @@
       background: #25d366;
     }
 
-    /* ================= MOBILE ================= */
-
+    /* ================= RESPONSIVE ================= */
     @media (max-width: 900px) {
-
       .menu-btn {
         display: block;
       }
@@ -627,7 +631,6 @@
     }
 
     @media (max-width: 600px) {
-
       .nav-container {
         padding: 10px 14px;
       }
@@ -641,20 +644,20 @@
       }
 
       .brand img {
-        width: 45px;
-        height: 45px;
+        width: 44px;
+        height: 44px;
       }
 
       .hero {
-        padding: 35px 15px;
+        padding: 40px 15px 30px;
       }
 
       .hero h2 {
-        font-size: 2rem;
+        font-size: 2.1rem;
       }
 
       .hero p {
-        font-size: 0.92rem;
+        font-size: 0.95rem;
       }
 
       .section {
@@ -672,10 +675,6 @@
 
       .highlight {
         padding: 13px 8px;
-      }
-
-      .highlight-icon {
-        font-size: 24px;
       }
 
       .services-grid {
@@ -696,27 +695,20 @@
         font-size: 0.88rem;
       }
     }
-
   </style>
 </head>
 
 <body>
 
 <!-- ================= HEADER ================= -->
-
 <header>
-
   <div class="nav-container">
-
     <a href="#home" class="brand">
-
       <img src="Logo.png" alt="Shree Balaji e-Mitra Center Logo">
-
       <div>
         <h1>Shree Balaji e-Mitra Center</h1>
         <span>Ankit Dangi | OP Dangi</span>
       </div>
-
     </a>
 
     <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">
@@ -724,37 +716,20 @@
     </button>
 
     <nav id="mainNav">
-
       <a href="#home" onclick="closeMenu()">Home</a>
-
       <a href="#services" onclick="closeMenu()">Services</a>
-
       <a href="#schemes" onclick="closeMenu()">Schemes</a>
-
       <a href="#payment" onclick="closeMenu()">Payment</a>
-
       <a href="#contact" onclick="closeMenu()">Contact</a>
-
-      <a href="tel:+918690653797" class="btn-call-nav">
-        📞 Call Now
-      </a>
-
+      <a href="tel:+918690653797" class="btn-call-nav">📞 Call Now</a>
     </nav>
-
   </div>
-
 </header>
 
-
 <!-- ================= HERO ================= -->
-
 <section class="hero" id="home">
-
   <div class="hero-content">
-
-    <span class="hero-tag">
-      🙏 आपकी सेवा, हमारा संकल्प
-    </span>
+    <span class="hero-tag">🙏 आपकी सेवा, हमारा संकल्प</span>
 
     <h2>
       Shree Balaji
@@ -769,40 +744,16 @@
     </p>
 
     <div class="hero-buttons">
-
-      <a href="tel:+918690653797" class="btn btn-primary">
-        📞 Call Ankit
-      </a>
-
-      <a href="tel:+919358276393" class="btn btn-outline">
-        📞 Call OP Dangi
-      </a>
-
-      <a href="https://wa.me/918690653797"
-         target="_blank"
-         rel="noopener"
-         class="btn btn-whatsapp">
-        💬 WhatsApp Ankit
-      </a>
-
-      <a href="https://wa.me/919358276393"
-         target="_blank"
-         rel="noopener"
-         class="btn btn-whatsapp">
-        💬 WhatsApp OP
-      </a>
-
+      <a href="tel:+918690653797" class="btn btn-primary">📞 Call Ankit</a>
+      <a href="tel:+919358276393" class="btn btn-outline">📞 Call OP Dangi</a>
+      <a href="https://wa.me/918690653797" target="_blank" rel="noopener" class="btn btn-whatsapp">💬 WhatsApp Ankit</a>
+      <a href="https://wa.me/919358276393" target="_blank" rel="noopener" class="btn btn-whatsapp">💬 WhatsApp OP</a>
     </div>
-
   </div>
-
 </section>
 
-
 <!-- ================= HIGHLIGHTS ================= -->
-
 <div class="highlights">
-
   <div class="highlight">
     <div class="highlight-icon">⚡</div>
     <h3>तेज सेवा</h3>
@@ -826,293 +777,155 @@
     <h3>आपका भरोसा</h3>
     <p>हमारी जिम्मेदारी</p>
   </div>
-
 </div>
 
-
 <!-- ================= SERVICES ================= -->
-
 <section class="section" id="services">
-
   <div class="section-title">
-
     <h2>हमारी प्रमुख सेवाएं</h2>
-
-    <p>
-      आपके रोजमर्रा के जरूरी ऑनलाइन और डिजिटल काम
-      एक ही जगह
-    </p>
-
+    <p>आपके रोजमर्रा के जरूरी ऑनलाइन और डिजिटल काम एक ही जगह</p>
   </div>
-
 
   <div class="services-grid">
-
-
     <div class="card">
-
       <div class="card-icon">📄</div>
-
       <h3>Document Services</h3>
-
-      <p>
-        प्रिंट, स्कैन, फोटो कॉपी, PDF, लैमिनेशन
-        एवं दस्तावेज संबंधी कार्य।
-      </p>
-
+      <p>प्रिंट, स्कैन, फोटो कॉपी, PDF, लैमिनेशन एवं दस्तावेज संबंधी कार्य।</p>
     </div>
 
-
     <div class="card">
-
       <div class="card-icon">🏛️</div>
-
       <h3>Government Services</h3>
-
-      <p>
-        मूल निवास, जाति प्रमाण पत्र, जन आधार,
-        राशन कार्ड एवं अन्य सरकारी सेवाएं।
-      </p>
-
+      <p>मूल निवास, जाति प्रमाण पत्र, जन आधार, राशन कार्ड एवं अन्य सरकारी सेवाएं।</p>
     </div>
 
-
     <div class="card">
-
       <div class="card-icon">🪪</div>
-
       <h3>PAN & Online Documents</h3>
-
-      <p>
-        PAN Card एवं उपलब्ध अन्य ऑनलाइन
-        दस्तावेज सेवाओं में सहायता।
-      </p>
-
+      <p>PAN Card एवं उपलब्ध अन्य ऑनलाइन दस्तावेज सेवाओं में सहायता।</p>
     </div>
 
-
     <div class="card">
-
       <div class="card-icon">📱</div>
-
       <h3>Recharge & Bills</h3>
-
-      <p>
-        मोबाइल रिचार्ज, DTH, बिजली बिल,
-        पानी बिल एवं अन्य बिल भुगतान।
-      </p>
-
+      <p>मोबाइल रिचार्ज, DTH, बिजली बिल, पानी बिल एवं अन्य बिल भुगतान।</p>
     </div>
 
-
     <div class="card">
-
       <div class="card-icon">₹</div>
-
       <h3>Banking & AEPS</h3>
-
-      <p>
-        AEPS, बैलेंस चेक, मिनी स्टेटमेंट
-        एवं उपलब्ध बैंकिंग सेवाएं।
-      </p>
-
+      <p>AEPS, बैलेंस चेक, मिनी स्टेटमेंट एवं उपलब्ध बैंकिंग सेवाएं।</p>
     </div>
 
-
     <div class="card">
-
       <div class="card-icon">👥</div>
-
       <h3>Online Recruitment Forms</h3>
-
-      <p>
-        सरकारी भर्ती एवं प्रतियोगी परीक्षाओं
-        के ऑनलाइन फॉर्म भरने की सुविधा।
-      </p>
-
+      <p>सरकारी भर्ती एवं प्रतियोगी परीक्षाओं के ऑनलाइन फॉर्म भरने की सुविधा।</p>
     </div>
 
-
     <div class="card">
-
       <div class="card-icon">🎓</div>
-
       <h3>Scholarship</h3>
-
-      <p>
-        छात्रवृत्ति एवं शिक्षा से संबंधित
-        ऑनलाइन आवेदन में सहायता।
-      </p>
-
+      <p>छात्रवृत्ति एवं शिक्षा से संबंधित ऑनलाइन आवेदन में सहायता।</p>
     </div>
 
-
     <div class="card">
-
       <div class="card-icon">🌾</div>
-
       <h3>Kisan Services</h3>
-
-      <p>
-        PM किसान एवं उपलब्ध कृषि योजनाओं
-        के ऑनलाइन आवेदन में सहायता।
-      </p>
-
+      <p>PM किसान एवं उपलब्ध कृषि योजनाओं के ऑनलाइन आवेदन में सहायता।</p>
     </div>
-
 
     <div class="card">
-
       <div class="card-icon">🏠</div>
-
       <h3>Social Security</h3>
-
-      <p>
-        पेंशन, पालनहार एवं उपलब्ध सामाजिक
-        सुरक्षा योजनाओं में सहायता।
-      </p>
-
+      <p>पेंशन, पालनहार एवं उपलब्ध सामाजिक सुरक्षा योजनाओं में सहायता।</p>
     </div>
-
-
   </div>
-
 </section>
-
 
 <!-- ================= SCHEMES ================= -->
-
 <section class="section" id="schemes">
-
   <div class="section-title">
-
     <h2>सरकारी योजनाएं व सहायता</h2>
-
-    <p>
-      पात्रता के अनुसार विभिन्न योजनाओं के
-      ऑनलाइन आवेदन में सहायता
-    </p>
-
+    <p>पात्रता के अनुसार विभिन्न योजनाओं के ऑनलाइन आवेदन में सहायता</p>
   </div>
-
 
   <div class="schemes-box">
-
-
     <div class="scheme-panel">
-
       <h2>📚 छात्र एवं युवा</h2>
-
-
       <div class="scheme-item">
-
         <h4>🎓 छात्रवृत्ति</h4>
-
-        <p>
-          छात्रवृत्ति एवं शिक्षा से संबंधित
-          ऑनलाइन आवेदन।
-        </p>
-
+        <p>छात्रवृत्ति एवं शिक्षा से संबंधित ऑनलाइन आवेदन।</p>
       </div>
-
-
       <div class="scheme-item">
-
         <h4>📝 Recruitment Forms</h4>
-
-        <p>
-          सरकारी भर्ती एवं प्रतियोगी परीक्षाओं
-          के ऑनलाइन फॉर्म।
-        </p>
-
+        <p>सरकारी भर्ती एवं प्रतियोगी परीक्षाओं के ऑनलाइन फॉर्म।</p>
       </div>
-
-
       <div class="scheme-item">
-
         <h4>💻 Online Applications</h4>
-
-        <p>
-          विभिन्न ऑनलाइन आवेदन एवं
-          डिजिटल सेवाओं में सहायता।
-        </p>
-
+        <p>विभिन्न ऑनलाइन आवेदन एवं डिजिटल सेवाओं में सहायता।</p>
       </div>
-
     </div>
-
 
     <div class="scheme-panel">
-
       <h2>👨‍🌾 किसान एवं नागरिक</h2>
-
-
       <div class="scheme-item">
-
         <h4>🌾 किसान योजनाएं</h4>
-
-        <p>
-          PM किसान एवं उपलब्ध कृषि योजनाओं
-          के आवेदन में सहायता।
-        </p>
-
+        <p>PM किसान एवं उपलब्ध कृषि योजनाओं के आवेदन में सहायता।</p>
       </div>
-
-
       <div class="scheme-item">
-
         <h4>🏠 सामाजिक सुरक्षा</h4>
-
-        <p>
-          वृद्धावस्था, विधवा, दिव्यांग पेंशन
-          एवं उपलब्ध योजनाओं में सहायता।
-        </p>
-
+        <p>वृद्धावस्था, विधवा, दिव्यांग पेंशन एवं उपलब्ध योजनाओं में सहायता।</p>
       </div>
-
-
       <div class="scheme-item">
-
         <h4>🪪 नागरिक सेवाएं</h4>
-
-        <p>
-          जन आधार, प्रमाण पत्र, राशन कार्ड
-          एवं अन्य उपलब्ध सेवाएं।
-        </p>
-
+        <p>जन आधार, प्रमाण पत्र, राशन कार्ड एवं अन्य उपलब्ध सेवाएं।</p>
       </div>
-
     </div>
-
-
   </div>
-
 </section>
 
-
 <!-- ================= PAYMENT ================= -->
-
 <section class="section payment-section" id="payment">
-
   <div class="section-title">
     <h2>💳 ऑनलाइन भुगतान (Online Payment)</h2>
     <p>अपनी सुविधानुसार सुरक्षित Razorpay गेटवे या UPI QR Code से भुगतान करें</p>
   </div>
 
   <div class="payment-container">
-
-    <!-- 1. Razorpay Gateway Card -->
+    <!-- Card 1: Razorpay Gateway -->
     <div class="pay-card">
       <div>
         <div class="pay-card-icon">💳</div>
         <h3>Razorpay ऑनलाइन गेटवे</h3>
         <p class="pay-card-desc">
-          डेबिट कार्ड, क्रेडिट कार्ड, नेट बैंकिंग या वॉलेट द्वारा सीधा भुगतान करें
+          रकम दर्ज करें और सीधे UPI, कार्ड या नेटबैंकिंग से भुगतान करें
         </p>
       </div>
 
-      <div style="margin: 15px 0;">
-        <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_TaQH1iffsFcUqj" async> </script> </form>
+      <!-- Payment Input Form -->
+      <div id="paymentFormArea" style="display: flex; flex-direction: column; gap: 10px; margin: 15px 0;">
+        <input type="text" id="payerName" placeholder="आपका नाम (Full Name)" class="payment-input">
+        <input type="tel" id="payerPhone" placeholder="मोबाइल नंबर (Mobile No.)" class="payment-input">
+        <input type="number" id="payerAmount" placeholder="रकम (₹ Amount)" class="payment-input">
+        
+        <button type="button" onclick="startRazorpayPayment()" class="btn btn-primary" style="border: none; cursor: pointer; justify-content: center; padding: 12px; font-size: 1rem; margin-top: 5px;">
+          🚀 Pay Now
+        </button>
+      </div>
+
+      <!-- Success & WhatsApp Share Box -->
+      <div id="paymentSuccessArea" style="display: none; background: #ecfdf5; border: 1px solid #6ee7b7; border-radius: 12px; padding: 18px; margin: 15px 0; text-align: center;">
+        <div style="font-size: 2.2rem; color: #059669; margin-bottom: 6px;">✅</div>
+        <h4 style="color: #065f46; margin-bottom: 6px; font-size: 1.1rem;">भुगतान सफल रहा!</h4>
+        <p style="color: #047857; font-size: 0.85rem; margin-bottom: 12px;">Payment ID: <strong id="successPayId"></strong></p>
+        
+        <a id="waSendBtn" href="#" target="_blank" class="btn btn-whatsapp" style="width: 100%; justify-content: center; font-size: 0.95rem; padding: 11px;">
+          💬 WhatsApp पर रसीद भेजें
+        </a>
+        <p style="color: #64748b; font-size: 0.78rem; margin-top: 8px;">
+          (WhatsApp अपने आप खुल रहा है, कृपया स्क्रीनशॉट भेजें)
+        </p>
       </div>
 
       <p class="payment-badge">
@@ -1120,7 +933,7 @@
       </p>
     </div>
 
-    <!-- 2. UPI QR Card -->
+    <!-- Card 2: UPI QR Card -->
     <div class="pay-card">
       <div>
         <div class="pay-card-icon">📱</div>
@@ -1146,265 +959,162 @@
         स्कैन करें और तुरंत भुगतान करें
       </p>
     </div>
-
   </div>
-
 </section>
-
 
 <!-- ================= CONTACT ================= -->
-
 <section class="section" id="contact">
-
   <div class="section-title">
-
     <h2>📞 संपर्क करें</h2>
-
-    <p>
-      किसी भी सेवा की जानकारी के लिए
-      Call या WhatsApp करें
-    </p>
-
+    <p>किसी भी सेवा की जानकारी के लिए Call या WhatsApp करें</p>
   </div>
-
 
   <div class="contact-grid">
-
-
     <div class="contact-card">
-
       <h3>Ankit Dangi</h3>
-
-      <div class="phone-number">
-        📞 8690653797
-      </div>
-
+      <div class="phone-number">📞 8690653797</div>
       <div class="contact-buttons">
-
-        <a
-          href="tel:+918690653797"
-          class="btn btn-primary">
-          📞 Call
-        </a>
-
-        <a
-          href="https://wa.me/918690653797"
-          target="_blank"
-          rel="noopener"
-          class="btn btn-whatsapp">
-          💬 WhatsApp
-        </a>
-
+        <a href="tel:+918690653797" class="btn btn-primary">📞 Call</a>
+        <a href="https://wa.me/918690653797" target="_blank" rel="noopener" class="btn btn-whatsapp">💬 WhatsApp</a>
       </div>
-
     </div>
-
 
     <div class="contact-card">
-
       <h3>OP Dangi</h3>
-
-      <div class="phone-number">
-        📞 9358276393
-      </div>
-
+      <div class="phone-number">📞 9358276393</div>
       <div class="contact-buttons">
-
-        <a
-          href="tel:+919358276393"
-          class="btn btn-primary">
-          📞 Call
-        </a>
-
-        <a
-          href="https://wa.me/919358276393"
-          target="_blank"
-          rel="noopener"
-          class="btn btn-whatsapp">
-          💬 WhatsApp
-        </a>
-
+        <a href="tel:+919358276393" class="btn btn-primary">📞 Call</a>
+        <a href="https://wa.me/919358276393" target="_blank" rel="noopener" class="btn btn-whatsapp">💬 WhatsApp</a>
       </div>
-
     </div>
-
-
   </div>
-
 </section>
-
 
 <!-- ================= LOCATION ================= -->
-
 <section class="section">
-
   <div class="location-box">
-
     <h2>📍 हमारा स्थान</h2>
-
-    <p>
-      साखथली खुर्द, राजस्थान - 312615
-    </p>
-
-    <a
-      href="https://www.google.com/maps/search/?api=1&query=Sakhthali+Khurd+Rajasthan+312615"
-      target="_blank"
-      rel="noopener"
-      class="btn btn-outline">
-
+    <p>साखथली खुर्द, राजस्थान - 312615</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Sakhthali+Khurd+Rajasthan+312615" target="_blank" rel="noopener" class="btn btn-outline">
       🗺️ Google Maps पर देखें
-
     </a>
-
   </div>
-
 </section>
 
-
 <!-- ================= FOOTER ================= -->
-
 <footer>
-
   <div class="footer-grid">
-
-
     <div>
-
       <h3>Shree Balaji e-Mitra</h3>
-
-      <p>
-        🙏 आपकी सेवा, हमारा संकल्प
-      </p>
-
-      <p>
-        साखथली खुर्द, राजस्थान - 312615
-      </p>
-
+      <p>🙏 आपकी सेवा, हमारा संकल्प</p>
+      <p>साखथली खुर्द, राजस्थान - 312615</p>
     </div>
 
-
     <div>
-
       <h3>Quick Contact</h3>
-
-      <p>
-        Ankit Dangi:
-        <a href="tel:+918690653797">
-          +91 8690653797
-        </a>
-      </p>
-
-      <p>
-        OP Dangi:
-        <a href="tel:+919358276393">
-          +91 9358276393
-        </a>
-      </p>
-
+      <p>Ankit Dangi: <a href="tel:+918690653797">+91 8690653797</a></p>
+      <p>OP Dangi: <a href="tel:+919358276393">+91 9358276393</a></p>
     </div>
-
 
     <div>
-
       <h3>UPI Payment</h3>
-
-      <p>
-        ankitdangi17@icici
-      </p>
-
-      <p>
-        सोमवार - शनिवार: 08:00 AM - 08:00 PM
-      </p>
-
-      <p>
-        रविवार: 09:00 AM - 08:00 PM
-      </p>
-
+      <p>ankitdangi17@icici</p>
+      <p>सोमवार - शनिवार: 08:00 AM - 08:00 PM</p>
+      <p>रविवार: 09:00 AM - 08:00 PM</p>
     </div>
-
-
   </div>
-
 
   <div class="footer-bottom">
-
-    © 2026 Shree Balaji e-Mitra Center
-    | All Rights Reserved.
-
+    © 2026 Shree Balaji e-Mitra Center | All Rights Reserved.
   </div>
-
 </footer>
 
-
 <!-- ================= MOBILE FLOATING BAR ================= -->
-
 <div class="floating-bar">
-
-  <a
-    href="tel:+918690653797"
-    class="float-call">
-
-    📞 Call Now
-
-  </a>
-
-
-  <a
-    href="https://wa.me/918690653797"
-    target="_blank"
-    rel="noopener"
-    class="float-wa">
-
-    💬 WhatsApp
-
-  </a>
-
+  <a href="tel:+918690653797" class="float-call">📞 Call Now</a>
+  <a href="https://wa.me/918690653797" target="_blank" rel="noopener" class="float-wa">💬 WhatsApp</a>
 </div>
 
-
 <!-- ================= JAVASCRIPT ================= -->
-
 <script>
-
   function toggleMenu() {
-
     const nav = document.getElementById("mainNav");
-
     nav.classList.toggle("active");
-
   }
-
 
   function closeMenu() {
-
     const nav = document.getElementById("mainNav");
-
     nav.classList.remove("active");
-
   }
 
-
-  // Close mobile menu when clicking outside
-
   document.addEventListener("click", function(event) {
-
     const nav = document.getElementById("mainNav");
     const menuBtn = document.querySelector(".menu-btn");
-
     if (
       nav.classList.contains("active") &&
       !nav.contains(event.target) &&
       !menuBtn.contains(event.target)
     ) {
-
       nav.classList.remove("active");
-
     }
-
   });
 
-</script>
+  // Razorpay Payment Handler
+  function startRazorpayPayment() {
+    const name = document.getElementById('payerName').value.trim();
+    const phone = document.getElementById('payerPhone').value.trim();
+    const amount = document.getElementById('payerAmount').value.trim();
 
+    if (!name) {
+      alert("कृपया अपना नाम दर्ज करें!");
+      return;
+    }
+    if (!phone || phone.length < 10) {
+      alert("कृपया 10 अंकों का सही मोबाइल नंबर दर्ज करें!");
+      return;
+    }
+    if (!amount || Number(amount) <= 0) {
+      alert("कृपया भुगतान की सही रकम (Amount) दर्ज करें!");
+      return;
+    }
+
+    const options = {
+      "key": "rzp_live_RFNXAgYSLvwjB3",
+      "amount": Number(amount) * 100,
+      "currency": "INR",
+      "name": "Shree Balaji e-Mitra Center",
+      "description": "e-Mitra Service Fee",
+      "image": "Logo.png",
+      "prefill": {
+        "name": name,
+        "contact": phone
+      },
+      "theme": {
+        "color": "#2563eb"
+      },
+      "handler": function (response) {
+        // Form hide and show Success Box
+        document.getElementById('paymentFormArea').style.display = 'none';
+        document.getElementById('paymentSuccessArea').style.display = 'block';
+        document.getElementById('successPayId').innerText = response.razorpay_payment_id;
+
+        // WhatsApp Link generate
+        const msg = `नमस्ते Ankit जी, मैंने Shree Balaji e-Mitra पर ऑनलाइन भुगतान कर दिया है।\n\n👤 नाम: ${name}\n📱 मोबाइल: ${phone}\n💰 रकम: ₹${amount}\n🆔 Payment ID: ${response.razorpay_payment_id}\n\n(भुगतान का स्क्रीनशॉट संलग्न है)`;
+        const waUrl = `https://wa.me/918690653797?text=${encodeURIComponent(msg)}`;
+        
+        document.getElementById('waSendBtn').href = waUrl;
+
+        // Auto open WhatsApp
+        setTimeout(function() {
+          window.open(waUrl, '_blank');
+        }, 1200);
+      }
+    };
+
+    const rzp = new Razorpay(options);
+    rzp.open();
+  }
+</script>
 
 </body>
 </html>
