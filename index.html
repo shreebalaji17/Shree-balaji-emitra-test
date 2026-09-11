@@ -513,7 +513,7 @@
       margin-bottom: 18px;
     }
 
-    /* ================= ABOUT US (POSITIONED AT BOTTOM) ================= */
+    /* ================= ABOUT US (AT BOTTOM) ================= */
     .about-section {
       background: #f1f5f9;
       border-top: 1px solid var(--border);
@@ -1017,7 +1017,7 @@
   </div>
 
   <div class="payment-container">
-    <!-- Card 1: Razorpay Gateway -->
+    <!-- Card 1: Razorpay Gateway With Transparent Fee Breakdown -->
     <div class="pay-card">
       <div>
         <div class="pay-card-icon">💳</div>
@@ -1031,7 +1031,28 @@
       <div id="paymentFormArea" style="display: flex; flex-direction: column; gap: 10px; margin: 15px 0;">
         <input type="text" id="payerName" placeholder="आपका नाम (Full Name)" class="payment-input">
         <input type="tel" id="payerPhone" placeholder="मोबाइल नंबर (Mobile No.)" class="payment-input">
-        <input type="number" id="payerAmount" placeholder="रकम (₹ Amount)" class="payment-input">
+        <input type="number" id="payerAmount" placeholder="मूल सेवा शुल्क (₹ Amount)" class="payment-input" oninput="updateFeeBreakdown()">
+
+        <!-- Live Cost Transparency Box -->
+        <div id="breakdownBox" style="display: none; background: #ffffff; border: 1px dashed var(--primary); border-radius: 10px; padding: 12px; font-size: 0.85rem; text-align: left;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+            <span>मूल सेवा शुल्क:</span>
+            <strong>₹<span id="displayBase">0.00</span></strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 4px; color: var(--gray);">
+            <span>गेटवे शुल्क (2%):</span>
+            <span>₹<span id="displayGateway">0.00</span></span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 6px; color: var(--gray);">
+            <span>GST (शुल्क पर 18%):</span>
+            <span>₹<span id="displayGst">0.00</span></span>
+          </div>
+          <hr style="border: 0; border-top: 1px solid var(--border); margin: 6px 0;">
+          <div style="display: flex; justify-content: space-between; font-weight: 700; color: var(--primary);">
+            <span>कुल भुगतान राशि:</span>
+            <span>₹<span id="displayTotal">0.00</span></span>
+          </div>
+        </div>
         
         <button type="button" onclick="startRazorpayPayment()" class="btn btn-primary" style="border: none; cursor: pointer; justify-content: center; padding: 12px; font-size: 1rem; margin-top: 5px;">
           🚀 Pay Now
@@ -1125,7 +1146,7 @@
   </div>
 </section>
 
-<!-- ================= ABOUT US (NOW PLACED AT THE BOTTOM) ================= -->
+<!-- ================= ABOUT US (POSITIONED AT BOTTOM) ================= -->
 <section class="section about-section" id="about">
   <div class="section-title">
     <h2>🏢 हमारे बारे में (About Us)</h2>
@@ -1329,11 +1350,33 @@
     }
   });
 
+  // Live Surcharge Calculator (2% Gateway + 18% GST on Fee = 2.36%)
+  function updateFeeBreakdown() {
+    const amountVal = parseFloat(document.getElementById('payerAmount').value);
+    const box = document.getElementById('breakdownBox');
+
+    if (isNaN(amountVal) || amountVal <= 0) {
+      box.style.display = 'none';
+      return;
+    }
+
+    const gatewayFee = amountVal * 0.02;
+    const gstOnFee = gatewayFee * 0.18;
+    const grandTotal = amountVal + gatewayFee + gstOnFee;
+
+    document.getElementById('displayBase').innerText = amountVal.toFixed(2);
+    document.getElementById('displayGateway').innerText = gatewayFee.toFixed(2);
+    document.getElementById('displayGst').innerText = gstOnFee.toFixed(2);
+    document.getElementById('displayTotal').innerText = grandTotal.toFixed(2);
+
+    box.style.display = 'block';
+  }
+
   // Razorpay Payment Handler
   function startRazorpayPayment() {
     const name = document.getElementById('payerName').value.trim();
     const phone = document.getElementById('payerPhone').value.trim();
-    const amount = document.getElementById('payerAmount').value.trim();
+    const baseAmount = parseFloat(document.getElementById('payerAmount').value.trim());
 
     if (!name) {
       alert("कृपया अपना नाम दर्ज करें!");
@@ -1343,17 +1386,24 @@
       alert("कृपया 10 अंकों का सही मोबाइल नंबर दर्ज करें!");
       return;
     }
-    if (!amount || Number(amount) <= 0) {
+    if (isNaN(baseAmount) || baseAmount <= 0) {
       alert("कृपया भुगतान की सही रकम (Amount) दर्ज करें!");
       return;
     }
 
+    // Calculation: 2% Gateway + 18% GST on Fee
+    const gatewayFee = baseAmount * 0.02;
+    const gstOnFee = gatewayFee * 0.18;
+    const totalSurcharge = parseFloat((gatewayFee + gstOnFee).toFixed(2));
+    const finalAmount = parseFloat((baseAmount + totalSurcharge).toFixed(2));
+    const amountInPaise = Math.round(finalAmount * 100);
+
     const options = {
       "key": "rzp_live_RFNXAgYSLvwjB3",
-      "amount": Number(amount) * 100,
+      "amount": amountInPaise,
       "currency": "INR",
       "name": "Shree Balaji e-Mitra Center",
-      "description": "e-Mitra Service Fee",
+      "description": `मूल शुल्क: ₹${baseAmount.toFixed(2)} + गेटवे व GST: ₹${totalSurcharge.toFixed(2)}`,
       "image": "Logo.png",
       "prefill": {
         "name": name,
@@ -1367,7 +1417,7 @@
         document.getElementById('paymentSuccessArea').style.display = 'block';
         document.getElementById('successPayId').innerText = response.razorpay_payment_id;
 
-        const msg = `नमस्ते Ankit जी, मैंने Shree Balaji e-Mitra पर ऑनलाइन भुगतान कर दिया है।\n\n👤 नाम: ${name}\n📱 मोबाइल: ${phone}\n💰 रकम: ₹${amount}\n🆔 Payment ID: ${response.razorpay_payment_id}\n\n(भुगतान का स्क्रीनशॉट संलग्न है)`;
+        const msg = `नमस्ते Ankit जी, मैंने Shree Balaji e-Mitra पर ऑनलाइन भुगतान कर दिया है।\n\n👤 नाम: ${name}\n📱 मोबाइल: ${phone}\n\n🧾 बिल विवरण:\n• मूल सेवा शुल्क: ₹${baseAmount.toFixed(2)}\n• ऑनलाइन गेटवे शुल्क (2%): ₹${gatewayFee.toFixed(2)}\n• GST (18% शुल्क पर): ₹${gstOnFee.toFixed(2)}\n💰 कुल भुगतान: ₹${finalAmount.toFixed(2)}\n\n🆔 Payment ID: ${response.razorpay_payment_id}\n\n(भुगतान का स्क्रीनशॉट संलग्न है)`;
         const waUrl = `https://wa.me/918690653797?text=${encodeURIComponent(msg)}`;
         
         document.getElementById('waSendBtn').href = waUrl;
