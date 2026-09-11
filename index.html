@@ -22,9 +22,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Razorpay Checkout Library -->
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-
   <style>
     :root {
       --primary: #2563eb;
@@ -367,7 +364,7 @@
       font-size: 0.9rem;
     }
 
-    /* ================= PAYMENT SECTION ================= */
+    /* ================= PAYMENT SECTION (NEW SECURE VERSION) ================= */
     .payment-section {
       background: white;
     }
@@ -412,21 +409,6 @@
       margin-bottom: 14px;
     }
 
-    .payment-input {
-      padding: 11px 14px;
-      border-radius: 9px;
-      border: 1px solid var(--border);
-      font-size: 0.95rem;
-      width: 100%;
-      outline: none;
-      transition: 0.2s;
-    }
-
-    .payment-input:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
-    }
-
     .upi-badge {
       background: white;
       border: 1px dashed var(--border);
@@ -448,13 +430,6 @@
       background: white;
       border: 1px solid var(--border);
       padding: 6px;
-    }
-
-    .payment-badge {
-      color: #10b981;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-top: 15px;
     }
 
     /* ================= CONTACT ================= */
@@ -652,7 +627,7 @@
 
     .modal-box {
       background: white;
-      border-radius: 16px;
+      border-radius: 166px;
       max-width: 750px;
       width: 100%;
       max-height: 85vh;
@@ -1009,15 +984,15 @@
   </div>
 </section>
 
-<!-- ================= PAYMENT ================= -->
+<!-- ================= PAYMENT SECTION (NEW SECURE GATEWAY VERSION) ================= -->
 <section class="section payment-section" id="payment">
   <div class="section-title">
     <h2>💳 ऑनलाइन भुगतान (Online Payment)</h2>
-    <p>अपनी सुविधानुसार Gateway (Credit Card / Netbanking) या 0% शुल्क UPI QR Code से भुगतान करें</p>
+    <p>अपनी सुविधानुसार Gateway (Credit Card / Netbanking) या direct UPI QR Code से भुगतान करें</p>
   </div>
 
   <div class="payment-container">
-    <!-- Card 1: Razorpay Gateway (Credit Card & Netbanking with charges) -->
+    <!-- Card 1: Razorpay Gateway (CC & Netbanking) -->
     <div class="pay-card">
       <div>
         <div class="pay-card-icon">🏛️</div>
@@ -1026,64 +1001,25 @@
           Credit Card, Debit Card, Netbanking या Wallets से भुगतान के लिए इसे चुनें
         </p>
 
-        <!-- Clear Notice on Gateway Surcharge -->
+        <!-- Gateway Charge Notice -->
         <div style="background: #fff7ed; border: 1.5px solid #fdba74; border-radius: 10px; padding: 12px; margin-bottom: 15px; text-align: left; font-size: 0.83rem; color: #9a3412; line-height: 1.5;">
           <div style="font-weight: 700; display: flex; align-items: center; gap: 6px; margin-bottom: 4px; color: #c2410c;">
             <span>⚠️</span> जरूरी सूचना (Gateway Charges):
           </div>
           <p style="margin: 0;">
-            ऑनलाइन गेटवे (Razorpay) से Credit Card या Netbanking द्वारा भुगतान करने पर कंपनी का ट्रांजैक्शन चार्ज (<strong>2% + 18% GST</strong>) अतिरिक्त जुड़ेगा।
+            ऑनलाइन गेटवे से Credit Card या Netbanking द्वारा भुगतान करने पर ट्रांजैक्शन चार्ज अतिरिक्त जुड़ेगा। सही रकम और चार्ज के लिए नीचे बटन पर क्लिक करके secure page देखें।
           </p>
           <div style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed #fed7aa; color: #15803d; font-weight: 600;">
-            💡 <strong>बिना किसी अतिरिक्त चार्ज के:</strong> बराबर में दिए गए <strong>UPI QR कोड</strong> को PhonePe/GPay से स्कैन करें।
+            💡 <strong>बिना किसी एक्स्ट्रा चार्ज के:</strong> बराबर में दिए गए <strong>UPI QR कोड</strong> को PhonePe/GPay से स्कैन करें।
           </div>
         </div>
       </div>
 
-      <!-- Payment Input Form -->
-      <div id="paymentFormArea" style="display: flex; flex-direction: column; gap: 10px; margin: 10px 0;">
-        <input type="text" id="payerName" placeholder="आपका नाम (Full Name)" class="payment-input" required>
-        <input type="tel" id="payerPhone" placeholder="मोबाइल नंबर (10 Digit Mobile No.)" class="payment-input" maxlength="10" required>
-        <input type="number" id="payerAmount" placeholder="मूल सेवा शुल्क (₹ Amount)" class="payment-input" min="1" step="any" oninput="updateFeeBreakdown()" required>
-
-        <!-- Live Cost Breakdown -->
-        <div id="breakdownBox" style="display: none; background: #ffffff; border: 1px dashed var(--primary); border-radius: 10px; padding: 12px; font-size: 0.85rem; text-align: left;">
-          <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
-            <span>मूल सेवा शुल्क:</span>
-            <strong>₹<span id="displayBase">0.00</span></strong>
-          </div>
-          <div style="display: flex; justify-content: space-between; margin-bottom: 4px; color: var(--gray);">
-            <span>गेटवे शुल्क (2%):</span>
-            <span>₹<span id="displayGateway">0.00</span></span>
-          </div>
-          <div style="display: flex; justify-content: space-between; margin-bottom: 6px; color: var(--gray);">
-            <span>GST (शुल्क पर 18%):</span>
-            <span>₹<span id="displayGst">0.00</span></span>
-          </div>
-          <hr style="border: 0; border-top: 1px solid var(--border); margin: 6px 0;">
-          <div style="display: flex; justify-content: space-between; font-weight: 700; color: var(--primary);">
-            <span>कुल भुगतान राशि:</span>
-            <span>₹<span id="displayTotal">0.00</span></span>
-          </div>
-        </div>
-        
-        <button type="button" id="paySubmitBtn" onclick="startRazorpayPayment()" class="btn btn-primary" style="border: none; cursor: pointer; justify-content: center; padding: 12px; font-size: 1rem; margin-top: 5px;">
-          🚀 Pay Now (With Charges)
-        </button>
-      </div>
-
-      <!-- Success & WhatsApp Share Area -->
-      <div id="paymentSuccessArea" style="display: none; background: #ecfdf5; border: 1px solid #6ee7b7; border-radius: 12px; padding: 18px; margin: 15px 0; text-align: center;">
-        <div style="font-size: 2.2rem; color: #059669; margin-bottom: 6px;">✅</div>
-        <h4 style="color: #065f46; margin-bottom: 6px; font-size: 1.1rem;">भुगतान सफल रहा!</h4>
-        <p style="color: #047857; font-size: 0.85rem; margin-bottom: 12px;">Payment ID: <strong id="successPayId"></strong></p>
-        
-        <a id="waSendBtn" href="#" target="_blank" class="btn btn-whatsapp" style="width: 100%; justify-content: center; font-size: 0.95rem; padding: 11px;">
-          💬 WhatsApp पर रसीद भेजें
+      <!-- Call to Action Button for Razorpay Secure Page -->
+      <div style="margin: 15px 0;">
+        <a href="https://rzp.io/rzp/KCz6Mkb6" target="_blank" rel="noopener" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 14px; font-size: 1rem;">
+          🚀 सुरक्षित भुगतान पेज पर जाएं
         </a>
-        <p style="color: #64748b; font-size: 0.78rem; margin-top: 8px;">
-          (WhatsApp अपने आप खुल रहा है, कृपया स्क्रीनशॉट भेजें)
-        </p>
       </div>
 
       <p class="payment-badge">
@@ -1330,7 +1266,7 @@
       <h4>2. जानकारी का उपयोग</h4>
       <p>आपकी व्यक्तिगत जानकारी का उपयोग केवल संबंधित सरकारी विभाग, पोर्टल या सेवा प्रदाता पर आवेदन जमा करने के लिए किया जाता है। हम आपका डेटा किसी थर्ड पार्टी को नहीं बेचते।</p>
       <h4>3. डेटा सुरक्षा एवं ऑनलाइन भुगतान</h4>
-      <p>ऑनलाइन भुगतान Razorpay के 128-bit एन्क्रिप्टेड सिक्योर गेटवे द्वारा प्रोसेस होते हैं। हम ग्राहकों के संवेदनशील कार्ड या बैंकिंग पासवर्ड स्टोर नहीं करते हैं।</p>
+      <p>ऑनलाइन भुगतान Razorpay के Secure Gateway पर प्रोसेस होते हैं। हम ग्राहकों के संवेदनशील कार्ड या बैंकिंग पासवर्ड स्टोर नहीं करते हैं।</p>
       <h4>4. संपर्क</h4>
       <p>गोपनीयता से संबंधित किसी भी प्रश्न के लिए आप हमें ankitdangi17@gmail.com पर संपर्क कर सकते हैं।</p>
     `,
@@ -1347,10 +1283,10 @@
     shipping: `
       <h3>Service Delivery Policy (सेवा वितरण नीति)</h3>
       <h4>1. डिजिटल डिलीवरी</h4>
-      <p>हम किसी भी प्रकार का भौतिक उत्पाद (Physical Item) कूरियर द्वारा नहीं भेजते। हमारी सभी सेवाएं ऑनलाइन और डिजिटल माध्यम से पूरी की जाती हैं।</p>
+      <p>हम किसी भी प्रकार का भौतिक उत्पाद कूरियर द्वारा नहीं भेजते। हमारी सभी सेवाएं ऑनलाइन और डिजिटल माध्यम से पूरी की जाती हैं।</p>
       <h4>2. वितरण का समय व माध्यम</h4>
-      <p>• ऑनलाइन फॉर्म रसीद, टोकन और बिल पावती तुरंत (10 मिनट से 24 घंटे में) WhatsApp, ईमेल या सेंटर पर प्रिंट आउट के रूप में सौंप दी जाती है।<br>
-      • सरकारी प्रमाण पत्रों (जैसे मूल निवास, जाति) का जारी होना संबंधित सरकारी विभाग की स्वीकृति अवधि पर निर्भर करता है।</p>
+      <p>• ऑनलाइन फॉर्म रसीद, टोकन और बिल पावती तुरंत WhatsApp, ईमेल या सेंटर पर प्रिंट आउट के रूप में सौंप दी जाती है।<br>
+      • सरकारी प्रमाण पत्रों का जारी होना संबंधित सरकारी विभाग की स्वीकृति अवधि पर निर्भर करता है।</p>
     `,
     contact: `
       <h3>Contact Us (संपर्क सूत्र)</h3>
@@ -1377,782 +1313,6 @@
       closePolicy();
     }
   });
-
-  function updateFeeBreakdown() {
-    const amountVal = parseFloat(document.getElementById('payerAmount').value);
-    const box = document.getElementById('breakdownBox');
-
-    if (isNaN(amountVal) || amountVal <= 0) {
-      box.style.display = 'none';
-      return;
-    }
-
-    const gatewayFee = amountVal * 0.02;
-    const gstOnFee = gatewayFee * 0.18;
-    const grandTotal = amountVal + gatewayFee + gstOnFee;
-
-    document.getElementById('displayBase').innerText = amountVal.toFixed(2);
-    document.getElementById('displayGateway').innerText = gatewayFee.toFixed(2);
-    document.getElementById('displayGst').innerText = gstOnFee.toFixed(2);
-    document.getElementById('displayTotal').innerText = grandTotal.toFixed(2);
-
-    box.style.display = 'block';
-  }
-
-  function startRazorpayPayment() {
-    const nameInput = document.getElementById('payerName');
-    const phoneInput = document.getElementById('payerPhone');
-    const amountInput = document.getElementById('payerAmount');
-    const payBtn = document.getElementById('paySubmitBtn');
-
-    const name = nameInput.value.trim();
-    const phone = phoneInput.value.trim();
-    const baseAmount = parseFloat(amountInput.value.trim());
-
-    if (!name) {
-      alert("कृपया अपना नाम दर्ज करें!");
-      nameInput.focus();
-      return;
-    }
-
-    const phoneRegex = /^[6-9]\d{9}$/;
-    if (!phoneRegex.test(phone)) {
-      alert("कृपया 10 अंकों का मान्य भारतीय मोबाइल नंबर दर्ज करें!");
-      phoneInput.focus();
-      return;
-    }
-
-    if (isNaN(baseAmount) || baseAmount <= 0) {
-      alert("कृपया भुगतान की सही रकम (Amount) दर्ज करें!");
-      amountInput.focus();
-      return;
-    }
-
-    payBtn.disabled = true;
-    payBtn.innerText = "⏳ Processing...";
-
-    const gatewayFee = baseAmount * 0.02;
-    const gstOnFee = gatewayFee * 0.18;
-    const totalSurcharge = parseFloat((gatewayFee + gstOnFee).toFixed(2));
-    const finalAmount = parseFloat((baseAmount + totalSurcharge).toFixed(2));
-    const amountInPaise = Math.round(finalAmount * 100);
-
-    const options = {
-      "key": "rzp_live_RFNXAgYSLvwjB3",
-      "amount": amountInPaise,
-      "currency": "INR",
-      "name": "Shree Balaji e-Mitra Center",
-      "description": `मूल शुल्क: ₹${baseAmount.toFixed(2)} + गेटवे व GST: ₹${totalSurcharge.toFixed(2)}`,
-      "image": "Logo.png",
-      "prefill": {
-        "name": name,
-        "contact": phone
-      },
-      "theme": {
-        "color": "#2563eb"
-      },
-      "modal": {
-        "ondismiss": function() {
-          payBtn.disabled = false;
-          payBtn.innerText = "🚀 Pay Now (With Charges)";
-        }
-      },
-      "handler": function (response) {
-        document.getElementById('paymentFormArea').style.display = 'none';
-        document.getElementById('paymentSuccessArea').style.display = 'block';
-        document.getElementById('successPayId').innerText = response.razorpay_payment_id;
-
-        const msg = `नमस्ते Ankit जी, मैंने Shree Balaji e-Mitra पर ऑनलाइन भुगतान कर दिया है।\n\n👤 नाम: ${name}\n📱 मोबाइल: ${phone}\n\n🧾 बिल विवरण:\n• मूल सेवा शुल्क: ₹${baseAmount.toFixed(2)}\n• ऑनलाइन गेटवे शुल्क (2%): ₹${gatewayFee.toFixed(2)}\n• GST (18% शुल्क पर): ₹${gstOnFee.toFixed(2)}\n💰 कुल भुगतान: ₹${finalAmount.toFixed(2)}\n\n🆔 Payment ID: ${response.razorpay_payment_id}\n\n(भुगतान का स्क्रीनशॉट संलग्न है)`;
-        const waUrl = `https://wa.me/918690653797?text=${encodeURIComponent(msg)}`;
-        
-        document.getElementById('waSendBtn').href = waUrl;
-
-        setTimeout(function() {
-          window.open(waUrl, '_blank');
-        }, 1200);
-      }
-    };
-
-    const rzp = new Razorpay(options);
-    rzp.open();
-  }
-</script>
-
-</body>
-</html>
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-      }
-
-      .btn {
-        padding: 10px 14px;
-        font-size: 0.88rem;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-<!-- ================= HEADER ================= -->
-<header>
-  <div class="nav-container">
-    <a href="#home" class="brand">
-      <img src="Logo.png" alt="Shree Balaji e-Mitra Center Logo">
-      <div>
-        <h1>Shree Balaji e-Mitra Center</h1>
-        <span>Ankit Dangi | OP Dangi</span>
-      </div>
-    </a>
-
-    <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">
-      ☰
-    </button>
-
-    <nav id="mainNav">
-      <a href="#home" onclick="closeMenu()">Home</a>
-      <a href="#services" onclick="closeMenu()">Services</a>
-      <a href="#schemes" onclick="closeMenu()">Schemes</a>
-      <a href="#payment" onclick="closeMenu()">Payment</a>
-      <a href="#contact" onclick="closeMenu()">Contact</a>
-      <a href="#about" onclick="closeMenu()">About</a>
-      <a href="tel:+918690653797" class="btn-call-nav">📞 Call Now</a>
-    </nav>
-  </div>
-</header>
-
-<!-- ================= HERO ================= -->
-<section class="hero" id="home">
-  <div class="hero-content">
-    <span class="hero-tag">🙏 आपकी सेवा, हमारा संकल्प</span>
-
-    <h2>
-      Shree Balaji
-      <span>e-Mitra Center</span>
-    </h2>
-
-    <p>
-      सभी सरकारी एवं डिजिटल सेवाएं एक ही स्थान पर।
-      ऑनलाइन फॉर्म, दस्तावेज, सरकारी योजनाएं, प्रिंट,
-      स्कैन, बिल भुगतान, रिचार्ज, बैंकिंग एवं अन्य
-      नागरिक सेवाओं के लिए संपर्क करें।
-    </p>
-
-    <div class="hero-buttons">
-      <a href="tel:+918690653797" class="btn btn-primary">📞 Call Ankit</a>
-      <a href="tel:+919358276393" class="btn btn-outline">📞 Call OP Dangi</a>
-      <a href="https://wa.me/918690653797" target="_blank" rel="noopener" class="btn btn-whatsapp">💬 WhatsApp Ankit</a>
-      <a href="https://wa.me/919358276393" target="_blank" rel="noopener" class="btn btn-whatsapp">💬 WhatsApp OP</a>
-    </div>
-  </div>
-</section>
-
-<!-- ================= HIGHLIGHTS ================= -->
-<div class="highlights">
-  <div class="highlight">
-    <div class="highlight-icon">⚡</div>
-    <h3>तेज सेवा</h3>
-    <p>समय पर काम</p>
-  </div>
-
-  <div class="highlight">
-    <div class="highlight-icon">📋</div>
-    <h3>सही जानकारी</h3>
-    <p>उचित मार्गदर्शन</p>
-  </div>
-
-  <div class="highlight">
-    <div class="highlight-icon">💻</div>
-    <h3>डिजिटल सुविधा</h3>
-    <p>ऑनलाइन सेवाएं</p>
-  </div>
-
-  <div class="highlight">
-    <div class="highlight-icon">🤝</div>
-    <h3>आपका भरोसा</h3>
-    <p>हमारी जिम्मेदारी</p>
-  </div>
-</div>
-
-<!-- ================= SERVICES ================= -->
-<section class="section" id="services">
-  <div class="section-title">
-    <h2>हमारी प्रमुख सेवाएं</h2>
-    <p>आपके रोजमर्रा के जरूरी ऑनलाइन और डिजिटल काम एक ही जगह</p>
-  </div>
-
-  <div class="services-grid">
-    <div class="card">
-      <div class="card-icon">📄</div>
-      <h3>Document Services</h3>
-      <p>प्रिंट, स्कैन, फोटो कॉपी, PDF, लैमिनेशन एवं दस्तावेज संबंधी कार्य।</p>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">🏛️</div>
-      <h3>Government Services</h3>
-      <p>मूल निवास, जाति प्रमाण पत्र, जन आधार, राशन कार्ड एवं अन्य सरकारी सेवाएं।</p>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">🪪</div>
-      <h3>PAN & Online Documents</h3>
-      <p>PAN Card एवं उपलब्ध अन्य ऑनलाइन दस्तावेज सेवाओं में सहायता।</p>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">📱</div>
-      <h3>Recharge & Bills</h3>
-      <p>मोबाइल रिचार्ज, DTH, बिजली बिल, पानी बिल एवं अन्य बिल भुगतान।</p>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">₹</div>
-      <h3>Banking & AEPS</h3>
-      <p>AEPS, बैलेंस चेक, मिनी स्टेटमेंट एवं उपलब्ध बैंकिंग सेवाएं।</p>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">👥</div>
-      <h3>Online Recruitment Forms</h3>
-      <p>सरकारी भर्ती एवं प्रतियोगी परीक्षाओं के ऑनलाइन फॉर्म भरने की सुविधा।</p>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">🎓</div>
-      <h3>Scholarship</h3>
-      <p>छात्रवृत्ति एवं शिक्षा से संबंधित ऑनलाइन आवेदन में सहायता।</p>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">🌾</div>
-      <h3>Kisan Services</h3>
-      <p>PM किसान एवं उपलब्ध कृषि योजनाओं के ऑनलाइन आवेदन में सहायता।</p>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">🏠</div>
-      <h3>Social Security</h3>
-      <p>पेंशन, पालनहार एवं उपलब्ध सामाजिक सुरक्षा योजनाओं में सहायता।</p>
-    </div>
-  </div>
-</section>
-
-<!-- ================= SCHEMES ================= -->
-<section class="section" id="schemes">
-  <div class="section-title">
-    <h2>सरकारी योजनाएं व सहायता</h2>
-    <p>पात्रता के अनुसार विभिन्न योजनाओं के ऑनलाइन आवेदन में सहायता</p>
-  </div>
-
-  <div class="schemes-box">
-    <div class="scheme-panel">
-      <h2>📚 छात्र एवं युवा</h2>
-      <div class="scheme-item">
-        <h4>🎓 छात्रवृत्ति</h4>
-        <p>छात्रवृत्ति एवं शिक्षा से संबंधित ऑनलाइन आवेदन।</p>
-      </div>
-      <div class="scheme-item">
-        <h4>📝 Recruitment Forms</h4>
-        <p>सरकारी भर्ती एवं प्रतियोगी परीक्षाओं के ऑनलाइन फॉर्म।</p>
-      </div>
-      <div class="scheme-item">
-        <h4>💻 Online Applications</h4>
-        <p>विभिन्न ऑनलाइन आवेदन एवं डिजिटल सेवाओं में सहायता।</p>
-      </div>
-    </div>
-
-    <div class="scheme-panel">
-      <h2>👨‍🌾 किसान एवं नागरिक</h2>
-      <div class="scheme-item">
-        <h4>🌾 किसान योजनाएं</h4>
-        <p>PM किसान एवं उपलब्ध कृषि योजनाओं के आवेदन में सहायता।</p>
-      </div>
-      <div class="scheme-item">
-        <h4>🏠 सामाजिक सुरक्षा</h4>
-        <p>वृद्धावस्था, विधवा, दिव्यांग पेंशन एवं उपलब्ध योजनाओं में सहायता।</p>
-      </div>
-      <div class="scheme-item">
-        <h4>🪪 नागरिक सेवाएं</h4>
-        <p>जन आधार, प्रमाण पत्र, राशन कार्ड एवं अन्य उपलब्ध सेवाएं।</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= PAYMENT ================= -->
-<section class="section payment-section" id="payment">
-  <div class="section-title">
-    <h2>💳 ऑनलाइन भुगतान (Online Payment)</h2>
-    <p>अपनी सुविधानुसार Gateway (Credit Card / Netbanking) या 0% शुल्क UPI QR Code से भुगतान करें</p>
-  </div>
-
-  <div class="payment-container">
-    <!-- Card 1: Razorpay Gateway (Credit Card & Netbanking with charges) -->
-    <div class="pay-card">
-      <div>
-        <div class="pay-card-icon">🏛️</div>
-        <h3>Credit Card & Netbanking</h3>
-        <p class="pay-card-desc">
-          Credit Card, Debit Card, Netbanking या Wallets से भुगतान के लिए इसे चुनें
-        </p>
-
-        <!-- Clear Notice on Gateway Surcharge -->
-        <div style="background: #fff7ed; border: 1.5px solid #fdba74; border-radius: 10px; padding: 12px; margin-bottom: 15px; text-align: left; font-size: 0.83rem; color: #9a3412; line-height: 1.5;">
-          <div style="font-weight: 700; display: flex; align-items: center; gap: 6px; margin-bottom: 4px; color: #c2410c;">
-            <span>⚠️</span> जरूरी सूचना (Gateway Charges):
-          </div>
-          <p style="margin: 0;">
-            ऑनलाइन गेटवे (Razorpay) से Credit Card या Netbanking द्वारा भुगतान करने पर कंपनी का ट्रांजैक्शन चार्ज (<strong>2% + 18% GST</strong>) अतिरिक्त जुड़ेगा।
-          </p>
-          <div style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed #fed7aa; color: #15803d; font-weight: 600;">
-            💡 <strong>बिना किसी अतिरिक्त चार्ज के:</strong> बराबर में दिए गए <strong>UPI QR कोड</strong> को PhonePe/GPay से स्कैन करें।
-          </div>
-        </div>
-      </div>
-
-      <!-- Payment Input Form -->
-      <div id="paymentFormArea" style="display: flex; flex-direction: column; gap: 10px; margin: 10px 0;">
-        <input type="text" id="payerName" placeholder="आपका नाम (Full Name)" class="payment-input" required>
-        <input type="tel" id="payerPhone" placeholder="मोबाइल नंबर (10 Digit Mobile No.)" class="payment-input" maxlength="10" required>
-        <input type="number" id="payerAmount" placeholder="मूल सेवा शुल्क (₹ Amount)" class="payment-input" min="1" step="any" oninput="updateFeeBreakdown()" required>
-
-        <!-- Live Cost Breakdown -->
-        <div id="breakdownBox" style="display: none; background: #ffffff; border: 1px dashed var(--primary); border-radius: 10px; padding: 12px; font-size: 0.85rem; text-align: left;">
-          <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
-            <span>मूल सेवा शुल्क:</span>
-            <strong>₹<span id="displayBase">0.00</span></strong>
-          </div>
-          <div style="display: flex; justify-content: space-between; margin-bottom: 4px; color: var(--gray);">
-            <span>गेटवे शुल्क (2%):</span>
-            <span>₹<span id="displayGateway">0.00</span></span>
-          </div>
-          <div style="display: flex; justify-content: space-between; margin-bottom: 6px; color: var(--gray);">
-            <span>GST (शुल्क पर 18%):</span>
-            <span>₹<span id="displayGst">0.00</span></span>
-          </div>
-          <hr style="border: 0; border-top: 1px solid var(--border); margin: 6px 0;">
-          <div style="display: flex; justify-content: space-between; font-weight: 700; color: var(--primary);">
-            <span>कुल भुगतान राशि:</span>
-            <span>₹<span id="displayTotal">0.00</span></span>
-          </div>
-        </div>
-        
-        <button type="button" id="paySubmitBtn" onclick="startRazorpayPayment()" class="btn btn-primary" style="border: none; cursor: pointer; justify-content: center; padding: 12px; font-size: 1rem; margin-top: 5px;">
-          🚀 Pay Now (With Charges)
-        </button>
-      </div>
-
-      <!-- Success & WhatsApp Share Area -->
-      <div id="paymentSuccessArea" style="display: none; background: #ecfdf5; border: 1px solid #6ee7b7; border-radius: 12px; padding: 18px; margin: 15px 0; text-align: center;">
-        <div style="font-size: 2.2rem; color: #059669; margin-bottom: 6px;">✅</div>
-        <h4 style="color: #065f46; margin-bottom: 6px; font-size: 1.1rem;">भुगतान सफल रहा!</h4>
-        <p style="color: #047857; font-size: 0.85rem; margin-bottom: 12px;">Payment ID: <strong id="successPayId"></strong></p>
-        
-        <a id="waSendBtn" href="#" target="_blank" class="btn btn-whatsapp" style="width: 100%; justify-content: center; font-size: 0.95rem; padding: 11px;">
-          💬 WhatsApp पर रसीद भेजें
-        </a>
-        <p style="color: #64748b; font-size: 0.78rem; margin-top: 8px;">
-          (WhatsApp अपने आप खुल रहा है, कृपया स्क्रीनशॉट भेजें)
-        </p>
-      </div>
-
-      <p class="payment-badge">
-        🔒 100% सुरक्षित एवं प्रमाणित Razorpay
-      </p>
-    </div>
-
-    <!-- Card 2: UPI QR Card (Zero Charge Option) -->
-    <div class="pay-card" style="border: 2px solid #10b981; position: relative;">
-      <div style="position: absolute; top: -12px; right: 18px; background: #10b981; color: white; font-size: 0.72rem; font-weight: 700; padding: 3px 10px; border-radius: 12px;">
-        0% EXTRA CHARGE
-      </div>
-
-      <div>
-        <div class="pay-card-icon">📱</div>
-        <h3 style="color: #065f46;">Direct UPI QR कोड</h3>
-        <p class="pay-card-desc">
-          PhonePe, Google Pay, Paytm आदि से <strong>सीधे बैंक अकाउंट</strong> द्वारा 0% शुल्क पर भुगतान करें
-        </p>
-      </div>
-
-      <div>
-        <img
-          src="Qr.png"
-          alt="Ankit Dangi UPI QR Code"
-          class="qr-img"
-          style="border: 2px solid #bbf7d0;"
-        >
-        <br>
-        <div class="upi-badge" style="background: #f0fdf4; border-color: #86efac; color: #166534;">
-          UPI ID: ankitdangi17@icici
-        </div>
-
-        <!-- Limitation Notice for QR -->
-        <div style="margin: 12px 0; padding: 9px; background: #fffbeb; border-radius: 8px; border: 1px solid #fde68a; font-size: 0.78rem; color: #92400e; text-align: left; line-height: 1.4;">
-          ❌ <strong>ध्यान दें:</strong> इस QR कोड पर <u>Credit Card</u> या <u>Netbanking</u> से भुगतान स्वीकार नहीं होगा। यह केवल UPI लिंक्ड बैंक खातों के लिए है।
-        </div>
-
-        <div style="margin-top: 5px;">
-          <a href="upi://pay?pa=ankitdangi17@icici&pn=Shree%20Balaji%20e-Mitra&cu=INR" class="btn btn-whatsapp" style="font-size: 0.88rem; padding: 10px 18px; border-radius: 8px; width: 100%; justify-content: center;">
-            📲 Open in UPI App (No Charges)
-          </a>
-        </div>
-      </div>
-
-      <p style="color: #15803d; font-size: 0.82rem; font-weight: 600; margin-top: 15px;">
-        ✅ सीधे खाते में ट्रांसफर — शून्य अतिरिक्त शुल्क
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ================= CONTACT ================= -->
-<section class="section" id="contact">
-  <div class="section-title">
-    <h2>📞 संपर्क करें</h2>
-    <p>किसी भी सेवा की जानकारी के लिए Call या WhatsApp करें</p>
-  </div>
-
-  <div class="contact-grid">
-    <div class="contact-card">
-      <h3>Ankit Dangi</h3>
-      <div class="phone-number">📞 8690653797</div>
-      <div class="contact-buttons">
-        <a href="tel:+918690653797" class="btn btn-primary">📞 Call</a>
-        <a href="https://wa.me/918690653797" target="_blank" rel="noopener" class="btn btn-whatsapp">💬 WhatsApp</a>
-      </div>
-    </div>
-
-    <div class="contact-card">
-      <h3>OP Dangi</h3>
-      <div class="phone-number">📞 9358276393</div>
-      <div class="contact-buttons">
-        <a href="tel:+919358276393" class="btn btn-primary">📞 Call</a>
-        <a href="https://wa.me/919358276393" target="_blank" rel="noopener" class="btn btn-whatsapp">💬 WhatsApp</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= LOCATION ================= -->
-<section class="section">
-  <div class="location-box">
-    <h2>📍 हमारा स्थान</h2>
-    <p>साखथली खुर्द, तहसील - अरनोद, जिला - प्रतापगढ़, राजस्थान - 312615</p>
-    <a href="https://www.google.com/maps/search/?api=1&query=Sakhthali+Khurd+Rajasthan+312615" target="_blank" rel="noopener" class="btn btn-outline">
-      🗺️ Google Maps पर देखें
-    </a>
-  </div>
-</section>
-
-<!-- ================= ABOUT US ================= -->
-<section class="section about-section" id="about">
-  <div class="section-title">
-    <h2>🏢 हमारे बारे में (About Us)</h2>
-    <p>ग्रामीण क्षेत्र में पारदर्शी, त्वरित और विश्वसनीय डिजिटल सेवाएं</p>
-  </div>
-
-  <div class="about-container">
-    <div class="about-text">
-      <h3 style="color: var(--primary); font-size: 1.35rem; margin-bottom: 12px;">
-        श्री बालाजी ई-मित्र केंद्र, साखथली खुर्द
-      </h3>
-      <p style="color: var(--text); margin-bottom: 14px; font-size: 0.95rem;">
-        हमारा उद्देश्य ग्राम साखथली खुर्द (तहसील - अरनोद) और आस-पास के सभी नागरिकों को सरकारी योजनाओं, ऑनलाइन फॉर्म, बैंकिंग और आवश्यक डिजिटल सेवाओं का सीधा लाभ पहुँचाना है, ताकि किसी को भी छोटे-छोटे कार्यों के लिए दूर न जाना पड़े।
-      </p>
-      <p style="color: var(--text); margin-bottom: 16px; font-size: 0.95rem;">
-        केंद्र का संचालन <strong>Ankit Dangi</strong> और <strong>OP Dangi</strong> द्वारा पूरी निष्ठा, उचित मार्गदर्शन और समय पर कार्य पूरा करने के संकल्प के साथ किया जाता है।
-      </p>
-
-      <div style="display: flex; flex-direction: column; gap: 8px;">
-        <div style="display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 0.92rem;">
-          <span style="color: #10b981;">✔</span> 100% अधिकृत एवं सुरक्षित ऑनलाइन सेवाएं
-        </div>
-        <div style="display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 0.92rem;">
-          <span style="color: #10b981;">✔</span> योजनाओं की सटीक व सही जानकारी
-        </div>
-        <div style="display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 0.92rem;">
-          <span style="color: #10b981;">✔</span> आसान व त्वरित डिजिटल भुगतान सुविधा
-        </div>
-      </div>
-    </div>
-
-    <div class="about-stats">
-      <div class="stat-card">
-        <div class="stat-num">50+</div>
-        <div class="stat-text">डिजिटल सेवाएं</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">100%</div>
-        <div class="stat-text">विश्वसनीय कार्य</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">त्वरित</div>
-        <div class="stat-text">ऑनलाइन रसीद</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">सक्रिय</div>
-        <div class="stat-text">नागरिक सहायता</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= FOOTER ================= -->
-<footer>
-  <div class="footer-grid">
-    <div>
-      <h3>Shree Balaji e-Mitra</h3>
-      <p>🙏 आपकी सेवा, हमारा संकल्प</p>
-      <p>साखथली खुर्द, तहसील - अरनोद, जिला - प्रतापगढ़, राजस्थान - 312615</p>
-      <p style="margin-top: 10px; font-size: 0.85rem; color: #38bdf8;">प्रमाणित नागरिक सेवा केंद्र</p>
-    </div>
-
-    <div>
-      <h3>Quick Contact</h3>
-      <p>Ankit Dangi: <a href="tel:+918690653797" style="display:inline;">+91 8690653797</a></p>
-      <p>OP Dangi: <a href="tel:+919358276393" style="display:inline;">+91 9358276393</a></p>
-      <p>Email: <a href="mailto:ankitdangi17@gmail.com" style="display:inline;">ankitdangi17@gmail.com</a></p>
-    </div>
-
-    <div>
-      <h3>Payment & Timing</h3>
-      <p>UPI ID: ankitdangi17@icici</p>
-      <p>सोमवार - शनिवार: 08:00 AM - 08:00 PM</p>
-      <p>रविवार: 09:00 AM - 08:00 PM</p>
-    </div>
-
-    <div>
-      <h3>Legal & Policies</h3>
-      <a onclick="openPolicy('terms')">⚖️ Terms & Conditions</a>
-      <a onclick="openPolicy('privacy')">🔒 Privacy Policy</a>
-      <a onclick="openPolicy('refund')">🔄 Refund & Cancellation</a>
-      <a onclick="openPolicy('shipping')">📦 Service Delivery Policy</a>
-      <a onclick="openPolicy('contact')">🏢 Contact Us</a>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    © <span id="currentYear"></span> Shree Balaji e-Mitra Center | All Rights Reserved.
-  </div>
-</footer>
-
-<!-- ================= FLOATING BAR ================= -->
-<div class="floating-bar">
-  <a href="tel:+918690653797" class="float-call">📞 Call Now</a>
-  <a href="https://wa.me/918690653797" target="_blank" rel="noopener" class="float-wa">💬 WhatsApp</a>
-</div>
-
-<!-- ================= POLICY MODAL ================= -->
-<div class="modal-overlay" id="policyModal">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closePolicy()">&times;</button>
-    <div class="modal-content" id="policyContent"></div>
-  </div>
-</div>
-
-<!-- ================= JAVASCRIPT ================= -->
-<script>
-  document.getElementById("currentYear").textContent = new Date().getFullYear();
-
-  function toggleMenu() {
-    const nav = document.getElementById("mainNav");
-    nav.classList.toggle("active");
-  }
-
-  function closeMenu() {
-    const nav = document.getElementById("mainNav");
-    nav.classList.remove("active");
-  }
-
-  document.addEventListener("click", function(event) {
-    const nav = document.getElementById("mainNav");
-    const menuBtn = document.querySelector(".menu-btn");
-    if (
-      nav.classList.contains("active") &&
-      !nav.contains(event.target) &&
-      !menuBtn.contains(event.target)
-    ) {
-      nav.classList.remove("active");
-    }
-  });
-
-  const policies = {
-    terms: `
-      <h3>Terms & Conditions (नियम एवं शर्तें)</h3>
-      <p><strong>अंतिम अपडेट: 2026</strong></p>
-      <h4>1. परिचय</h4>
-      <p>यह वेबसाइट Shree Balaji e-Mitra Center द्वारा संचालित है। हमारी सेवाओं का उपयोग करके आप हमारे नियमों और शर्तों का पालन करने के लिए सहमत होते हैं।</p>
-      <h4>2. सेवाएं</h4>
-      <p>हम सरकारी योजनाओं के आवेदन, प्रतियोगी परीक्षा फॉर्म, जन आधार, पैन कार्ड, प्रमाण पत्र, यूटिलिटी बिल भुगतान और अन्य डिजिटल नागरिक सेवाएं प्रदान करते हैं।</p>
-      <h4>3. ग्राहक का दायित्व</h4>
-      <p>ग्राहक द्वारा फॉर्म या सेवाओं के लिए दी गई सभी व्यक्तिगत जानकारी और दस्तावेज पूरी तरह सही और वैध होने चाहिए। गलत जानकारी के लिए ग्राहक स्वयं उत्तरदायी होगा।</p>
-      <h4>4. सेवा शुल्क</h4>
-      <p>सरकारी शुल्क एवं परामर्श शुल्क काम शुरू होने से पहले या काम पूरा होने पर देय होगा। सभी ऑनलाइन भुगतान Razorpay गेटवे या UPI द्वारा सुरक्षित प्रोसेस किए जाते हैं।</p>
-      <h4>5. विवाद क्षेत्राधिकार</h4>
-      <p>किसी भी कानूनी विवाद का क्षेत्राधिकार स्थानीय न्यायालय (अरनोद/प्रतापगढ़, राजस्थान) के अधीन होगा।</p>
-    `,
-    privacy: `
-      <h3>Privacy Policy (गोपनीयता नीति)</h3>
-      <p><strong>अंतिम अपडेट: 2026</strong></p>
-      <h4>1. सूचना संग्रह</h4>
-      <p>सरकारी फॉर्म और ई-मित्र सेवाओं को पूरा करने के लिए हम आवश्यक व्यक्तिगत जानकारी (जैसे नाम, मोबाइल, पहचान पत्र और शैक्षणिक दस्तावेज) प्राप्त करते हैं।</p>
-      <h4>2. जानकारी का उपयोग</h4>
-      <p>आपकी व्यक्तिगत जानकारी का उपयोग केवल संबंधित सरकारी विभाग, पोर्टल या सेवा प्रदाता पर आवेदन जमा करने के लिए किया जाता है। हम आपका डेटा किसी थर्ड पार्टी को नहीं बेचते।</p>
-      <h4>3. डेटा सुरक्षा एवं ऑनलाइन भुगतान</h4>
-      <p>ऑनलाइन भुगतान Razorpay के 128-bit एन्क्रिप्टेड सिक्योर गेटवे द्वारा प्रोसेस होते हैं। हम ग्राहकों के संवेदनशील कार्ड या बैंकिंग पासवर्ड स्टोर नहीं करते हैं।</p>
-      <h4>4. संपर्क</h4>
-      <p>गोपनीयता से संबंधित किसी भी प्रश्न के लिए आप हमें ankitdangi17@gmail.com पर संपर्क कर सकते हैं।</p>
-    `,
-    refund: `
-      <h3>Refund & Cancellation Policy (रिफंड व रद्दीकरण नीति)</h3>
-      <h4>1. डिजिटल सेवाएं</h4>
-      <p>ई-मित्र केंद्र पर दी जाने वाली सेवाएं डिजिटल होती हैं। एक बार जब कोई सरकारी टोकन, फॉर्म या बिल भुगतान सफलतापूर्वक सबमिट हो जाता है, तो उसे रद्द नहीं किया जा सकता।</p>
-      <h4>2. रिफंड की शर्तें</h4>
-      <p>• यदि भुगतान कट गया हो लेकिन तकनीकी खराबी के कारण सेवा पूरी न हो पाई हो, तो पूरी राशि वापस कर दी जाएगी।<br>
-      • यदि ग्राहक के खाते से पैसे कट गए और गेटवे पर विफल (Failed) हो गए, तो वह राशि बैंक द्वारा 3 से 5 कार्य दिवसों में ग्राहक के खाते में स्वतः लौट आती है।</p>
-      <h4>3. रिफंड प्रक्रिया</h4>
-      <p>स्वीकृत रिफंड 5 से 7 कार्य दिवसों (Working Days) के भीतर ग्राहक के मूल भुगतान खाते में भेज दिया जाएगा।</p>
-    `,
-    shipping: `
-      <h3>Service Delivery Policy (सेवा वितरण नीति)</h3>
-      <h4>1. डिजिटल डिलीवरी</h4>
-      <p>हम किसी भी प्रकार का भौतिक उत्पाद (Physical Item) कूरियर द्वारा नहीं भेजते। हमारी सभी सेवाएं ऑनलाइन और डिजिटल माध्यम से पूरी की जाती हैं।</p>
-      <h4>2. वितरण का समय व माध्यम</h4>
-      <p>• ऑनलाइन फॉर्म रसीद, टोकन और बिल पावती तुरंत (10 मिनट से 24 घंटे में) WhatsApp, ईमेल या सेंटर पर प्रिंट आउट के रूप में सौंप दी जाती है।<br>
-      • सरकारी प्रमाण पत्रों (जैसे मूल निवास, जाति) का जारी होना संबंधित सरकारी विभाग की स्वीकृति अवधि पर निर्भर करता है।</p>
-    `,
-    contact: `
-      <h3>Contact Us (संपर्क सूत्र)</h3>
-      <p><strong>व्यावसायिक नाम:</strong> Shree Balaji e-Mitra Center</p>
-      <p><strong>संचालक:</strong> Ankit Dangi & OP Dangi</p>
-      <p><strong>पता:</strong> ग्राम - साखथली खुर्द, तहसील - अरनोद, जिला - प्रतापगढ़, राजस्थान, पिन कोड - 312615</p>
-      <p><strong>मोबाइल:</strong> +91 8690653797, +91 9358276393</p>
-      <p><strong>ईमेल:</strong> ankitdangi17@gmail.com</p>
-      <p><strong>कार्य समय:</strong> सोमवार से शनिवार: 08:00 AM - 08:00 PM | रविवार: 09:00 AM - 08:00 PM</p>
-    `
-  };
-
-  function openPolicy(type) {
-    document.getElementById('policyContent').innerHTML = policies[type];
-    document.getElementById('policyModal').classList.add('active');
-  }
-
-  function closePolicy() {
-    document.getElementById('policyModal').classList.remove('active');
-  }
-
-  document.getElementById('policyModal').addEventListener('click', function(e) {
-    if (e.target === this) {
-      closePolicy();
-    }
-  });
-
-  function updateFeeBreakdown() {
-    const amountVal = parseFloat(document.getElementById('payerAmount').value);
-    const box = document.getElementById('breakdownBox');
-
-    if (isNaN(amountVal) || amountVal <= 0) {
-      box.style.display = 'none';
-      return;
-    }
-
-    const gatewayFee = amountVal * 0.02;
-    const gstOnFee = gatewayFee * 0.18;
-    const grandTotal = amountVal + gatewayFee + gstOnFee;
-
-    document.getElementById('displayBase').innerText = amountVal.toFixed(2);
-    document.getElementById('displayGateway').innerText = gatewayFee.toFixed(2);
-    document.getElementById('displayGst').innerText = gstOnFee.toFixed(2);
-    document.getElementById('displayTotal').innerText = grandTotal.toFixed(2);
-
-    box.style.display = 'block';
-  }
-
-  function startRazorpayPayment() {
-    const nameInput = document.getElementById('payerName');
-    const phoneInput = document.getElementById('payerPhone');
-    const amountInput = document.getElementById('payerAmount');
-    const payBtn = document.getElementById('paySubmitBtn');
-
-    const name = nameInput.value.trim();
-    const phone = phoneInput.value.trim();
-    const baseAmount = parseFloat(amountInput.value.trim());
-
-    if (!name) {
-      alert("कृपया अपना नाम दर्ज करें!");
-      nameInput.focus();
-      return;
-    }
-
-    const phoneRegex = /^[6-9]\d{9}$/;
-    if (!phoneRegex.test(phone)) {
-      alert("कृपया 10 अंकों का मान्य भारतीय मोबाइल नंबर दर्ज करें!");
-      phoneInput.focus();
-      return;
-    }
-
-    if (isNaN(baseAmount) || baseAmount <= 0) {
-      alert("कृपया भुगतान की सही रकम (Amount) दर्ज करें!");
-      amountInput.focus();
-      return;
-    }
-
-    payBtn.disabled = true;
-    payBtn.innerText = "⏳ Processing...";
-
-    const gatewayFee = baseAmount * 0.02;
-    const gstOnFee = gatewayFee * 0.18;
-    const totalSurcharge = parseFloat((gatewayFee + gstOnFee).toFixed(2));
-    const finalAmount = parseFloat((baseAmount + totalSurcharge).toFixed(2));
-    const amountInPaise = Math.round(finalAmount * 100);
-
-    const options = {
-      "key": "rzp_live_RFNXAgYSLvwjB3",
-      "amount": amountInPaise,
-      "currency": "INR",
-      "name": "Shree Balaji e-Mitra Center",
-      "description": `मूल शुल्क: ₹${baseAmount.toFixed(2)} + गेटवे व GST: ₹${totalSurcharge.toFixed(2)}`,
-      "image": "Logo.png",
-      "prefill": {
-        "name": name,
-        "contact": phone
-      },
-      "theme": {
-        "color": "#2563eb"
-      },
-      "modal": {
-        "ondismiss": function() {
-          payBtn.disabled = false;
-          payBtn.innerText = "🚀 Pay Now (With Charges)";
-        }
-      },
-      "handler": function (response) {
-        document.getElementById('paymentFormArea').style.display = 'none';
-        document.getElementById('paymentSuccessArea').style.display = 'block';
-        document.getElementById('successPayId').innerText = response.razorpay_payment_id;
-
-        const msg = `नमस्ते Ankit जी, मैंने Shree Balaji e-Mitra पर ऑनलाइन भुगतान कर दिया है।\n\n👤 नाम: ${name}\n📱 मोबाइल: ${phone}\n\n🧾 बिल विवरण:\n• मूल सेवा शुल्क: ₹${baseAmount.toFixed(2)}\n• ऑनलाइन गेटवे शुल्क (2%): ₹${gatewayFee.toFixed(2)}\n• GST (18% शुल्क पर): ₹${gstOnFee.toFixed(2)}\n💰 कुल भुगतान: ₹${finalAmount.toFixed(2)}\n\n🆔 Payment ID: ${response.razorpay_payment_id}\n\n(भुगतान का स्क्रीनशॉट संलग्न है)`;
-        const waUrl = `https://wa.me/918690653797?text=${encodeURIComponent(msg)}`;
-        
-        document.getElementById('waSendBtn').href = waUrl;
-
-        setTimeout(function() {
-          window.open(waUrl, '_blank');
-        }, 1200);
-      }
-    };
-
-    const rzp = new Razorpay(options);
-    rzp.open();
-  }
 </script>
 
 </body>
