@@ -6,14 +6,10 @@
 
 <title>श्री बालाजी ई-मित्र सेंटर | साखथली खुर्द</title>
 
-<meta name="description" content="श्री बालाजी ई-मित्र सेंटर, साखथली खुर्द (अरनोद, प्रतापगढ़) - पैन कार्ड, जन आधार, सरकारी योजनाएं, बिल भुगतान व डिजिटल सेवाएं।">
-<meta name="theme-color" content="#b91c1c">
-
-<!-- PWA Manifest -->
-<link rel="manifest" href="manifest.json">
+<meta name="description" content="श्री बालाजी ई-मित्र सेंटर, साखथली खुर्द, अरनोद, प्रतापगढ़ - आधार, पैन कार्ड, जन आधार, ABHA, ABC, e-Shram, सरकारी योजनाएं एवं डिजिटल सेवाएं।">
+<meta name="theme-color" content="#991b1b">
 
 <style>
-/* CSS RESET & VARIABLES */
 *{
     margin:0;
     padding:0;
@@ -22,6 +18,7 @@
 
 :root{
     --primary:#991b1b;
+    --primary2:#dc2626;
     --primary-soft:#fef2f2;
     --dark:#0f172a;
     --text:#334155;
@@ -30,21 +27,34 @@
     --card:#ffffff;
     --border:#e2e8f0;
     --green:#16a34a;
+    --orange:#ea580c;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans Devanagari",sans-serif;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,
+    "Noto Sans Devanagari",sans-serif;
     background:var(--bg);
     color:var(--text);
     line-height:1.5;
-    padding-bottom:70px;
+    padding-bottom:75px;
 }
 
-a{ text-decoration:none; color:inherit; }
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+}
 
 /* HEADER */
 header{
-    background:#ffffff;
+    background:#fff;
     border-bottom:1px solid var(--border);
     position:sticky;
     top:0;
@@ -52,12 +62,13 @@ header{
 }
 
 .header-wrap{
-    max-width:960px;
+    max-width:1100px;
     margin:auto;
     padding:10px 16px;
     display:flex;
     align-items:center;
     justify-content:space-between;
+    gap:15px;
 }
 
 .brand{
@@ -67,9 +78,10 @@ header{
 }
 
 .brand img{
-    width:42px;
-    height:42px;
+    width:44px;
+    height:44px;
     border-radius:50%;
+    object-fit:cover;
     border:1px solid var(--border);
 }
 
@@ -85,18 +97,19 @@ header{
     font-weight:600;
 }
 
-/* TOP NAV */
 nav{
     display:flex;
-    gap:6px;
+    gap:4px;
+    flex-wrap:wrap;
+    justify-content:flex-end;
 }
 
 .nav-btn{
     background:none;
     border:none;
-    padding:7px 12px;
-    border-radius:6px;
-    font-size:13px;
+    padding:7px 9px;
+    border-radius:7px;
+    font-size:12px;
     font-weight:700;
     color:var(--muted);
     cursor:pointer;
@@ -110,7 +123,7 @@ nav{
 
 /* CONTAINER */
 .container{
-    max-width:960px;
+    max-width:1100px;
     margin:auto;
     padding:20px 16px;
 }
@@ -123,7 +136,7 @@ nav{
     display:block;
 }
 
-/* CARDS & COMMON */
+/* COMMON */
 .card{
     background:var(--card);
     border:1px solid var(--border);
@@ -133,7 +146,7 @@ nav{
 }
 
 .sec-head{
-    font-size:18px;
+    font-size:19px;
     font-weight:800;
     color:var(--dark);
     margin:20px 0 12px;
@@ -155,29 +168,45 @@ nav{
     cursor:pointer;
 }
 
-.btn-main{ background:var(--primary); color:white; }
-.btn-green{ background:var(--green); color:white; }
-.btn-light{ background:var(--primary-soft); color:var(--primary); }
+.btn-main{
+    background:var(--primary);
+    color:#fff;
+}
 
-/* HOME HERO */
+.btn-green{
+    background:var(--green);
+    color:#fff;
+}
+
+.btn-light{
+    background:var(--primary-soft);
+    color:var(--primary);
+}
+
+.btn-orange{
+    background:var(--orange);
+    color:#fff;
+}
+
+/* HERO */
 .hero{
     background:linear-gradient(135deg,#991b1b,#dc2626);
-    color:white;
-    border-radius:14px;
-    padding:26px 20px;
+    color:#fff;
+    border-radius:15px;
+    padding:28px 20px;
     text-align:center;
     margin-bottom:18px;
 }
 
 .hero h2{
-    font-size:24px;
+    font-size:26px;
     margin-bottom:8px;
 }
 
 .hero p{
     font-size:14px;
-    opacity:0.95;
-    max-width:600px;
+    opacity:.95;
+    max-width:700px;
     margin:0 auto 16px;
 }
 
@@ -190,21 +219,19 @@ nav{
 
 .hero-actions .btn{
     font-size:13px;
-    padding:9px 14px;
 }
 
-/* STATUS PILL */
 .status-pill{
     display:inline-block;
-    padding:4px 12px;
+    padding:5px 12px;
     border-radius:50px;
     font-size:12px;
-    font-weight:700;
+    font-weight:800;
     margin-bottom:10px;
-    background:rgba(255,255,255,0.2);
+    background:#fff;
 }
 
-/* GRIDS */
+/* GRID */
 .grid-2{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -213,40 +240,48 @@ nav{
 
 .grid-3{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
     gap:14px;
 }
 
-/* PAN CARD BOX */
-.pan-box{
-    border:1.5px solid var(--border);
-    border-radius:10px;
-    padding:16px;
-    background:white;
+/* SERVICE CARD */
+.service-card{
+    transition:.2s;
 }
 
-.pan-box.featured{
-    border-color:var(--primary);
-    background:#fffaf8;
+.service-card:hover{
+    transform:translateY(-2px);
+    border-color:#fecaca;
 }
 
-.pan-price{
-    font-size:22px;
-    font-weight:800;
+.service-card h4{
+    color:var(--dark);
+    font-size:15px;
+    margin-bottom:5px;
+}
+
+.service-card p{
+    font-size:12px;
+    color:var(--muted);
+}
+
+.service-price{
     color:var(--primary);
-    margin:6px 0;
+    font-weight:900;
+    font-size:18px;
+    margin-top:8px;
 }
 
 /* SEARCH */
 .search-input{
     width:100%;
-    padding:12px 14px;
+    padding:13px 14px;
     border:1.5px solid var(--border);
-    border-radius:8px;
+    border-radius:9px;
     font-size:14px;
     outline:none;
     margin-bottom:16px;
-    background:white;
+    background:#fff;
 }
 
 .search-input:focus{
@@ -257,54 +292,174 @@ nav{
 .notice{
     background:#fffbeb;
     border-left:4px solid #f59e0b;
-    padding:12px 14px;
-    border-radius:6px;
+    padding:13px 14px;
+    border-radius:7px;
     font-size:13px;
     color:#92400e;
     margin-bottom:14px;
 }
 
-/* UPI */
+.notice-green{
+    background:#f0fdf4;
+    border-left:4px solid #16a34a;
+    color:#166534;
+}
+
+.notice-red{
+    background:#fef2f2;
+    border-left:4px solid #dc2626;
+    color:#991b1b;
+}
+
+/* PAYMENT */
+.payment-box{
+    text-align:center;
+}
+
+.qr{
+    width:190px;
+    height:190px;
+    object-fit:contain;
+    margin:15px auto;
+    display:block;
+    border-radius:10px;
+    border:1px solid var(--border);
+}
+
 .upi-row{
     display:flex;
     justify-content:space-between;
     align-items:center;
+    gap:10px;
     background:#f1f5f9;
-    padding:8px 12px;
-    border-radius:6px;
+    padding:9px 12px;
+    border-radius:7px;
     font-size:13px;
-    font-weight:700;
+    font-weight:800;
     margin-top:8px;
 }
 
 .copy-btn{
     background:var(--primary);
-    color:white;
+    color:#fff;
     border:none;
-    padding:4px 8px;
-    border-radius:4px;
+    padding:5px 9px;
+    border-radius:5px;
     font-size:11px;
     cursor:pointer;
+    white-space:nowrap;
 }
 
-/* MOBILE BOTTOM BAR */
+/* RATE TABLE */
+.rate-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.rate-table th,
+.rate-table td{
+    padding:11px 10px;
+    border-bottom:1px solid var(--border);
+    text-align:left;
+    font-size:13px;
+}
+
+.rate-table th{
+    background:var(--primary-soft);
+    color:var(--primary);
+    font-weight:800;
+}
+
+.rate-table tr:last-child td{
+    border-bottom:none;
+}
+
+.rate{
+    font-weight:900;
+    color:var(--primary);
+    white-space:nowrap;
+}
+
+/* REQUEST FORM */
+.form-group{
+    margin-bottom:12px;
+}
+
+.form-group label{
+    display:block;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:5px;
+    color:var(--dark);
+}
+
+.form-control{
+    width:100%;
+    padding:11px 12px;
+    border:1px solid var(--border);
+    border-radius:8px;
+    outline:none;
+    font-size:13px;
+    background:#fff;
+}
+
+.form-control:focus{
+    border-color:var(--primary);
+}
+
+/* DOCUMENTS */
+.doc-list{
+    padding-left:20px;
+}
+
+.doc-list li{
+    font-size:13px;
+    margin-bottom:7px;
+}
+
+/* RECRUITMENT */
+.recruit-card{
+    border-left:4px solid var(--primary);
+}
+
+/* CONTACT */
+.contact-line{
+    font-size:13px;
+    margin-bottom:8px;
+}
+
+/* FOOTER */
+footer{
+    max-width:1100px;
+    margin:20px auto 0;
+    padding:18px 16px;
+    text-align:center;
+    color:var(--muted);
+    font-size:11px;
+}
+
+/* MOBILE NAV */
 .mobile-nav{
     position:fixed;
     bottom:0;
     left:0;
     right:0;
-    background:#ffffff;
+    background:#fff;
     border-top:1px solid var(--border);
     display:none;
     justify-content:space-around;
-    padding:6px 0;
+    padding:6px 2px;
     z-index:200;
 }
 
 .mobile-nav button{
     background:none;
     border:none;
-    font-size:11px;
+    font-size:10px;
     font-weight:700;
     color:var(--muted);
     cursor:pointer;
@@ -312,6 +467,7 @@ nav{
     flex-direction:column;
     align-items:center;
     gap:2px;
+    min-width:55px;
 }
 
 .mobile-nav button.active{
@@ -322,278 +478,1183 @@ nav{
     font-size:18px;
 }
 
+/* WHATSAPP FLOAT */
+.whatsapp-float{
+    position:fixed;
+    right:18px;
+    bottom:82px;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:#16a34a;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+    box-shadow:0 4px 15px rgba(0,0,0,.2);
+    z-index:150;
+}
+
 /* RESPONSIVE */
-@media(max-width:768px){
-    nav{ display:none; }
-    .mobile-nav{ display:flex; }
-    .grid-2{ grid-template-columns:1fr; }
-    .hero h2{ font-size:20px; }
+@media(max-width:900px){
+    nav{
+        display:none;
+    }
+
+    .mobile-nav{
+        display:flex;
+    }
+
+    .grid-2{
+        grid-template-columns:1fr;
+    }
+
+    .hero h2{
+        font-size:21px;
+    }
+
+    .container{
+        padding:15px 12px;
+    }
+
+    .whatsapp-float{
+        bottom:82px;
+        right:14px;
+    }
+}
+
+@media(max-width:500px){
+    .brand-text h1{
+        font-size:14px;
+    }
+
+    .brand img{
+        width:40px;
+        height:40px;
+    }
+
+    .hero{
+        padding:23px 15px;
+    }
+
+    .hero-actions .btn{
+        width:100%;
+    }
+
+    .upi-row{
+        font-size:12px;
+    }
+
+    .rate-table th,
+    .rate-table td{
+        padding:9px 7px;
+        font-size:12px;
+    }
 }
 </style>
 </head>
+
 <body>
 
 <!-- HEADER -->
 <header>
-    <div class="header-wrap">
-        <div class="brand">
-            <img src="Logo.png" alt="श्री बालाजी ई-मित्र लोगो">
-            <div class="brand-text">
-                <h1>श्री बालाजी ई-मित्र सेंटर</h1>
-                <span>साखथली खुर्द, अरनोद</span>
-            </div>
-        </div>
+<div class="header-wrap">
 
-        <nav>
-            <button class="nav-btn active" onclick="showTab('home', this)">1. होम</button>
-            <button class="nav-btn" onclick="showTab('services', this)">2. सेवाएं व योजनाएं</button>
-            <button class="nav-btn" onclick="showTab('contact', this)">3. संपर्क व भुगतान</button>
-        </nav>
+    <div class="brand">
+        <img src="Logo.png" alt="श्री बालाजी ई-मित्र लोगो">
+        <div class="brand-text">
+            <h1>श्री बालाजी ई-मित्र सेंटर</h1>
+            <span>साखथली खुर्द, अरनोद</span>
+        </div>
     </div>
+
+    <nav>
+        <button class="nav-btn active" onclick="showTab('home',this)">🏠 होम</button>
+        <button class="nav-btn" onclick="showTab('services',this)">🛠️ सेवाएं</button>
+        <button class="nav-btn" onclick="showTab('notices',this)">📢 नोटिस</button>
+        <button class="nav-btn" onclick="showTab('request',this)">📝 अनुरोध</button>
+        <button class="nav-btn" onclick="showTab('payment',this)">💳 भुगतान</button>
+        <button class="nav-btn" onclick="showTab('contact',this)">📞 संपर्क</button>
+    </nav>
+
+</div>
 </header>
+
 
 <div class="container">
 
-<!-- ================= TAB 1: HOME ================= -->
+<!-- ================= HOME ================= -->
 <main id="home" class="page active">
+
     <div class="hero">
-        <span class="status-pill" id="shopStatus">दुकान की स्थिति...</span>
+
+        <span class="status-pill" id="shopStatus">
+            दुकान की स्थिति...
+        </span>
+
         <h2>श्री बालाजी ई-मित्र सेंटर</h2>
-        <p>साखथली खुर्द में नया पैन कार्ड, जन आधार e-KYC, सरकारी योजनाएं, बिजली बिल व ऑनलाइन फॉर्म्स की भरोसेमंद सेवा।</p>
-        <div class="hero-actions">
-            <button class="btn btn-light" onclick="showTab('services', document.querySelectorAll('.nav-btn')[1])">📋 सेवाएं देखें</button>
-            <a href="tel:+918690653797" class="btn btn-main" style="background:#ffffff; color:#991b1b;">📞 कॉल करें</a>
-            <a href="https://wa.me/918690653797" target="_blank" class="btn btn-green">💬 WhatsApp</a>
-        </div>
-    </div>
 
-    <div class="grid-2">
-        <div class="card">
-            <h3 style="font-size:15px; margin-bottom:8px; color:var(--primary);">⏰ दुकान का समय</h3>
-            <p style="font-size:13px; color:var(--text);"><strong>सोमवार - शनिवार:</strong> सुबह 8:00 AM से रात 8:00 PM</p>
-            <p style="font-size:13px; color:var(--text);"><strong>रविवार:</strong> सुबह 9:00 AM से शाम 7:00 PM</p>
-        </div>
-
-        <div class="card">
-            <h3 style="font-size:15px; margin-bottom:8px; color:var(--primary);">📍 मुख्य पता</h3>
-            <p style="font-size:13px; color:var(--text);">ग्राम पंचायत - साखथली खुर्द, तहसील - अरनोद</p>
-            <p style="font-size:13px; color:var(--text);">जिला - प्रतापगढ़, राजस्थान (पिन: 312615)</p>
-        </div>
-    </div>
-
-    <div class="card" style="margin-top:10px;">
-        <h3 style="font-size:15px; margin-bottom:6px; color:var(--dark);">📢 जरूरी सूचना</h3>
-        <p style="font-size:13px; color:var(--muted);">
-            सरकारी पोर्टल पर ऑनलाइन टोकन जनरेट होने के कारण पैन कार्ड व सरकारी फॉर्म्स का <strong>शुल्क आवेदन से पहले जमा कराना अनिवार्य है</strong>।
+        <p>
+            साखथली खुर्द में आधार, पैन कार्ड, जन आधार,
+            सरकारी योजनाएं, बिल भुगतान, कार्ड प्रिंट एवं
+            ऑनलाइन डिजिटल सेवाओं की सुविधा।
         </p>
-    </div>
-</main>
 
-<!-- ================= TAB 2: SERVICES & SCHEMES ================= -->
-<main id="services" class="page">
-    <input type="text" id="searchBox" class="search-input" placeholder="🔍 सेवा या योजना खोजें (जैसे: PAN, आधार, संबल, पेंशन...)" onkeyup="filterItems()">
+        <div class="hero-actions">
 
-    <!-- PAN CARD SECTION -->
-    <div class="sec-head">🪪 नया पैन कार्ड आवेदन (PAN Card)</div>
-    <div class="grid-2" style="margin-bottom:20px;">
-        <div class="pan-box">
-            <h4 style="font-size:15px;">सॉफ्ट कॉपी (e-PAN केवल)</h4>
-            <div class="pan-price">₹200</div>
-            <p style="font-size:12px; color:var(--muted);">डिजिटल e-PAN कार्ड सीधे ईमेल/व्हाट्सएप पर प्राप्त होगा (3-5 दिन में)।</p>
-            <p style="font-size:12px; color:var(--primary); margin-top:6px;">दस्तावेज: आधार कार्ड + फोटो + मोबाइल OTP</p>
-        </div>
+            <button class="btn btn-light"
+            onclick="showTab('services')">
+                🛠️ सेवाएं देखें
+            </button>
 
-        <div class="pan-box featured">
-            <h4 style="font-size:15px;">हार्ड कॉपी + सॉफ्ट कॉपी (Plastic Card)</h4>
-            <div class="pan-price">₹250</div>
-            <p style="font-size:12px; color:var(--muted);">ओरिजिनल पीवीसी कार्ड डाक से घर आएगा व डिजिटल पीडीएफ भी मिलेगी।</p>
-            <p style="font-size:12px; color:var(--primary); margin-top:6px;">दस्तावेज: आधार कार्ड + 2 फोटो + हस्ताक्षर</p>
+            <a href="tel:+918690653797"
+            class="btn"
+            style="background:#fff;color:#991b1b;">
+                📞 कॉल करें
+            </a>
+
+            <a href="https://wa.me/918690653797"
+            target="_blank"
+            class="btn btn-green">
+                💬 WhatsApp
+            </a>
+
         </div>
     </div>
 
-    <!-- AADHAAR C/O RULE -->
-    <div class="notice">
-        <strong>⚠️ आधार में पिता / पति नाम संशोधन नियम:</strong><br>
-        • <strong>शादी के बाद पिता की जगह पति का नाम:</strong> महिला व पति दोनों के आधार कार्ड की प्रति + विवाह प्रमाण पत्र या जन आधार + मोबाइल ओटीपी आवश्यक है।<br>
-        • <strong>पति की जगह पिता का नाम:</strong> स्वयं का आधार + पिता का आधार + 10वीं मार्कशीट/जन आधार + मोबाइल ओटीपी।
-    </div>
 
-    <!-- ALL SERVICES & SCHEMES GRID -->
-    <div class="sec-head">📋 प्रमुख डिजिटल सेवाएं एवं सरकारी योजनाएं</div>
-    <div class="grid-3" id="serviceGrid">
-        <div class="card s-item">
-            <h4 style="font-size:14px; margin-bottom:4px;">Jan Aadhaar Services</h4>
-            <p style="font-size:12px; color:var(--muted);">नया परिवार नामांकन, e-KYC, सदस्य जोड़ना एवं पारिवारिक विवरण सुधार।</p>
-        </div>
-
-        <div class="card s-item">
-            <h4 style="font-size:14px; margin-bottom:4px;">मुख्यमंत्री युवा स्वरोजगार योजना (MMYSY)</h4>
-            <p style="font-size:12px; color:var(--muted);">नया व्यवसाय शुरू करने हेतु ₹10 लाख तक का 100% ब्याज-मुक्त ऋण सहायता।</p>
-        </div>
-
-        <div class="card s-item">
-            <h4 style="font-size:14px; margin-bottom:4px;">मुख्यमंत्री युवा संबल (बेरोजगारी भत्ता)</h4>
-            <p style="font-size:12px; color:var(--muted);">स्नातक बेरोजगार युवाओं को आर्थिक भत्ता: पुरुषों को ₹4,000 व महिलाओं को ₹4,500/माह।</p>
-        </div>
-
-        <div class="card s-item">
-            <h4 style="font-size:14px; margin-bottom:4px;">मुख्यमंत्री अनुप्रति कोचिंग योजना</h4>
-            <p style="font-size:12px; color:var(--muted);">प्रतियोगी परीक्षाओं (UPSC, RAS, REET, Police) हेतु प्रतिष्ठित संस्थानों में फ्री कोचिंग।</p>
-        </div>
-
-        <div class="card s-item">
-            <h4 style="font-size:14px; margin-bottom:4px;">पालनहार एवं राजश्री योजना</h4>
-            <p style="font-size:12px; color:var(--muted);">अनाथ/पात्र बच्चों को मासिक सहायता एवं बालिकाओं को चरणबद्ध आर्थिक संबल।</p>
-        </div>
-
-        <div class="card s-item">
-            <h4 style="font-size:14px; margin-bottom:4px;">आयुष्मान व आभा हेल्थ कार्ड</h4>
-            <p style="font-size:12px; color:var(--muted);">₹5 लाख तक कैशलेस उपचार कार्ड व डिजिटल स्वास्थ्य पहचान पत्र (ABHA ID)।</p>
-        </div>
-
-        <div class="card s-item">
-            <h4 style="font-size:14px; margin-bottom:4px;">ई-श्रम व श्रमिक कार्ड (लेबर डायरी)</h4>
-            <p style="font-size:12px; color:var(--muted);">मजदूर डायरी छात्रवृत्ति, प्रसूति सहायता व दुर्घटना बीमा पंजीयन।</p>
-        </div>
-
-        <div class="card s-item">
-            <h4 style="font-size:14px; margin-bottom:4px;">APAAR / ABC स्टूडेंट आईडी</h4>
-            <p style="font-size:12px; color:var(--muted);">स्कूल व कॉलेज विद्यार्थियों के लिए अनिवार्य डिजिटल एकेडमिक क्रेडिट आईडी।</p>
-        </div>
-
-        <div class="card s-item">
-            <h4 style="font-size:14px; margin-bottom:4px;">बिजली व पानी बिल भुगतान</h4>
-            <p style="font-size:12px; color:var(--muted);">डिस्कॉम बिजली एवं जलदाय बिल तुरंत ऑनलाइन भुगतान व पक्की रसीद।</p>
-        </div>
-
-        <div class="card s-item">
-            <h4 style="font-size:14px; margin-bottom:4px;">पेंशन वार्षिक भौतिक सत्यापन</h4>
-            <p style="font-size:12px; color:var(--muted);">सामाजिक सुरक्षा पेंशन का बायोमेट्रिक सत्यापन व जीवन प्रमाण पत्र।</p>
-        </div>
-
-        <div class="card s-item">
-            <h4 style="font-size:14px; margin-bottom:4px;">AEPS नकद निकासी (Banking)</h4>
-            <p style="font-size:12px; color:var(--muted);">आधार अंगूठे से किसी भी बैंक खाते से रुपये निकालना व बैलेंस जांच।</p>
-        </div>
-
-        <div class="card s-item">
-            <h4 style="font-size:14px; margin-bottom:4px;">कलर प्रिंट, फोटो व ऑनलाइन फॉर्म</h4>
-            <p style="font-size:12px; color:var(--muted);">सरकारी भर्ती आवेदन, पासपोर्ट साइज फोटो, लेमिनेशन व फोटोकॉपी।</p>
-        </div>
-    </div>
-</main>
-
-<!-- ================= TAB 3: CONTACT & PAY ================= -->
-<main id="contact" class="page">
     <div class="grid-2">
+
         <div class="card">
-            <div class="sec-head" style="margin-top:0;">📍 केंद्र का पता व संपर्क</div>
-            <p style="font-size:13px; margin-bottom:12px;">
-                <strong>श्री बालाजी ई-मित्र सेंटर</strong><br>
-                ग्राम - <strong>साखथली खुर्द</strong>, तहसील - अरनोद<br>
-                जिला - प्रतापगढ़ (राजस्थान) - 312615
+            <h3 style="font-size:15px;color:var(--primary);margin-bottom:8px;">
+                ⏰ दुकान का समय
+            </h3>
+
+            <p style="font-size:13px;">
+                <strong>सोमवार - शनिवार:</strong><br>
+                सुबह 8:00 AM से रात 8:00 PM
             </p>
-            <p style="font-size:13px; margin-bottom:4px;"><strong>📞 अंकित डांगी:</strong> <a href="tel:+918690653797">+91 8690653797</a></p>
-            <p style="font-size:13px; margin-bottom:14px;"><strong>📧 Email:</strong> ankitdangi1707@gmail.com</p>
 
-            <div style="display:flex; gap:8px; flex-wrap:wrap;">
-                <a href="tel:+918690653797" class="btn btn-main">📞 कॉल करें</a>
-                <a href="https://maps.app.goo.gl/oXuohtgpiF6fRwV58?g_st=ac" target="_blank" class="btn btn-light">🗺️ Google Maps</a>
-            </div>
-        </div>
-
-        <div class="card" style="text-align:center;">
-            <div class="sec-head" style="margin-top:0; justify-content:center;">💳 ऑनलाइन भुगतान (UPI)</div>
-            <p style="font-size:12px; color:var(--muted);">पैन कार्ड व सेवा शुल्क हेतु QR स्कैन करें या UPI कॉपी करें:</p>
-            
-            <img src="Qr.png" alt="UPI QR Code" style="width:160px; height:160px; margin:10px auto; display:block; border-radius:8px; border:1px solid var(--border);">
-
-            <div class="upi-row">
-                <span>8690653797@slc</span>
-                <button class="copy-btn" onclick="copyUPI('8690653797@slc')">Copy</button>
-            </div>
-
-            <div class="upi-row">
-                <span>ankitdangi17@icici</span>
-                <button class="copy-btn" onclick="copyUPI('ankitdangi17@icici')">Copy</button>
-            </div>
-
-            <p style="font-size:11px; color:#ea580c; margin-top:10px; font-weight:700;">
-                ⚡ भुगतान के बाद स्क्रीनशॉट व्हाट्सएप पर अवश्य भेजें।
+            <p style="font-size:13px;margin-top:5px;">
+                <strong>रविवार:</strong><br>
+                सुबह 9:00 AM से शाम 7:00 PM
             </p>
         </div>
+
+
+        <div class="card">
+            <h3 style="font-size:15px;color:var(--primary);margin-bottom:8px;">
+                📍 मुख्य पता
+            </h3>
+
+            <p style="font-size:13px;">
+                ग्राम पंचायत - साखथली खुर्द,<br>
+                तहसील - अरनोद,<br>
+                जिला - प्रतापगढ़, राजस्थान - 312615
+            </p>
+        </div>
+
     </div>
+
+
+    <div class="notice notice-green">
+
+        <strong>💳 भुगतान की महत्वपूर्ण जानकारी</strong><br><br>
+
+        अधिकांश सामान्य सेवाओं का शुल्क
+        <strong>सेवा पूरी होने के बाद</strong> लिया जाएगा।
+
+        <br><br>
+
+        PAN Card, Aadhaar Print, Voter ID, ABHA Card,
+        APAAR/ABC Card, e-Shram Card तथा अन्य
+        कार्ड/प्रिंट सेवाओं में आवेदन या प्रिंटिंग
+        खर्च के कारण <strong>पहले भुगतान लिया जा सकता है।</strong>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3 style="font-size:15px;color:var(--dark);margin-bottom:7px;">
+            📢 जरूरी सूचना
+        </h3>
+
+        <p style="font-size:13px;color:var(--muted);">
+            सेवा लेने से पहले संबंधित सेवा का शुल्क और
+            आवश्यक दस्तावेज की जानकारी प्राप्त कर लें।
+            भुगतान करने के बाद रसीद/भुगतान प्रमाण अवश्य रखें।
+        </p>
+
+    </div>
+
+</main>
+
+
+<!-- ================= SERVICES ================= -->
+<main id="services" class="page">
+
+    <input
+        type="text"
+        id="searchBox"
+        class="search-input"
+        placeholder="🔍 सेवा खोजें..."
+        onkeyup="filterItems()"
+    >
+
+
+    <div class="sec-head">
+        🛠️ प्रमुख डिजिटल सेवाएं
+    </div>
+
+
+    <div class="grid-3" id="serviceGrid">
+
+
+        <div class="card service-card s-item">
+            <h4>🪪 Aadhaar Card Print</h4>
+            <p>आधार कार्ड की प्रिंट सुविधा।</p>
+            <div class="service-price">₹50</div>
+        </div>
+
+
+        <div class="card service-card s-item">
+            <h4>📱 Aadhaar Mobile Update</h4>
+            <p>आधार में मोबाइल नंबर जोड़ना/अपडेट करना।</p>
+            <div class="service-price">₹120</div>
+        </div>
+
+
+        <div class="card service-card s-item">
+            <h4>📧 Aadhaar Email Update</h4>
+            <p>आधार में ईमेल जोड़ना/अपडेट करना।</p>
+            <div class="service-price">₹100</div>
+        </div>
+
+
+        <div class="card service-card s-item">
+            <h4>🏠 Aadhaar Address Update</h4>
+            <p>आधार में पता जोड़ना/अपडेट करना।</p>
+            <div class="service-price">₹150</div>
+        </div>
+
+
+        <div class="card service-card s-item">
+            <h4>🪪 नया PAN Card</h4>
+            <p>e-PAN / Hard Copy + Soft Copy सुविधा।</p>
+            <div class="service-price">₹200 से</div>
+        </div>
+
+
+        <div class="card service-card s-item">
+            <h4>🏥 ABHA Card</h4>
+            <p>ABHA Health ID/Card की डिजिटल सुविधा।</p>
+            <div class="service-price">₹100</div>
+        </div>
+
+
+        <div class="card service-card s-item">
+            <h4>🎓 APAAR / ABC Card</h4>
+            <p>विद्यार्थियों के लिए APAAR/ABC ID सुविधा।</p>
+            <div class="service-price">₹100</div>
+        </div>
+
+
+        <div class="card service-card s-item">
+            <h4>👷 e-Shram Card</h4>
+            <p>e-Shram पंजीयन एवं कार्ड प्रिंट सुविधा।</p>
+            <div class="service-price">₹100</div>
+        </div>
+
+
+        <div class="card service-card s-item">
+            <h4>🗳️ Voter ID</h4>
+            <p>मतदाता पहचान पत्र संबंधी ऑनलाइन सेवाएं।</p>
+            <div class="service-price">शुल्क जानकारी केंद्र पर</div>
+        </div>
+
+
+        <div class="card service-card s-item">
+            <h4>👨‍👩‍👧 Jan Aadhaar</h4>
+            <p>नामांकन, e-KYC, सदस्य जोड़ना एवं सुधार।</p>
+            <div class="service-price">शुल्क जानकारी केंद्र पर</div>
+        </div>
+
+
+        <div class="card service-card s-item">
+            <h4>💡 बिजली / पानी बिल</h4>
+            <p>ऑनलाइन बिल भुगतान एवं रसीद।</p>
+            <div class="service-price">शुल्क जानकारी केंद्र पर</div>
+        </div>
+
+
+        <div class="card service-card s-item">
+            <h4>📄 ऑनलाइन फॉर्म</h4>
+            <p>सरकारी भर्ती एवं अन्य ऑनलाइन आवेदन।</p>
+            <div class="service-price">शुल्क जानकारी केंद्र पर</div>
+        </div>
+
+
+        <div class="card service-card s-item">
+            <h4>🖨️ Print / Scan / Photocopy</h4>
+            <p>कलर प्रिंट, ब्लैक-व्हाइट, स्कैन एवं फोटोकॉपी।</p>
+            <div class="service-price">शुल्क जानकारी केंद्र पर</div>
+        </div>
+
+
+        <div class="card service-card s-item">
+            <h4>🏛️ सरकारी योजनाएं</h4>
+            <p>विभिन्न सरकारी योजनाओं की ऑनलाइन सेवाएं।</p>
+            <div class="service-price">शुल्क जानकारी केंद्र पर</div>
+        </div>
+
+
+        <div class="card service-card s-item">
+            <h4>💳 AEPS Banking</h4>
+            <p>उपलब्धता के अनुसार AEPS बैंकिंग सेवाएं।</p>
+            <div class="service-price">शुल्क जानकारी केंद्र पर</div>
+        </div>
+
+    </div>
+
+
+    <div class="sec-head">
+        📄 आवश्यक दस्तावेज
+    </div>
+
+    <div class="card">
+
+        <ul class="doc-list">
+
+            <li>आधार कार्ड</li>
+            <li>मोबाइल नंबर</li>
+            <li>पासपोर्ट साइज फोटो</li>
+            <li>ईमेल ID — जहां आवश्यक हो</li>
+            <li>संबंधित सेवा के अनुसार अतिरिक्त दस्तावेज</li>
+
+        </ul>
+
+        <p style="font-size:12px;color:var(--muted);margin-top:10px;">
+            अलग-अलग सेवाओं में दस्तावेज अलग हो सकते हैं।
+            आवेदन से पहले केंद्र पर जानकारी प्राप्त करें।
+        </p>
+
+    </div>
+
+
+    <div class="sec-head">
+        💰 सेवा शुल्क सूची
+    </div>
+
+
+    <div style="overflow-x:auto;">
+
+        <table class="rate-table">
+
+            <thead>
+                <tr>
+                    <th>सेवा</th>
+                    <th>केंद्र सेवा शुल्क</th>
+                    <th>भुगतान</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Aadhaar Card Print</td>
+                    <td class="rate">₹50</td>
+                    <td>काम पूरा होने के बाद</td>
+                </tr>
+
+                <tr>
+                    <td>Aadhaar Mobile Update</td>
+                    <td class="rate">₹120</td>
+                    <td>काम पूरा होने के बाद</td>
+                </tr>
+
+                <tr>
+                    <td>Aadhaar Email Update</td>
+                    <td class="rate">₹100</td>
+                    <td>काम पूरा होने के बाद</td>
+                </tr>
+
+                <tr>
+                    <td>Aadhaar Address Update</td>
+                    <td class="rate">₹150</td>
+                    <td>काम पूरा होने के बाद</td>
+                </tr>
+
+                <tr>
+                    <td>ABHA Card</td>
+                    <td class="rate">₹100</td>
+                    <td>काम पूरा होने के बाद</td>
+                </tr>
+
+                <tr>
+                    <td>APAAR / ABC Card</td>
+                    <td class="rate">₹100</td>
+                    <td>काम पूरा होने के बाद</td>
+                </tr>
+
+                <tr>
+                    <td>e-Shram Card</td>
+                    <td class="rate">₹100</td>
+                    <td>काम पूरा होने के बाद</td>
+                </tr>
+
+                <tr>
+                    <td>PAN Card</td>
+                    <td class="rate">₹200 से</td>
+                    <td>आवेदन के अनुसार</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <div class="notice" style="margin-top:14px;">
+
+        <strong>⚠️ शुल्क संबंधी सूचना:</strong><br>
+
+        ऊपर दिए गए शुल्क केंद्र के सेवा शुल्क हैं।
+        सरकारी शुल्क/पोर्टल शुल्क जहां लागू हो,
+        वह अलग हो सकता है। सेवा शुरू करने से पहले
+        कुल शुल्क की जानकारी दी जाएगी।
+
+    </div>
+
+</main>
+
+
+<!-- ================= NOTICE ================= -->
+<main id="notices" class="page">
+
+    <div class="sec-head">
+        📢 जरूरी सूचना एवं अपडेट
+    </div>
+
+
+    <div class="notice notice-green">
+
+        <strong>✅ सेवा शुल्क नियम</strong><br>
+
+        सामान्य सेवाओं का भुगतान सेवा पूरी होने के बाद लिया जाएगा।
+
+    </div>
+
+
+    <div class="notice">
+
+        <strong>⚠️ पहले भुगतान वाली सेवाएं</strong><br>
+
+        PAN Card, Aadhaar Print, Voter ID, ABHA Card,
+        APAAR/ABC Card, e-Shram Card आदि में
+        आवेदन/प्रिंटिंग खर्च के कारण पहले भुगतान लिया जा सकता है।
+
+    </div>
+
+
+    <div class="card recruit-card">
+
+        <h3 style="font-size:15px;margin-bottom:6px;">
+            💼 भर्ती एवं सरकारी फॉर्म
+        </h3>
+
+        <p style="font-size:13px;color:var(--muted);">
+            नई भर्ती, सरकारी फॉर्म, एडमिट कार्ड और रिजल्ट
+            संबंधी ऑनलाइन सेवाओं के लिए केंद्र पर संपर्क करें।
+        </p>
+
+        <br>
+
+        <a
+            href="https://recruitment.rajasthan.gov.in/"
+            target="_blank"
+            class="btn btn-main"
+        >
+            🔎 राजस्थान भर्ती पोर्टल
+        </a>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3 style="font-size:15px;margin-bottom:6px;">
+            🏛️ महत्वपूर्ण सरकारी पोर्टल
+        </h3>
+
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+
+            <a
+                href="https://sso.rajasthan.gov.in/"
+                target="_blank"
+                class="btn btn-light"
+            >
+                Rajasthan SSO
+            </a>
+
+            <a
+                href="https://janaadhaar.rajasthan.gov.in/"
+                target="_blank"
+                class="btn btn-light"
+            >
+                Jan Aadhaar
+            </a>
+
+            <a
+                href="https://ssp.rajasthan.gov.in/"
+                target="_blank"
+                class="btn btn-light"
+            >
+                Pension
+            </a>
+
+            <a
+                href="https://www.myscheme.gov.in/"
+                target="_blank"
+                class="btn btn-light"
+            >
+                myScheme
+            </a>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- ================= REQUEST ================= -->
+<main id="request" class="page">
+
+    <div class="sec-head">
+        📝 Online Service Request
+    </div>
+
+
+    <div class="card">
+
+        <p style="font-size:13px;color:var(--muted);margin-bottom:15px;">
+            नीचे जानकारी भरें। आपकी जानकारी WhatsApp पर
+            भेजने के लिए तैयार हो जाएगी।
+        </p>
+
+
+        <div class="form-group">
+
+            <label>👤 ग्राहक का नाम</label>
+
+            <input
+                id="reqName"
+                class="form-control"
+                type="text"
+                placeholder="अपना नाम लिखें"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>📱 मोबाइल नंबर</label>
+
+            <input
+                id="reqMobile"
+                class="form-control"
+                type="tel"
+                placeholder="10 अंकों का मोबाइल नंबर"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>🛠️ सेवा चुनें</label>
+
+            <select id="reqService" class="form-control">
+
+                <option value="">-- सेवा चुनें --</option>
+
+                <option>Aadhaar Card Print - ₹50</option>
+                <option>Aadhaar Mobile Update - ₹120</option>
+                <option>Aadhaar Email Update - ₹100</option>
+                <option>Aadhaar Address Update - ₹150</option>
+                <option>ABHA Card - ₹100</option>
+                <option>APAAR / ABC Card - ₹100</option>
+                <option>e-Shram Card - ₹100</option>
+                <option>PAN Card</option>
+                <option>Voter ID</option>
+                <option>Jan Aadhaar</option>
+                <option>Online Form</option>
+                <option>अन्य सेवा</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>📝 अतिरिक्त जानकारी</label>
+
+            <textarea
+                id="reqMessage"
+                class="form-control"
+                rows="4"
+                placeholder="यदि कोई विशेष जानकारी हो तो लिखें..."
+            ></textarea>
+
+        </div>
+
+
+        <button
+            class="btn btn-green"
+            style="width:100%;"
+            onclick="sendRequest()"
+        >
+            💬 WhatsApp पर Request भेजें
+        </button>
+
+    </div>
+
+</main>
+
+
+<!-- ================= PAYMENT ================= -->
+<main id="payment" class="page">
+
+    <div class="sec-head">
+        💳 ऑनलाइन भुगतान
+    </div>
+
+
+    <div class="grid-2">
+
+
+        <div class="card payment-box">
+
+            <h3 style="font-size:17px;color:var(--primary);">
+                📲 QR Code से भुगतान
+            </h3>
+
+            <p style="font-size:12px;color:var(--muted);">
+                नीचे दिए गए QR Code को किसी भी UPI App
+                से Scan करें।
+            </p>
+
+
+            <img
+                src="Qr.png"
+                class="qr"
+                alt="श्री बालाजी ई-मित्र UPI QR Code"
+            >
+
+
+            <div class="upi-row">
+
+                <span>8690653797@slc</span>
+
+                <button
+                    class="copy-btn"
+                    onclick="copyUPI('8690653797@slc')"
+                >
+                    Copy
+                </button>
+
+            </div>
+
+
+            <div class="upi-row">
+
+                <span>ankitdangi17@icici</span>
+
+                <button
+                    class="copy-btn"
+                    onclick="copyUPI('ankitdangi17@icici')"
+                >
+                    Copy
+                </button>
+
+            </div>
+
+
+            <br>
+
+            <a
+                href="https://wa.me/918690653797?text=नमस्ते%20श्री%20बालाजी%20ई-मित्र%20सेंटर,%20मैंने%20भुगतान%20कर दिया%20है।"
+                target="_blank"
+                class="btn btn-green"
+            >
+                📤 Payment Screenshot भेजें
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3 style="font-size:17px;color:var(--dark);margin-bottom:12px;">
+                💳 भुगतान नियम
+            </h3>
+
+
+            <div class="notice notice-green">
+
+                <strong>सामान्य सेवाएं</strong><br>
+
+                अधिकांश सेवाओं का भुगतान
+                <strong>सेवा पूरी होने के बाद</strong>
+                लिया जाएगा।
+
+            </div>
+
+
+            <div class="notice">
+
+                <strong>पहले भुगतान वाली सेवाएं</strong><br>
+
+                PAN Card, Aadhaar Print, Voter ID,
+                ABHA Card, APAAR/ABC Card,
+                e-Shram Card तथा अन्य कार्ड/प्रिंट सेवाओं
+                में पहले भुगतान लिया जा सकता है।
+
+            </div>
+
+
+            <p style="font-size:12px;color:var(--muted);">
+                भुगतान करने के बाद Transaction ID या
+                Screenshot सुरक्षित रखें।
+            </p>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- ================= CONTACT ================= -->
+<main id="contact" class="page">
+
+    <div class="sec-head">
+        📞 संपर्क एवं पता
+    </div>
+
+
+    <div class="grid-2">
+
+
+        <div class="card">
+
+            <h3 style="font-size:17px;color:var(--primary);margin-bottom:12px;">
+                📍 श्री बालाजी ई-मित्र सेंटर
+            </h3>
+
+
+            <p class="contact-line">
+                <strong>ग्राम:</strong> साखथली खुर्द
+            </p>
+
+            <p class="contact-line">
+                <strong>तहसील:</strong> अरनोद
+            </p>
+
+            <p class="contact-line">
+                <strong>जिला:</strong> प्रतापगढ़, राजस्थान
+            </p>
+
+            <p class="contact-line">
+                <strong>पिन:</strong> 312615
+            </p>
+
+            <br>
+
+            <p class="contact-line">
+                📞 <strong>अंकित डांगी:</strong>
+                <a href="tel:+918690653797">
+                    +91 8690653797
+                </a>
+            </p>
+
+            <p class="contact-line">
+                📧 <strong>Email:</strong>
+                ankitdangi1707@gmail.com
+            </p>
+
+
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:15px;">
+
+                <a
+                    href="tel:+918690653797"
+                    class="btn btn-main"
+                >
+                    📞 कॉल करें
+                </a>
+
+                <a
+                    href="https://wa.me/918690653797"
+                    target="_blank"
+                    class="btn btn-green"
+                >
+                    💬 WhatsApp
+                </a>
+
+                <a
+                    href="https://maps.app.goo.gl/oXuohtgpiF6fRwV58?g_st=ac"
+                    target="_blank"
+                    class="btn btn-light"
+                >
+                    🗺️ Google Maps
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3 style="font-size:17px;color:var(--primary);margin-bottom:10px;">
+                ⏰ दुकान का समय
+            </h3>
+
+            <p style="font-size:13px;">
+                <strong>सोमवार - शनिवार</strong><br>
+                8:00 AM - 8:00 PM
+            </p>
+
+            <br>
+
+            <p style="font-size:13px;">
+                <strong>रविवार</strong><br>
+                9:00 AM - 7:00 PM
+            </p>
+
+            <br>
+
+            <div class="notice notice-green" style="margin-bottom:0;">
+                🟢 दुकान खुली/बंद स्थिति वेबसाइट पर
+                अपने आप दिखाई जाएगी।
+            </div>
+
+        </div>
+
+    </div>
+
 </main>
 
 </div>
 
-<!-- MOBILE BOTTOM NAVIGATION -->
+
+<!-- WHATSAPP FLOAT -->
+<a
+    href="https://wa.me/918690653797"
+    target="_blank"
+    class="whatsapp-float"
+    aria-label="WhatsApp"
+>
+    💬
+</a>
+
+
+<!-- MOBILE NAV -->
 <div class="mobile-nav">
-    <button class="active" onclick="showTab('home', this)"><span>🏠</span>होम</button>
-    <button onclick="showTab('services', this)"><span>🛠️</span>सेवाएं</button>
-    <button onclick="showTab('contact', this)"><span>📍</span>संपर्क</button>
-    <button onclick="window.open('https://wa.me/918690653797')"><span style="color:#16a34a;">💬</span>चैट</button>
+
+    <button class="active" onclick="showTab('home')">
+        <span>🏠</span>
+        होम
+    </button>
+
+    <button onclick="showTab('services')">
+        <span>🛠️</span>
+        सेवाएं
+    </button>
+
+    <button onclick="showTab('notices')">
+        <span>📢</span>
+        नोटिस
+    </button>
+
+    <button onclick="showTab('request')">
+        <span>📝</span>
+        अनुरोध
+    </button>
+
+    <button onclick="showTab('payment')">
+        <span>💳</span>
+        भुगतान
+    </button>
+
+    <button onclick="showTab('contact')">
+        <span>📞</span>
+        संपर्क
+    </button>
+
 </div>
 
-<!-- JAVASCRIPT -->
+
+<footer>
+
+    <strong>श्री बालाजी ई-मित्र सेंटर</strong><br>
+    साखथली खुर्द, अरनोद, प्रतापगढ़, राजस्थान - 312615<br><br>
+
+    © 2026 श्री बालाजी ई-मित्र सेंटर. सभी अधिकार सुरक्षित।
+
+</footer>
+
+
 <script>
-// TAB SWITCHER
-function showTab(tabId, el){
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.mobile-nav button').forEach(b => b.classList.remove('active'));
+
+/* ================= TAB SWITCHER ================= */
+
+function showTab(tabId){
+
+    document.querySelectorAll('.page').forEach(function(page){
+        page.classList.remove('active');
+    });
 
     const target = document.getElementById(tabId);
-    if(target) target.classList.add('active');
 
-    // Desktop nav sync
-    const map = { 'home':0, 'services':1, 'contact':2 };
-    const dTabs = document.querySelectorAll('.nav-btn');
-    if(dTabs[map[tabId]]) dTabs[map[tabId]].classList.add('active');
+    if(target){
+        target.classList.add('active');
+    }
 
-    // Mobile nav sync
-    const mTabs = document.querySelectorAll('.mobile-nav button');
-    if(mTabs[map[tabId]]) mTabs[map[tabId]].classList.add('active');
 
-    window.scrollTo({ top:0, behavior:'smooth' });
-}
+    document.querySelectorAll('.nav-btn').forEach(function(btn){
+        btn.classList.remove('active');
+    });
 
-// LIVE FILTER
-function filterItems(){
-    const q = document.getElementById('searchBox').value.toLowerCase();
-    document.querySelectorAll('.s-item').forEach(card => {
-        const text = card.innerText.toLowerCase();
-        card.style.display = text.includes(q) ? 'block' : 'none';
+
+    document.querySelectorAll('.mobile-nav button').forEach(function(btn){
+        btn.classList.remove('active');
+    });
+
+
+    const tabs = {
+        home:0,
+        services:1,
+        notices:2,
+        request:3,
+        payment:4,
+        contact:5
+    };
+
+
+    const index = tabs[tabId];
+
+
+    const desktopButtons =
+        document.querySelectorAll('.nav-btn');
+
+    if(desktopButtons[index]){
+        desktopButtons[index].classList.add('active');
+    }
+
+
+    const mobileButtons =
+        document.querySelectorAll('.mobile-nav button');
+
+    if(mobileButtons[index]){
+        mobileButtons[index].classList.add('active');
+    }
+
+
+    window.scrollTo({
+        top:0,
+        behavior:'smooth'
     });
 }
 
-// COPY UPI
-function copyUPI(val){
-    navigator.clipboard.writeText(val);
-    alert('UPI ID कॉपी हो गई: ' + val);
+
+/* ================= SEARCH ================= */
+
+function filterItems(){
+
+    const input =
+        document.getElementById('searchBox');
+
+    const q =
+        input.value.toLowerCase().trim();
+
+
+    document.querySelectorAll('.s-item').forEach(function(card){
+
+        const text =
+            card.innerText.toLowerCase();
+
+        card.style.display =
+            text.includes(q) ? '' : 'none';
+
+    });
 }
 
-// SHOP STATUS (8 AM - 8 PM)
-function updateStatus(){
-    const h = new Date().getHours();
-    const el = document.getElementById('shopStatus');
-    if(h >= 8 && h < 20){
-        el.textContent = '🟢 अभी दुकान खुली है (8 AM - 8 PM)';
-        el.style.color = '#15803d';
+
+/* ================= COPY UPI ================= */
+
+function copyUPI(value){
+
+    if(navigator.clipboard){
+
+        navigator.clipboard.writeText(value)
+        .then(function(){
+
+            alert('UPI ID कॉपी हो गई:\n' + value);
+
+        })
+        .catch(function(){
+
+            alert('UPI ID: ' + value);
+
+        });
+
     }else{
-        el.textContent = '🔴 अभी दुकान बंद है (8 AM - 8 PM)';
-        el.style.color = '#b91c1c';
+
+        alert('UPI ID: ' + value);
+
     }
 }
+
+
+/* ================= SERVICE REQUEST ================= */
+
+function sendRequest(){
+
+    const name =
+        document.getElementById('reqName').value.trim();
+
+    const mobile =
+        document.getElementById('reqMobile').value.trim();
+
+    const service =
+        document.getElementById('reqService').value;
+
+    const message =
+        document.getElementById('reqMessage').value.trim();
+
+
+    if(!name){
+
+        alert('कृपया अपना नाम भरें।');
+        return;
+
+    }
+
+
+    if(!mobile || mobile.length < 10){
+
+        alert('कृपया सही मोबाइल नंबर भरें।');
+        return;
+
+    }
+
+
+    if(!service){
+
+        alert('कृपया सेवा चुनें।');
+        return;
+
+    }
+
+
+    const text =
+        'नमस्ते श्री बालाजी ई-मित्र सेंटर,%0A%0A' +
+
+        '📝 नई Service Request%0A' +
+
+        '👤 नाम: ' + encodeURIComponent(name) + '%0A' +
+
+        '📱 मोबाइल: ' + encodeURIComponent(mobile) + '%0A' +
+
+        '🛠️ सेवा: ' + encodeURIComponent(service) + '%0A' +
+
+        '💬 जानकारी: ' +
+        encodeURIComponent(message || 'कोई अतिरिक्त जानकारी नहीं') +
+
+        '%0A%0Aकृपया मेरी Service Request के बारे में जानकारी दें।';
+
+
+    window.open(
+        'https://wa.me/918690653797?text=' + text,
+        '_blank'
+    );
+}
+
+
+/* ================= SHOP STATUS ================= */
+
+function updateStatus(){
+
+    const now = new Date();
+
+    const day = now.getDay();
+
+    const hour = now.getHours();
+
+    const minute = now.getMinutes();
+
+    const currentMinutes =
+        hour * 60 + minute;
+
+
+    let openTime;
+    let closeTime;
+
+
+    /* Sunday = 0 */
+
+    if(day === 0){
+
+        openTime = 9 * 60;
+        closeTime = 19 * 60;
+
+    }else{
+
+        openTime = 8 * 60;
+        closeTime = 20 * 60;
+
+    }
+
+
+    const el =
+        document.getElementById('shopStatus');
+
+
+    if(currentMinutes >= openTime &&
+       currentMinutes < closeTime){
+
+        el.textContent =
+            day === 0
+            ? '🟢 अभी दुकान खुली है (9 AM - 7 PM)'
+            : '🟢 अभी दुकान खुली है (8 AM - 8 PM)';
+
+        el.style.color = '#15803d';
+
+    }else{
+
+        el.textContent =
+            day === 0
+            ? '🔴 अभी दुकान बंद है (9 AM - 7 PM)'
+            : '🔴 अभी दुकान बंद है (8 AM - 8 PM)';
+
+        el.style.color = '#b91c1c';
+
+    }
+
+}
+
+
 updateStatus();
 
-// PWA SERVICE WORKER
-if('serviceWorker' in navigator){
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js').catch(()=>{});
-    });
-}
+setInterval(updateStatus,60000);
+
 </script>
 
 </body>
-</html>
+                    </html>
