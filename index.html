@@ -8,16 +8,20 @@
 <title>श्री बालाजी ई-मित्र सेंटर | साखथली खुर्द, अरनोद</title>
 
 <meta name="description"
-content="श्री बालाजी ई-मित्र सेंटर, साखथली खुर्द, अरनोद, प्रतापगढ़ राजस्थान। GGTU Exam Form, Semester Fee, Result, Time Table, Jan Aadhaar, PAN Card, सरकारी योजनाएं और डिजिटल सेवाएं।">
+content="श्री बालाजी ई-मित्र सेंटर, साखथली खुर्द, अरनोद, प्रतापगढ़ राजस्थान। जन आधार, सरकारी योजनाएं, पेंशन, PAN Card, ऑनलाइन फॉर्म, बिल भुगतान, प्रिंटिंग और डिजिटल सेवाएं।">
 
 <meta name="keywords"
-content="Shree Balaji eMitra, eMitra Sakhthali Khurd, eMitra Arnod, GGTU Exam Form, GGTU Result, GGTU Time Table, Semester Fee, Jan Aadhaar, PAN Card, Ankit Dangi">
+content="Shree Balaji eMitra, eMitra Sakhthali Khurd, eMitra Arnod, Jan Aadhaar, PAN Card, Rajasthan Government Schemes, Ankit Dangi">
 
 <meta name="author" content="Ankit Dangi">
 
 <meta property="og:title" content="श्री बालाजी ई-मित्र सेंटर">
-<meta property="og:description" content="GGTU Exam Form, Result, Semester Fee, Jan Aadhaar, सरकारी योजनाएं और डिजिटल सेवाएं">
+<meta property="og:description" content="जन आधार, सरकारी योजनाएं, पैन कार्ड और डिजिटल सेवाएं">
 <meta property="og:type" content="website">
+
+<!-- PWA App Links -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#7c2d12">
 
 <style>
 
@@ -42,7 +46,6 @@ content="Shree Balaji eMitra, eMitra Sakhthali Khurd, eMitra Arnod, GGTU Exam Fo
     --muted:#64748b;
     --green:#15803d;
     --blue:#1d4ed8;
-    --red:#dc2626;
     --border:#fed7aa;
     --shadow:0 8px 25px rgba(0,0,0,.10);
 }
@@ -194,63 +197,6 @@ nav button.active{
 
 
 /* =========================================================
-   LATEST TICKER
-========================================================= */
-
-.latest-ticker{
-    background:#fff;
-    border-bottom:1px solid #fed7aa;
-    overflow:hidden;
-    white-space:nowrap;
-}
-
-.ticker-inner{
-    display:flex;
-    align-items:center;
-    min-height:38px;
-}
-
-.ticker-title{
-    background:#dc2626;
-    color:#fff;
-    padding:5px 12px;
-    font-size:12px;
-    font-weight:800;
-    border-radius:5px;
-    flex-shrink:0;
-    z-index:2;
-}
-
-.ticker-content{
-    overflow:hidden;
-    position:relative;
-    width:100%;
-}
-
-.ticker-track{
-    display:inline-block;
-    padding-left:100%;
-    animation:tickerMove 28s linear infinite;
-    color:#7c2d12;
-    font-size:13px;
-    font-weight:600;
-}
-
-.ticker-track span{
-    margin-right:50px;
-}
-
-@keyframes tickerMove{
-    from{
-        transform:translateX(0);
-    }
-    to{
-        transform:translateX(-100%);
-    }
-}
-
-
-/* =========================================================
    HERO
 ========================================================= */
 
@@ -303,25 +249,10 @@ nav button.active{
     transform:translateY(-2px);
 }
 
-.btn-white{
-    background:#fff;
-    color:#9a3412;
-}
-
-.btn-green{
-    background:#16a34a;
-    color:#fff;
-}
-
-.btn-blue{
-    background:#2563eb;
-    color:#fff;
-}
-
-.btn-dark{
-    background:#292524;
-    color:#fff;
-}
+.btn-white{ background:#fff; color:#9a3412; }
+.btn-green{ background:#16a34a; color:#fff; }
+.btn-blue{ background:#2563eb; color:#fff; }
+.btn-dark{ background:#292524; color:#fff; }
 
 .hero-card{
     background:rgba(255,255,255,.14);
@@ -352,15 +283,8 @@ nav button.active{
     gap:15px;
 }
 
-.status-open{
-    color:#15803d;
-    font-weight:700;
-}
-
-.status-closed{
-    color:#b91c1c;
-    font-weight:700;
-}
+.status-open{ color:#15803d; font-weight:700; }
+.status-closed{ color:#b91c1c; font-weight:700; }
 
 
 /* =========================================================
@@ -468,17 +392,9 @@ section{
     background:#1e40af;
 }
 
-.green-link{
-    background:#15803d!important;
-}
-
-.orange-link{
-    background:#ea580c!important;
-}
-
-.dark-link{
-    background:#292524!important;
-}
+.green-link{ background:#15803d!important; }
+.orange-link{ background:#ea580c!important; }
+.dark-link{ background:#292524!important; }
 
 
 /* =========================================================
@@ -506,7 +422,7 @@ section{
 
 
 /* =========================================================
-   NOTICE BOXES
+   NOTICE
 ========================================================= */
 
 .notice{
@@ -558,261 +474,6 @@ section{
 
 .check-list li:last-child{
     border-bottom:0;
-}
-
-
-/* =========================================================
-   GGTU
-========================================================= */
-
-.ggtu-banner{
-    background:linear-gradient(135deg,#7c2d12,#ea580c);
-    color:#fff;
-    padding:25px;
-    border-radius:20px;
-    box-shadow:var(--shadow);
-    margin-bottom:22px;
-}
-
-.ggtu-banner h2{
-    font-size:27px;
-    margin:5px 0 8px;
-}
-
-.latest-badge{
-    display:inline-block;
-    background:#dc2626;
-    color:#fff;
-    padding:4px 9px;
-    border-radius:20px;
-    font-size:10px;
-    font-weight:800;
-}
-
-.ggtu-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
-}
-
-.ggtu-card{
-    background:#fff;
-    border:1px solid #fed7aa;
-    border-radius:16px;
-    padding:20px;
-    box-shadow:0 5px 18px rgba(0,0,0,.06);
-    transition:.2s;
-}
-
-.ggtu-card:hover{
-    transform:translateY(-4px);
-    box-shadow:var(--shadow);
-}
-
-.ggtu-icon{
-    font-size:32px;
-}
-
-.ggtu-card h3{
-    color:#9a3412;
-    margin:6px 0;
-}
-
-.ggtu-card p{
-    color:#475569;
-    font-size:14px;
-}
-
-.ggtu-buttons{
-    display:flex;
-    flex-wrap:wrap;
-    gap:6px;
-    margin-top:12px;
-}
-
-.ggtu-btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:8px 10px;
-    border-radius:8px;
-    background:#1d4ed8;
-    color:#fff;
-    font-size:11px;
-    font-weight:700;
-    text-decoration:none;
-}
-
-.ggtu-btn.green{
-    background:#15803d;
-}
-
-.ggtu-btn.orange{
-    background:#ea580c;
-}
-
-.ggtu-btn.dark{
-    background:#292524;
-}
-
-.ggtu-note{
-    margin-top:20px;
-    padding:15px;
-    background:#eff6ff;
-    border-left:5px solid #2563eb;
-    border-radius:10px;
-    font-size:13px;
-}
-
-
-/* =========================================================
-   AUTO GGTU NOTIFICATIONS
-========================================================= */
-
-.auto-ggtu-box{
-    margin-top:25px;
-    background:#fff;
-    border:1px solid #fed7aa;
-    border-radius:20px;
-    padding:22px;
-    box-shadow:var(--shadow);
-}
-
-.auto-ggtu-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    gap:15px;
-    margin-bottom:15px;
-}
-
-.auto-ggtu-header h2{
-    color:#9a3412;
-    margin:7px 0;
-    font-size:25px;
-}
-
-.auto-ggtu-header p{
-    color:#64748b;
-    font-size:13px;
-}
-
-.refresh-ggtu{
-    border:0;
-    background:#15803d;
-    color:#fff;
-    padding:9px 14px;
-    border-radius:9px;
-    font-weight:700;
-    cursor:pointer;
-    white-space:nowrap;
-}
-
-.refresh-ggtu:hover{
-    background:#166534;
-}
-
-.ggtu-source{
-    background:#eff6ff;
-    border-left:4px solid #2563eb;
-    padding:10px 12px;
-    border-radius:8px;
-    font-size:12px;
-    margin-bottom:10px;
-}
-
-.ggtu-source a{
-    color:#1d4ed8;
-    font-weight:700;
-}
-
-.ggtu-last-update{
-    color:#64748b;
-    font-size:11px;
-    margin-bottom:12px;
-}
-
-.ggtu-notice-list{
-    display:grid;
-    gap:10px;
-}
-
-.ggtu-notice-item{
-    border:1px solid #fed7aa;
-    background:#fffaf5;
-    border-radius:12px;
-    padding:13px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:12px;
-    transition:.2s;
-}
-
-.ggtu-notice-item:hover{
-    transform:translateY(-2px);
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-}
-
-.ggtu-notice-content{
-    min-width:0;
-}
-
-.ggtu-notice-title{
-    color:#7c2d12;
-    font-weight:700;
-    font-size:14px;
-    line-height:1.5;
-}
-
-.ggtu-notice-date{
-    color:#64748b;
-    font-size:11px;
-    margin-top:5px;
-}
-
-.new-badge{
-    display:inline-block;
-    background:#dc2626;
-    color:#fff;
-    font-size:9px;
-    font-weight:800;
-    padding:3px 7px;
-    border-radius:20px;
-    margin-right:5px;
-}
-
-.ggtu-view-btn{
-    flex-shrink:0;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    background:#1d4ed8;
-    color:#fff;
-    padding:8px 11px;
-    border-radius:8px;
-    font-size:11px;
-    font-weight:700;
-    text-decoration:none;
-}
-
-.ggtu-view-btn:hover{
-    background:#1e40af;
-}
-
-.ggtu-loading,
-.ggtu-empty,
-.ggtu-error{
-    text-align:center;
-    padding:20px;
-    border-radius:10px;
-    background:#fff7ed;
-    color:#7c2d12;
-}
-
-.ggtu-more{
-    text-align:center;
-    margin-top:18px;
 }
 
 
@@ -923,7 +584,7 @@ section{
 
 
 /* =========================================================
-   UPI + QR
+   UPI
 ========================================================= */
 
 .upi-box{
@@ -932,19 +593,6 @@ section{
     padding:15px;
     border-radius:12px;
     margin-top:15px;
-}
-
-.qr{
-    display:block;
-    width:220px;
-    max-width:100%;
-    height:auto;
-    margin:15px auto;
-    border-radius:12px;
-    background:#fff;
-    padding:8px;
-    border:1px solid #fed7aa;
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
 }
 
 .upi-row{
@@ -966,10 +614,6 @@ section{
     border-radius:7px;
     cursor:pointer;
     font-weight:700;
-}
-
-.copy-btn:hover{
-    background:#c2410c;
 }
 
 
@@ -1031,10 +675,6 @@ footer li{
     text-decoration:none;
 }
 
-.whatsapp:hover{
-    transform:scale(1.06);
-}
-
 
 /* =========================================================
    MOBILE BAR
@@ -1078,208 +718,121 @@ footer li{
 ========================================================= */
 
 @media(max-width:1100px){
-
     .header-inner{
         flex-wrap:wrap;
         padding:9px 0;
     }
-
     nav{
         order:3;
         width:100%;
         justify-content:center;
     }
-
 }
 
 @media(max-width:900px){
-
     .hero-content{
         grid-template-columns:1fr;
     }
-
     .grid{
         grid-template-columns:repeat(2,1fr);
     }
-
-    .ggtu-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
     .footer-grid{
         grid-template-columns:1fr 1fr;
     }
-
 }
 
 @media(max-width:650px){
-
     .header-inner{
         min-height:62px;
         flex-wrap:nowrap;
         padding:6px 0;
     }
-
     .logo{
         width:41px;
         height:41px;
     }
-
     .logo-area{
         gap:7px;
         min-width:0;
     }
-
     .logo-text h1{
         font-size:13px;
         white-space:nowrap;
     }
-
     .logo-text span{
         font-size:8px;
         white-space:nowrap;
     }
-
     nav{
         display:none;
     }
-
     .header-right{
         gap:4px;
     }
-
     .visitor-badge{
         padding:3px 5px;
         font-size:8px;
     }
-
     .live-clock{
         min-width:80px;
         padding:3px;
     }
-
     #liveDate{
         font-size:7px;
     }
-
     #liveTime{
         font-size:10px;
     }
-
     .live-clock small{
         font-size:6px;
     }
-
     .hero{
         padding:40px 0;
     }
-
     .hero h2{
         font-size:25px;
     }
-
     .hero p{
         font-size:14px;
     }
-
     .grid{
         grid-template-columns:1fr;
     }
-
-    .ggtu-grid{
-        grid-template-columns:1fr;
-    }
-
     .contact-grid{
         grid-template-columns:1fr;
     }
-
     .footer-grid{
         grid-template-columns:1fr;
     }
-
     .status-box{
         flex-direction:column;
         align-items:flex-start;
     }
-
     section{
         padding:35px 0;
     }
-
     .mobile-bar{
         display:grid;
     }
-
     footer{
         padding-bottom:90px;
     }
-
     .whatsapp{
         right:14px;
         bottom:74px;
     }
-
-    .ggtu-banner h2{
-        font-size:22px;
-    }
-
-    .ticker-track{
-        font-size:11px;
-    }
-
-    .auto-ggtu-box{
-        margin-top:18px;
-        padding:15px;
-        border-radius:15px;
-    }
-
-    .auto-ggtu-header{
-        flex-direction:column;
-    }
-
-    .auto-ggtu-header h2{
-        font-size:21px;
-    }
-
-    .refresh-ggtu{
-        width:100%;
-    }
-
-    .ggtu-notice-item{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
-    .ggtu-notice-title{
-        font-size:13px;
-    }
-
-    .ggtu-view-btn{
-        width:100%;
-        text-align:center;
-    }
-
-    .qr{
-        width:190px;
-    }
-
 }
 
 @media print{
-
     header,
-    .latest-ticker,
     .mobile-bar,
     .whatsapp,
     footer{
         display:none!important;
     }
-
     .page{
         display:block!important;
     }
-
 }
 
 </style>
@@ -1298,134 +851,37 @@ footer li{
 <div class="container header-inner">
 
 <div class="logo-area">
-
-<img
-src="Logo.png"
-class="logo"
-alt="श्री बालाजी ई-मित्र सेंटर">
-
+<img src="Logo.png" class="logo" alt="श्री बालाजी ई-मित्र सेंटर">
 <div class="logo-text">
-
 <h1>श्री बालाजी ई-मित्र सेंटर</h1>
-
-<span>
-साखथली खुर्द, अरनोद, प्रतापगढ़
-</span>
-
+<span>साखथली खुर्द, अरनोद, प्रतापगढ़</span>
 </div>
-
 </div>
-
 
 <div class="header-right">
-
 <div class="visitor-badge">
 👁️ <span id="visitCount">...</span>
 </div>
 
 <div class="live-clock">
-
-<span id="liveDate">
---/--/----
-</span>
-
-<span id="liveTime">
---:--:--
-</span>
-
-<small>
-🟢 LIVE
-</small>
-
+<span id="liveDate">--/--/----</span>
+<span id="liveTime">--:--:--</span>
+<small>🟢 LIVE</small>
 </div>
-
 </div>
-
 
 <nav id="desktopNav">
-
-<button
-class="active"
-onclick="showPage('home')">
-होम
-</button>
-
-<button
-onclick="showPage('services')">
-सेवाएं
-</button>
-
-<button
-onclick="showPage('ggtu')">
-🎓 GGTU
-</button>
-
-<button
-onclick="showPage('schemes')">
-योजनाएं
-</button>
-
-<button
-onclick="showPage('jan')">
-Jan Aadhaar
-</button>
-
-<button
-onclick="showPage('notice')">
-सूचना
-</button>
-
-<button
-onclick="showPage('contact')">
-संपर्क
-</button>
-
+<button class="active" onclick="showPage('home')">होम</button>
+<button onclick="showPage('services')">सेवाएं</button>
+<button onclick="showPage('schemes')">योजनाएं</button>
+<button onclick="showPage('jan')">Jan Aadhaar</button>
+<button onclick="showPage('notice')">सूचना</button>
+<button onclick="showPage('contact')">संपर्क</button>
 </nav>
 
 </div>
 
 </header>
-
-
-<!-- =========================================================
-     LATEST TICKER
-========================================================= -->
-
-<div class="latest-ticker">
-
-<div class="container ticker-inner">
-
-<div class="ticker-title">
-🔴 LATEST
-</div>
-
-<div class="ticker-content">
-
-<div class="ticker-track">
-
-<span>
-🎓 GGTU Exam Form / Semester Fee / Time Table / Admit Card / Result / Revaluation के लिए GGTU Updates देखें।
-</span>
-
-<span>
-🪪 Jan Aadhaar e-KYC एवं सदस्य नाम/पता सुधार सेवा उपलब्ध।
-</span>
-
-<span>
-📋 उत्तर मैट्रिक छात्रवृत्ति एवं सरकारी भर्ती फॉर्म भरे जा रहे हैं।
-</span>
-
-<span>
-💬 सेवा की जानकारी के लिए सीधे WhatsApp करें।
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
 
 
 <!-- =========================================================
@@ -1435,331 +891,100 @@ onclick="showPage('contact')">
 <div id="home" class="page active">
 
 <section class="hero">
-
 <div class="container hero-content">
 
 <div>
-
-<h2>
-आपके गांव की डिजिटल सेवा का भरोसेमंद केंद्र
-</h2>
-
+<h2>आपके गांव की डिजिटल सेवा का भरोसेमंद केंद्र</h2>
 <p>
-Jan Aadhaar, GGTU Exam Form, Semester Fee, Result,
-PAN Card, सरकारी योजनाएं, Online Forms, Bill Payment
-और Digital Services।
+Jan Aadhaar, PAN Card, सरकारी योजनाएं, Online Forms, Bill Payment, छात्रवृत्ति और Digital Services।
 </p>
-
 
 <div class="hero-buttons">
-
-<a
-href="tel:+918690653797"
-class="btn btn-white">
-📞 कॉल करें
-</a>
-
-<a
-href="https://wa.me/918690653797?text=नमस्ते%20मुझे%20ई-मित्र%20सेवा%20की%20जानकारी%20चाहिए।"
-target="_blank"
-rel="noopener"
-class="btn btn-green">
-💬 WhatsApp
-</a>
-
-<a
-href="https://maps.app.goo.gl/oXuohtgpiF6fRwV58?g_st=ac"
-target="_blank"
-rel="noopener"
-class="btn btn-blue">
-📍 Google Maps
-</a>
-
+<a href="tel:+918690653797" class="btn btn-white">📞 कॉल करें</a>
+<a href="https://wa.me/918690653797?text=नमस्ते%20मुझे%20ई-मित्र%20सेवा%20की%20जानकारी%20चाहिए।" target="_blank" rel="noopener" class="btn btn-green">💬 WhatsApp</a>
+<a href="https://maps.app.goo.gl/oXuohtgpiF6fRwV58?g_st=ac" target="_blank" rel="noopener" class="btn btn-blue">📍 Google Maps</a>
 </div>
-
 </div>
-
 
 <div class="hero-card">
-
-<h3>
-🕐 सेवा समय
-</h3>
-
-<p>
-सुबह 8:00 बजे से शाम 8:00 बजे तक
-</p>
-
+<h3>🕐 सेवा समय</h3>
+<p>सुबह 8:00 बजे से शाम 8:00 बजे तक</p>
 <br>
-
-<p>
-📍 ग्राम पंचायत - साखथली खुर्द
-</p>
-
-<p>
-📌 तहसील - अरनोद
-</p>
-
-<p>
-📌 जिला - प्रतापगढ़, राजस्थान - 312615
-</p>
-
+<p>📍 ग्राम पंचायत - साखथली खुर्द</p>
+<p>📌 तहसील - अरनोद</p>
+<p>📌 जिला - प्रतापगढ़, राजस्थान - 312615</p>
 </div>
 
 </div>
-
 </section>
-
 
 <div class="container status-wrap">
-
 <div class="status-box">
-
 <div>
-
-<strong>
-दुकान की स्थिति:
-</strong>
-
-<span id="shopStatus">
-जांच हो रही है...
-</span>
-
+<strong>दुकान की स्थिति:</strong>
+<span id="shopStatus">जांच हो रही है...</span>
 </div>
-
 <div>
-
-<strong>
-आज का समय:
-</strong>
-
+<strong>आज का समय:</strong>
 08:00 AM - 08:00 PM
-
 </div>
-
 </div>
-
 </div>
-
-
-<!-- HOME GGTU -->
-
-<section>
-
-<div class="container">
-
-<div class="ggtu-banner">
-
-<span class="latest-badge">
-🔴 LATEST GGTU
-</span>
-
-<h2>
-🎓 GGTU कॉलेज विद्यार्थियों के लिए जरूरी अपडेट
-</h2>
-
-<p>
-Semester Exam Form, Exam Fee, Time Table,
-Admit Card, Result, Revaluation और Back/Due Paper
-संबंधी सेवाएं।
-</p>
-
-
-<div class="ggtu-buttons">
-
-<a
-class="ggtu-btn orange"
-href="https://ggtuexam.com/"
-target="_blank"
-rel="noopener">
-🌐 GGTU Exam Portal
-</a>
-
-<button
-class="ggtu-btn green"
-onclick="showPage('ggtu')">
-📢 सभी अपडेट देखें
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
 
 <!-- MAIN SERVICES -->
-
 <section>
-
 <div class="container">
-
 <div class="section-title">
-
-<h2>
-मुख्य सेवाएं
-</h2>
-
-<p>
-श्री बालाजी ई-मित्र सेंटर पर उपलब्ध प्रमुख सेवाएं
-</p>
-
+<h2>मुख्य सेवाएं</h2>
+<p>श्री बालाजी ई-मित्र सेंटर पर उपलब्ध प्रमुख सेवाएं</p>
 </div>
-
 
 <div class="grid">
 
+<div class="card">
+<div class="card-icon">🪪</div>
+<h3>Jan Aadhaar & e-KYC</h3>
+<p>Enrollment, e-KYC, Update, C/O सुधार एवं Family Services।</p>
+<button class="official" onclick="showPage('jan')">जानकारी देखें</button>
+</div>
 
 <div class="card">
-
-<div class="card-icon">
-🎓
+<div class="card-icon">📋</div>
+<h3>सरकारी जनकल्याण योजनाएं</h3>
+<p>युवा स्वरोजगार, अनुप्रति, पालनहार, संबल, किसान योजनाएं।</p>
+<button class="official" onclick="showPage('schemes')">योजनाएं देखें</button>
 </div>
-
-<h3>
-GGTU Exam & Result
-</h3>
-
-<p>
-Semester Exam Form, Fees, Time Table,
-Admit Card और Result।
-</p>
-
-<button
-class="official"
-onclick="showPage('ggtu')">
-GGTU Updates
-</button>
-
-</div>
-
 
 <div class="card">
-
-<div class="card-icon">
-🪪
+<div class="card-icon">💳</div>
+<h3>PAN Card (हार्ड / सॉफ्ट)</h3>
+<p>New PAN एवं PAN Correction (फीस पहले जमा अनिवार्य)।</p>
+<button class="official" onclick="showPage('services')">सेवा देखें</button>
 </div>
-
-<h3>
-Jan Aadhaar & e-KYC
-</h3>
-
-<p>
-Enrollment, e-KYC, Update, C/O सुधार
-एवं Family Services।
-</p>
-
-<button
-class="official"
-onclick="showPage('jan')">
-जानकारी देखें
-</button>
-
-</div>
-
 
 <div class="card">
-
-<div class="card-icon">
-📋
+<div class="card-icon">📑</div>
+<h3>Online Forms & छात्रवृत्ति</h3>
+<p>सरकारी भर्ती, कॉलेज, छात्रवृत्ति एवं अन्य online forms।</p>
+<button class="official" onclick="showPage('services')">Forms देखें</button>
 </div>
-
-<h3>
-सरकारी जनकल्याण योजनाएं
-</h3>
-
-<p>
-युवा स्वरोजगार, अनुप्रति, पालनहार,
-संबल, किसान योजनाएं।
-</p>
-
-<button
-class="official"
-onclick="showPage('schemes')">
-योजनाएं देखें
-</button>
-
-</div>
-
 
 <div class="card">
-
-<div class="card-icon">
-💳
+<div class="card-icon">👴</div>
+<h3>पेंशन वार्षिक भौतिक सत्यापन</h3>
+<p>सामाजिक सुरक्षा पेंशन सत्यापन एवं स्टेटस जांच।</p>
+<button class="official" onclick="showPage('notice')">जानकारी देखें</button>
 </div>
-
-<h3>
-PAN Card (हार्ड / सॉफ्ट)
-</h3>
-
-<p>
-New PAN एवं PAN Correction
-(फीस पहले जमा अनिवार्य)।
-</p>
-
-<button
-class="official"
-onclick="showPage('services')">
-सेवा देखें
-</button>
-
-</div>
-
 
 <div class="card">
-
-<div class="card-icon">
-📑
-</div>
-
-<h3>
-Online Recruitment Forms
-</h3>
-
-<p>
-सरकारी भर्ती, कॉलेज, छात्रवृत्ति
-एवं अन्य online forms।
-</p>
-
-<button
-class="official"
-onclick="showPage('services')">
-Forms देखें
-</button>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-icon">
-💡
-</div>
-
-<h3>
-Digital Services
-</h3>
-
-<p>
-Bill Payment, Recharge, AEPS
-नकद निकासी, Print व Scan।
-</p>
-
-<button
-class="official"
-onclick="showPage('services')">
-सभी सेवाएं
-</button>
-
-</div>
-
-
+<div class="card-icon">💡</div>
+<h3>Digital Services</h3>
+<p>Bill Payment, Recharge, AEPS नकद निकासी, Print व Scan।</p>
+<button class="official" onclick="showPage('services')">सभी सेवाएं</button>
 </div>
 
 </div>
-
+</div>
 </section>
 
 </div>
@@ -1772,958 +997,142 @@ onclick="showPage('services')">
 <div id="services" class="page">
 
 <section>
-
 <div class="container">
 
 <div class="section-title">
-
-<h2>
-ई-मित्र एवं डिजिटल सेवाएं
-</h2>
-
-<p>
-अपनी जरूरत की सेवा खोजें
-</p>
-
+<h2>ई-मित्र एवं डिजिटल सेवाएं</h2>
+<p>अपनी जरूरत की सेवा खोजें</p>
 </div>
-
 
 <div class="notice">
-
-<strong>
-📢 जरूरी सूचना:
-</strong>
-
-सरकारी पोर्टल पर ऑनलाइन टोकन जनरेट होने के कारण
-पैन कार्ड व ऑनलाइन फॉर्म्स का
-<strong>
-शुल्क आवेदन से पहले जमा कराना अनिवार्य है
-</strong>।
-
+<strong>📢 जरूरी सूचना:</strong> सरकारी पोर्टल पर ऑनलाइन टोकन जनरेट होने के कारण पैन कार्ड व ऑनलाइन फॉर्म्स का <strong>शुल्क आवेदन से पहले जमा कराना अनिवार्य है</strong>।
 </div>
-
 
 <div class="search-box">
-
-<input
-type="text"
-id="serviceSearch"
-placeholder="🔎 सेवा खोजें... जैसे PAN, GGTU, Jan Aadhaar, बिजली"
-onkeyup="searchServices()">
-
+<input type="text" id="serviceSearch" placeholder="🔎 सेवा खोजें... जैसे PAN, छात्रवृत्ति, Jan Aadhaar, बिजली" onkeyup="searchServices()">
 </div>
-
 
 <div class="grid" id="serviceGrid">
 
-
-<!-- GGTU QUICK CARD -->
-
-<div
-class="card service-card"
-style="border:2px solid #ea580c;background:#fffaf5;">
-
-<div class="card-icon">
-🎓
-</div>
-
-<span class="latest-badge">
-🔴 LATEST
-</span>
-
-<h3 style="margin-top:6px;">
-GGTU कॉलेज व स्कॉलरशिप
-</h3>
-
-<p>
-Odd/Even Semester एग्जाम फॉर्म,
-री-एडमिशन चालान व उत्तर मैट्रिक स्कॉलरशिप।
-</p>
-
-<div
-class="small"
-style="background:#fff;padding:6px;border-radius:6px;border:1px dashed #fdba74;margin:8px 0;">
-
-आवश्यक:
-रोल नंबर, पूर्व अंकतालिका,
-जन आधार, आय प्रमाण।
-
-</div>
-
-<button
-class="official orange-link"
-onclick="showPage('ggtu')">
-GGTU Updates देखें
-</button>
-
-</div>
-
-
 <!-- PAN HARD -->
-
 <div class="card service-card">
-
-<div class="card-icon">
-🪪
+<div class="card-icon">🪪</div>
+<h3>पैन कार्ड (Hard Copy + Soft)</h3>
+<p>ओरिजिनल पीवीसी प्लास्टिक कार्ड डाक से घर आएगा व डिजिटल पीडीएफ ईमेल पर।</p>
+<div class="price">₹250</div>
+<p class="small">आवश्यक: पहचान प्रमाण + 2 पासपोर्ट फोटो + हस्ताक्षर</p>
 </div>
-
-<h3>
-पैन कार्ड (Hard Copy + Soft)
-</h3>
-
-<p>
-ओरिजिनल पीवीसी प्लास्टिक कार्ड डाक से घर आएगा
-व डिजिटल पीडीएफ ईमेल पर।
-</p>
-
-<div class="price">
-₹250
-</div>
-
-<p class="small">
-आवश्यक:
-पहचान प्रमाण + 2 पासपोर्ट फोटो + हस्ताक्षर
-</p>
-
-</div>
-
 
 <!-- PAN SOFT -->
-
 <div class="card service-card">
-
-<div class="card-icon">
-📄
+<div class="card-icon">📄</div>
+<h3>पैन कार्ड (Soft Copy केवल)</h3>
+<p>डिजिटल e-PAN कार्ड सीधे ईमेल पर प्राप्त होगा (3 से 5 कार्य दिवसों में)।</p>
+<div class="price">₹200</div>
+<p class="small">आवश्यक: पहचान प्रमाण + फोटो + मोबाइल OTP</p>
 </div>
 
-<h3>
-पैन कार्ड (Soft Copy केवल)
-</h3>
-
-<p>
-डिजिटल e-PAN कार्ड सीधे ईमेल पर प्राप्त होगा
-(3 से 5 कार्य दिवसों में)।
-</p>
-
-<div class="price">
-₹200
+<!-- SCHOLARSHIP -->
+<div class="card service-card">
+<div class="card-icon">🎓</div>
+<h3>छात्रवृत्ति फॉर्म (Scholarship)</h3>
+<p>उत्तर मैट्रिक छात्रवृत्ति (SJE), NSP एवं मुख्यमंत्री उच्च शिक्षा छात्रवृत्ति।</p>
+<p class="small">दस्तावेज: जन आधार, आय प्रमाण पत्र, 10वीं/12वीं अंकतालिका</p>
 </div>
-
-<p class="small">
-आवश्यक:
-पहचान प्रमाण + फोटो + मोबाइल OTP
-</p>
-
-</div>
-
 
 <!-- AYUSHMAN -->
-
 <div class="card service-card">
-
-<div class="card-icon">
-🏥
+<div class="card-icon">🏥</div>
+<h3>Ayushman Bharat Card</h3>
+<p>प्रतिवर्ष 5 लाख तक का कैशलेस सरकारी व निजी उपचार।</p>
+<p class="small">दस्तावेज: पहचान प्रमाण + राशन कार्ड / जन आधार</p>
 </div>
-
-<h3>
-Ayushman Bharat Card
-</h3>
-
-<p>
-प्रतिवर्ष 5 लाख तक का कैशलेस सरकारी
-व निजी उपचार।
-</p>
-
-<p class="small">
-दस्तावेज:
-पहचान प्रमाण + राशन कार्ड / जन आधार
-</p>
-
-</div>
-
 
 <!-- E-SHRAM -->
-
 <div class="card service-card">
-
-<div class="card-icon">
-👷
+<div class="card-icon">👷</div>
+<h3>e-Shram Card</h3>
+<p>असंगठित मजदूरों व किसानों हेतु बीमा व सरकारी योजनाएं।</p>
+<p class="small">दस्तावेज: पहचान प्रमाण + बैंक पासबुक</p>
 </div>
 
-<h3>
-e-Shram Card
-</h3>
-
-<p>
-असंगठित मजदूरों व किसानों हेतु
-बीमा व सरकारी योजनाएं।
-</p>
-
-<p class="small">
-दस्तावेज:
-पहचान प्रमाण + बैंक पासबुक
-</p>
-
-</div>
-
-
-<!-- LABOUR -->
-
+<!-- LABOUR CARD -->
 <div class="card service-card">
-
-<div class="card-icon">
-🔨
+<div class="card-icon">🔨</div>
+<h3>श्रमिक कार्ड (लेबर डायरी)</h3>
+<p>छात्रवृत्ति, प्रसूति सहायता एवं शुभशक्ति योजना अनुदान।</p>
+<p class="small">दस्तावेज: 90 दिन कार्य प्रमाण + जन आधार</p>
 </div>
 
-<h3>
-श्रमिक कार्ड (लेबर डायरी)
-</h3>
-
-<p>
-छात्रवृत्ति, प्रसूति सहायता एवं
-शुभशक्ति योजना अनुदान।
-</p>
-
-<p class="small">
-दस्तावेज:
-90 दिन कार्य प्रमाण + जन आधार
-</p>
-
-</div>
-
-
-<!-- ABHA -->
-
+<!-- ABHA CARD -->
 <div class="card service-card">
-
-<div class="card-icon">
-🩺
+<div class="card-icon">🩺</div>
+<h3>ABHA Health ID</h3>
+<p>डिजिटल स्वास्थ्य खाता जिसमें सभी मेडिकल जांचें सुरक्षित रहती हैं।</p>
+<p class="small">दस्तावेज: पहचान प्रमाण + मोबाइल OTP</p>
 </div>
-
-<h3>
-ABHA Health ID
-</h3>
-
-<p>
-डिजिटल स्वास्थ्य खाता जिसमें सभी
-मेडिकल जांचें सुरक्षित रहती हैं।
-</p>
-
-<p class="small">
-दस्तावेज:
-पहचान प्रमाण + मोबाइल OTP
-</p>
-
-</div>
-
 
 <!-- APAAR -->
-
 <div class="card service-card">
-
-<div class="card-icon">
-🆔
+<div class="card-icon">🆔</div>
+<h3>APAAR / ABC ID</h3>
+<p>कॉलेज व स्कूल विद्यार्थियों के लिए अनिवार्य डिजिटल एकेडमिक आईडी।</p>
+<p class="small">दस्तावेज: पहचान प्रमाण + स्कूल/कॉलेज रोल नंबर</p>
 </div>
-
-<h3>
-APAAR / ABC ID
-</h3>
-
-<p>
-कॉलेज व स्कूल विद्यार्थियों के लिए
-डिजिटल एकेडमिक आईडी।
-</p>
-
-<p class="small">
-दस्तावेज:
-पहचान प्रमाण + स्कूल/कॉलेज रोल नंबर
-</p>
-
-</div>
-
 
 <!-- JAN AADHAAR -->
+<div class="card service-card">
+<div class="card-icon">🪪</div>
+<h3>Jan Aadhaar Services</h3>
+<p>Enrollment, e-KYC, सदस्य जोड़ना एवं पारिवारिक विवरण सुधार।</p>
+</div>
+
+<!-- BILL PAYMENT -->
+<div class="card service-card">
+<div class="card-icon">💡</div>
+<h3>बिजली व पानी बिल</h3>
+<p>डिस्कॉम बिजली बिल एवं जलदाय बिल तुरंत ऑनलाइन भुगतान व रसीद।</p>
+</div>
 
 <div class="card service-card">
-
-<div class="card-icon">
-🪪
+<div class="card-icon">📱</div>
+<h3>Mobile / DTH Recharge</h3>
+<p>मोबाइल एवं DTH तुरंत ऑनलाइन रिचार्ज सेवा।</p>
 </div>
-
-<h3>
-Jan Aadhaar Services
-</h3>
-
-<p>
-Enrollment, e-KYC, सदस्य जोड़ना एवं
-पारिवारिक विवरण सुधार।
-</p>
-
-</div>
-
-
-<!-- BILL -->
 
 <div class="card service-card">
-
-<div class="card-icon">
-💡
+<div class="card-icon">📑</div>
+<h3>Online Recruitment Forms</h3>
+<p>सरकारी भर्ती, OTR, Application फॉर्म एवं Admit Card।</p>
+<a class="official" href="https://recruitment.rajasthan.gov.in/" target="_blank" rel="noopener">Recruitment Portal</a>
 </div>
-
-<h3>
-बिजली व पानी बिल
-</h3>
-
-<p>
-डिस्कॉम बिजली बिल एवं जलदाय बिल
-तुरंत ऑनलाइन भुगतान व रसीद।
-</p>
-
-</div>
-
-
-<!-- RECHARGE -->
 
 <div class="card service-card">
-
-<div class="card-icon">
-📱
+<div class="card-icon">📜</div>
+<h3>मूल निवास / जाति प्रमाण पत्र</h3>
+<p>तहसील स्तरीय ऑनलाइन डिजिटल प्रमाण पत्र आवेदन।</p>
 </div>
-
-<h3>
-Mobile / DTH Recharge
-</h3>
-
-<p>
-मोबाइल एवं DTH तुरंत ऑनलाइन
-रिचार्ज सेवा।
-</p>
-
-</div>
-
-
-<!-- RECRUITMENT -->
 
 <div class="card service-card">
-
-<div class="card-icon">
-📑
+<div class="card-icon">🖨️</div>
+<h3>Printing / Photocopy</h3>
+<p>Color Print, Photocopy, Scan एवं High-Quality Lamination।</p>
 </div>
-
-<h3>
-Online Recruitment Forms
-</h3>
-
-<p>
-सरकारी भर्ती, OTR, Application
-फॉर्म एवं Admit Card।
-</p>
-
-<a
-class="official"
-href="https://recruitment.rajasthan.gov.in/"
-target="_blank"
-rel="noopener">
-Recruitment Portal
-</a>
-
-</div>
-
-
-<!-- CERTIFICATE -->
 
 <div class="card service-card">
-
-<div class="card-icon">
-📜
+<div class="card-icon">📸</div>
+<h3>Passport Size Photo</h3>
+<p>अर्जेंट पासपोर्ट साइज डिजिटल फोटो सेवा।</p>
 </div>
-
-<h3>
-मूल निवास / जाति प्रमाण पत्र
-</h3>
-
-<p>
-तहसील स्तरीय ऑनलाइन डिजिटल
-प्रमाण पत्र आवेदन।
-</p>
-
-</div>
-
-
-<!-- PRINT -->
 
 <div class="card service-card">
-
-<div class="card-icon">
-🖨️
-</div>
-
-<h3>
-Printing / Photocopy
-</h3>
-
-<p>
-Color Print, Photocopy, Scan एवं
-High-Quality Lamination।
-</p>
-
-</div>
-
-
-<!-- PHOTO -->
-
-<div class="card service-card">
-
-<div class="card-icon">
-📸
-</div>
-
-<h3>
-Passport Size Photo
-</h3>
-
-<p>
-अर्जेंट पासपोर्ट साइज डिजिटल फोटो सेवा।
-</p>
-
-</div>
-
-
-<!-- AEPS -->
-
-<div class="card service-card">
-
-<div class="card-icon">
-💰
-</div>
-
-<h3>
-AEPS (नकद निकासी)
-</h3>
-
-<p>
-बायोमेट्रिक प्रमाणीकरण से किसी भी
-बैंक खाते से रुपये निकालना व बैलेंस चेक।
-</p>
-
-</div>
-
-
+<div class="card-icon">💰</div>
+<h3>AEPS (नकद निकासी)</h3>
+<p>बायोमेट्रिक प्रमाणीकरण से किसी भी बैंक खाते से रुपये निकालना व बैलेंस चेक।</p>
 </div>
 
 </div>
-
-</section>
-
 </div>
-
-
-<!-- =========================================================
-     GGTU
-========================================================= -->
-
-<div id="ggtu" class="page">
-
-<section>
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-🎓 GGTU Latest Updates
-</h2>
-
-<p>
-Govind Guru Tribal University, Banswara
-</p>
-
-</div>
-
-
-<div class="ggtu-banner">
-
-<span class="latest-badge">
-🔴 LATEST NOTIFICATIONS
-</span>
-
-<h2>
-GGTU परीक्षा एवं विद्यार्थी सेवाएं
-</h2>
-
-<p>
-Semester Exam Form, Semester Fee, Time Table,
-Admit Card, Result, Revaluation, Back/Due Paper
-और College Services।
-</p>
-
-
-<div class="ggtu-buttons">
-
-<a
-class="ggtu-btn orange"
-href="https://www.ggtu.ac.in/"
-target="_blank"
-rel="noopener">
-🌐 GGTU Official
-</a>
-
-<a
-class="ggtu-btn green"
-href="https://ggtuexam.com/"
-target="_blank"
-rel="noopener">
-🎓 GGTU Exam Portal
-</a>
-
-</div>
-
-</div>
-
-
-<!-- =====================================================
-     AUTO NOTIFICATION SYSTEM
-===================================================== -->
-
-<div class="auto-ggtu-box">
-
-<div class="auto-ggtu-header">
-
-<div>
-
-<span class="latest-badge">
-🔴 AUTO UPDATE
-</span>
-
-<h2>
-🎓 GGTU Latest Notifications
-</h2>
-
-<p>
-GGTU की Official Website से परीक्षा एवं विद्यार्थी
-संबंधी नवीनतम अपडेट।
-</p>
-
-</div>
-
-
-<button
-class="refresh-ggtu"
-onclick="loadGGTUNotices(true)">
-
-🔄 Refresh
-
-</button>
-
-</div>
-
-
-<div class="ggtu-source">
-
-🏛️ Official Source:
-
-<a
-href="https://www.ggtu.ac.in/"
-target="_blank"
-rel="noopener">
-
-GGTU Official Website
-
-</a>
-
-</div>
-
-
-<div
-id="ggtuLastUpdate"
-class="ggtu-last-update">
-
-⏳ Latest updates load हो रहे हैं...
-
-</div>
-
-
-<div
-id="ggtuNoticeList"
-class="ggtu-notice-list">
-
-<div class="ggtu-loading">
-
-⏳ GGTU Latest Notifications लोड हो रहे हैं...
-
-</div>
-
-</div>
-
-
-<div class="ggtu-more">
-
-<a
-href="https://www.ggtu.ac.in/"
-target="_blank"
-rel="noopener"
-class="official orange-link">
-
-🌐 सभी Official Updates देखें
-
-</a>
-
-</div>
-
-</div>
-
-
-<div class="warning">
-
-<strong>
-⚠️ महत्वपूर्ण:
-</strong>
-
-GGTU की परीक्षा तिथि, Last Date, Fee और अन्य नियम
-course/semester के अनुसार बदल सकते हैं।
-आवेदन/भुगतान से पहले Official Portal पर
-वर्तमान notification जरूर देखें।
-
-</div>
-
-
-<div class="ggtu-grid">
-
-
-<!-- EXAM FORM -->
-
-<div class="ggtu-card">
-
-<div class="ggtu-icon">
-📝
-</div>
-
-<h3>
-Semester Exam Form
-</h3>
-
-<p>
-UG/PG Regular, Back एवं Due Exam Form
-भरने में सहायता।
-</p>
-
-<div class="ggtu-buttons">
-
-<a
-class="ggtu-btn orange"
-href="https://ggtuexam.com/"
-target="_blank"
-rel="noopener">
-📝 Exam Portal
-</a>
-
-<a
-class="ggtu-btn green"
-href="https://wa.me/918690653797?text=नमस्ते%20मुझे%20GGTU%20Semester%20Exam%20Form%20भरवाना%20है।"
-target="_blank"
-rel="noopener">
-💬 फॉर्म भरवाएं
-</a>
-
-</div>
-
-</div>
-
-
-<!-- FEE -->
-
-<div class="ggtu-card">
-
-<div class="ggtu-icon">
-💰
-</div>
-
-<h3>
-Semester / Exam Fee
-</h3>
-
-<p>
-Course एवं semester के अनुसार
-वर्तमान परीक्षा शुल्क व चालान भुगतान।
-</p>
-
-<div class="ggtu-buttons">
-
-<a
-class="ggtu-btn"
-href="https://ggtuexam.com/"
-target="_blank"
-rel="noopener">
-💰 Fee देखें
-</a>
-
-</div>
-
-</div>
-
-
-<!-- TIME TABLE -->
-
-<div class="ggtu-card">
-
-<div class="ggtu-icon">
-📅
-</div>
-
-<h3>
-Time Table / Date Sheet
-</h3>
-
-<p>
-Semester परीक्षा की current Date Sheet
-एवं Time Table डाउनलोड करें।
-</p>
-
-<div class="ggtu-buttons">
-
-<a
-class="ggtu-btn"
-href="https://www.ggtu.ac.in/"
-target="_blank"
-rel="noopener">
-📅 Time Table
-</a>
-
-</div>
-
-</div>
-
-
-<!-- ADMIT -->
-
-<div class="ggtu-card">
-
-<div class="ggtu-icon">
-🎫
-</div>
-
-<h3>
-Admit Card
-</h3>
-
-<p>
-उपलब्ध होने पर GGTU प्रवेश पत्र
-डाउनलोड व प्रिंट की सुविधा।
-</p>
-
-<div class="ggtu-buttons">
-
-<a
-class="ggtu-btn orange"
-href="https://ggtuexam.com/"
-target="_blank"
-rel="noopener">
-🎫 Admit Card
-</a>
-
-</div>
-
-</div>
-
-
-<!-- RESULT -->
-
-<div class="ggtu-card">
-
-<div class="ggtu-icon">
-📊
-</div>
-
-<h3>
-GGTU Result
-</h3>
-
-<p>
-UG / PG / Semester / Year Result
-ऑनलाइन चेक करें।
-</p>
-
-<div class="ggtu-buttons">
-
-<a
-class="ggtu-btn green"
-href="https://ggtuexam.com/"
-target="_blank"
-rel="noopener">
-📊 Result देखें
-</a>
-
-</div>
-
-</div>
-
-
-<!-- REVALUATION -->
-
-<div class="ggtu-card">
-
-<div class="ggtu-icon">
-🔄
-</div>
-
-<h3>
-Revaluation / Rechecking
-</h3>
-
-<p>
-Result के बाद सुविधा उपलब्ध होने पर
-revaluation आवेदन।
-</p>
-
-<div class="ggtu-buttons">
-
-<a
-class="ggtu-btn orange"
-href="https://ggtuexam.com/"
-target="_blank"
-rel="noopener">
-🔄 आवेदन देखें
-</a>
-
-</div>
-
-</div>
-
-
-<!-- BACK -->
-
-<div class="ggtu-card">
-
-<div class="ggtu-icon">
-🔁
-</div>
-
-<h3>
-Back / Due Paper
-</h3>
-
-<p>
-Back/Due exam form और पूरक परीक्षा
-संबंधी ऑनलाइन सहायता।
-</p>
-
-<div class="ggtu-buttons">
-
-<a
-class="ggtu-btn orange"
-href="https://ggtuexam.com/"
-target="_blank"
-rel="noopener">
-🔁 Exam Portal
-</a>
-
-<a
-class="ggtu-btn green"
-href="https://wa.me/918690653797?text=मुझे%20GGTU%20Back%20या%20Due%20Paper%20का%20फॉर्म%20भरवाना%20है।"
-target="_blank"
-rel="noopener">
-💬 सहायता
-</a>
-
-</div>
-
-</div>
-
-
-<!-- COLLEGE -->
-
-<div class="ggtu-card">
-
-<div class="ggtu-icon">
-🎓
-</div>
-
-<h3>
-College Admission / Fees
-</h3>
-
-<p>
-कॉलेज री-एडमिशन चालान एवं
-नियमित फीस जमा करने में सहायता।
-</p>
-
-<div class="ggtu-buttons">
-
-<a
-class="ggtu-btn dark"
-href="https://www.ggtu.ac.in/"
-target="_blank"
-rel="noopener">
-🌐 GGTU Portal
-</a>
-
-<a
-class="ggtu-btn green"
-href="https://wa.me/918690653797?text=मुझे%20GGTU%20College%20Fees%20या%20Admission%20का%20कार्य%20है।"
-target="_blank"
-rel="noopener">
-💬 फीस जमा करें
-</a>
-
-</div>
-
-</div>
-
-
-<!-- ABC -->
-
-<div class="ggtu-card">
-
-<div class="ggtu-icon">
-🆔
-</div>
-
-<h3>
-APAAR / ABC ID
-</h3>
-
-<p>
-विद्यार्थियों के Academic Bank of Credits
-से संबंधित डिजिटल आईडी।
-</p>
-
-<div class="ggtu-buttons">
-
-<a
-class="ggtu-btn green"
-href="https://www.abc.gov.in/"
-target="_blank"
-rel="noopener">
-🆔 ABC Portal
-</a>
-
-</div>
-
-</div>
-
-
-</div>
-
-
-<div class="ggtu-note">
-
-<strong>
-📢 विद्यार्थियों के लिए:
-</strong>
-
-GGTU की नई notification, Exam Form, Fee,
-Last Date, Time Table, Admit Card या Result
-जारी होने पर official portal पर वर्तमान जानकारी
-जरूर जांचें।
-
-श्री बालाजी ई-मित्र सेंटर पर समस्त कॉलेज
-ऑनलाइन सेवाएं उपलब्ध हैं।
-
-</div>
-
-
-</div>
-
 </section>
 
 </div>
@@ -2736,406 +1145,118 @@ Last Date, Time Table, Admit Card या Result
 <div id="schemes" class="page">
 
 <section>
-
 <div class="container">
 
 <div class="section-title">
-
-<h2>
-राजस्थान सरकारी योजनाएं
-</h2>
-
-<p>
-योजना की अंतिम पात्रता एवं नियम Official Portal पर जांचें
-</p>
-
+<h2>राजस्थान सरकारी योजनाएं</h2>
+<p>योजना की अंतिम पात्रता एवं नियम Official Portal पर जांचें</p>
 </div>
-
 
 <div class="notice">
-
-<strong>
-⚠️ जरूरी जानकारी:
-</strong>
-
-योजनाओं की पात्रता, राशि, दस्तावेज और Last Date
-समय के साथ बदल सकती है। आवेदन से पहले
-Official Portal पर वर्तमान जानकारी जांचें।
-
+<strong>⚠️ जरूरी जानकारी:</strong> योजनाओं की पात्रता, राशि, दस्तावेज और Last Date समय के साथ बदल सकती है। आवेदन से पहले Official Portal पर वर्तमान जानकारी जांचें।
 </div>
-
 
 <div class="search-box">
-
-<input
-type="text"
-id="schemeSearch"
-placeholder="🔎 योजना खोजें... जैसे स्वरोजगार, अनुप्रति, पालनहार"
-onkeyup="searchSchemes()">
-
+<input type="text" id="schemeSearch" placeholder="🔎 योजना खोजें... जैसे स्वरोजगार, अनुप्रति, पालनहार" onkeyup="searchSchemes()">
 </div>
-
 
 <div class="filters">
-
-<button
-class="filter-btn active"
-onclick="filterSchemes('all',this)">
-सभी
-</button>
-
-<button
-class="filter-btn"
-onclick="filterSchemes('farmer',this)">
-किसान
-</button>
-
-<button
-class="filter-btn"
-onclick="filterSchemes('student',this)">
-विद्यार्थी
-</button>
-
-<button
-class="filter-btn"
-onclick="filterSchemes('women',this)">
-महिला/बालिका
-</button>
-
-<button
-class="filter-btn"
-onclick="filterSchemes('youth',this)">
-युवा/रोजगार
-</button>
-
-<button
-class="filter-btn"
-onclick="filterSchemes('social',this)">
-सामाजिक सुरक्षा
-</button>
-
+<button class="filter-btn active" onclick="filterSchemes('all',this)">सभी</button>
+<button class="filter-btn" onclick="filterSchemes('farmer',this)">किसान</button>
+<button class="filter-btn" onclick="filterSchemes('student',this)">विद्यार्थी</button>
+<button class="filter-btn" onclick="filterSchemes('women',this)">महिला/बालिका</button>
+<button class="filter-btn" onclick="filterSchemes('youth',this)">युवा/रोजगार</button>
+<button class="filter-btn" onclick="filterSchemes('social',this)">सामाजिक सुरक्षा</button>
 </div>
-
 
 <div class="grid" id="schemeGrid">
 
-
-<!-- MMYSY -->
-
+<!-- 1: MMYSY -->
 <div class="card scheme-card youth">
-
-<div class="card-icon">
-💼
+<div class="card-icon">💼</div>
+<h3>मुख्यमंत्री युवा स्वरोजगार योजना (MMYSY)</h3>
+<p>युवाओं को नया व्यवसाय शुरू करने हेतु ₹10 लाख तक का ब्याज-मुक्त ऋण (ब्याज राज्य सरकार वहन करती है)।</p>
+<a class="official" href="https://ssoapps2.rajasthan.gov.in/mysy/Form.aspx" target="_blank" rel="noopener">🏛️ Official Portal</a>
+<a class="official green-link" href="https://wa.me/918690653797?text=मुझे%20युवा%20स्वरोजगार%20योजना%20का%20आवेदन%20करना%20है।" target="_blank" rel="noopener">💬 आवेदन सहायता</a>
 </div>
 
-<h3>
-मुख्यमंत्री युवा स्वरोजगार योजना (MMYSY)
-</h3>
-
-<p>
-युवाओं को नया व्यवसाय शुरू करने हेतु
-योजना के अनुसार ऋण/सहायता।
-</p>
-
-<a
-class="official"
-href="https://ssoapps2.rajasthan.gov.in/mysy/Form.aspx"
-target="_blank"
-rel="noopener">
-🏛️ Official Portal
-</a>
-
-<a
-class="official green-link"
-href="https://wa.me/918690653797?text=मुझे%20युवा%20स्वरोजगार%20योजना%20का%20आवेदन%20करना%20है।"
-target="_blank"
-rel="noopener">
-💬 आवेदन सहायता
-</a>
-
-</div>
-
-
-<!-- YUVA SAMBAL -->
-
+<!-- 2: YUVA SAMBAL -->
 <div class="card scheme-card youth">
-
-<div class="card-icon">
-👨‍💼
+<div class="card-icon">👨‍💼</div>
+<h3>मुख्यमंत्री युवा संबल योजना (बेरोजगारी भत्ता)</h3>
+<p>स्नातक बेरोजगार युवाओं को आर्थिक सहायता: पुरुषों को ₹4,000/माह एवं महिलाओं को ₹4,500/माह।</p>
+<a class="official" href="https://employment.rajasthan.gov.in/" target="_blank" rel="noopener">🏛️ Official Website</a>
+<a class="official green-link" href="https://wa.me/918690653797?text=मुझे%20बेरोजगारी%20भत्ता%20का%20आवेदन%20करना%20है।" target="_blank" rel="noopener">💬 आवेदन सहायता</a>
 </div>
 
-<h3>
-मुख्यमंत्री युवा संबल योजना
-</h3>
-
-<p>
-बेरोजगार युवाओं के लिए सरकारी
-आर्थिक सहायता योजना।
-</p>
-
-<a
-class="official"
-href="https://employment.rajasthan.gov.in/"
-target="_blank"
-rel="noopener">
-🏛️ Official Website
-</a>
-
-<a
-class="official green-link"
-href="https://wa.me/918690653797?text=मुझे%20बेरोजगारी%20भत्ता%20का%20आवेदन%20करना%20है।"
-target="_blank"
-rel="noopener">
-💬 आवेदन सहायता
-</a>
-
-</div>
-
-
-<!-- ANUPRATI -->
-
+<!-- 3: ANUPRATI -->
 <div class="card scheme-card student">
-
-<div class="card-icon">
-🎓
+<div class="card-icon">🎓</div>
+<h3>मुख्यमंत्री अनुप्रति कोचिंग योजना</h3>
+<p>प्रतियोगी परीक्षाओं (UPSC, RAS, REET, Police, NEET, JEE) हेतु प्रतिष्ठित संस्थानों में फ्री कोचिंग व आवास भत्ता।</p>
+<a class="official" href="https://sso.rajasthan.gov.in/" target="_blank" rel="noopener">🏛️ Rajasthan SSO</a>
+<a class="official green-link" href="https://wa.me/918690653797?text=मुझे%20अनुप्रति%20कोचिंग%20योजना%20की%20जानकारी%20चाहिए।" target="_blank" rel="noopener">💬 आवेदन सहायता</a>
 </div>
 
-<h3>
-मुख्यमंत्री अनुप्रति कोचिंग योजना
-</h3>
-
-<p>
-प्रतियोगी परीक्षाओं हेतु पात्र विद्यार्थियों
-के लिए कोचिंग सहायता।
-</p>
-
-<a
-class="official"
-href="https://sso.rajasthan.gov.in/"
-target="_blank"
-rel="noopener">
-🏛️ Rajasthan SSO
-</a>
-
-<a
-class="official green-link"
-href="https://wa.me/918690653797?text=मुझे%20अनुप्रति%20कोचिंग%20योजना%20की%20जानकारी%20चाहिए।"
-target="_blank"
-rel="noopener">
-💬 आवेदन सहायता
-</a>
-
-</div>
-
-
-<!-- GARGI -->
-
+<!-- 4: GARGI -->
 <div class="card scheme-card student women">
-
-<div class="card-icon">
-🎒
+<div class="card-icon">🎒</div>
+<h3>गार्गी पुरस्कार</h3>
+<p>10वीं बोर्ड परीक्षा में 75% या अधिक अंक प्राप्त करने वाली पात्र छात्राओं को प्रोत्साहन राशि व प्रमाण पत्र।</p>
+<a class="official" href="https://rajshaladarpan.rajasthan.gov.in/" target="_blank" rel="noopener">🏛️ Official Portal</a>
 </div>
 
-<h3>
-गार्गी पुरस्कार
-</h3>
-
-<p>
-पात्र छात्राओं के लिए शिक्षा एवं
-प्रोत्साहन संबंधी योजना।
-</p>
-
-<a
-class="official"
-href="https://rajshaladarpan.rajasthan.gov.in/"
-target="_blank"
-rel="noopener">
-🏛️ Official Portal
-</a>
-
-</div>
-
-
-<!-- SCOOTY -->
-
+<!-- 5: SCOOTY -->
 <div class="card scheme-card student women">
-
-<div class="card-icon">
-🛵
+<div class="card-icon">🛵</div>
+<h3>कालीबाई भील मेधावी छात्रा स्कूटी योजना</h3>
+<p>पात्र मेधावी छात्राओं को उच्च शिक्षा के लिए प्रोत्साहन स्वरूप निशुल्क स्कूटी वितरण।</p>
+<a class="official" href="https://hte.rajasthan.gov.in/" target="_blank" rel="noopener">🏛️ Higher Education</a>
 </div>
 
-<h3>
-कालीबाई भील मेधावी छात्रा स्कूटी योजना
-</h3>
-
-<p>
-पात्र मेधावी छात्राओं को उच्च शिक्षा
-के लिए प्रोत्साहन।
-</p>
-
-<a
-class="official"
-href="https://hte.rajasthan.gov.in/"
-target="_blank"
-rel="noopener">
-🏛️ Higher Education
-</a>
-
-</div>
-
-
-<!-- RAJSHREE -->
-
+<!-- 6: RAJSHREE -->
 <div class="card scheme-card women">
-
-<div class="card-icon">
-👧
+<div class="card-icon">👧</div>
+<h3>मुख्यमंत्री राजश्री योजना</h3>
+<p>बालिका के जन्म से लेकर 12वीं कक्षा तक कुल ₹50,000 की वित्तीय सहायता 6 चरणों में दी जाती है।</p>
+<a class="official" href="https://wcd.rajasthan.gov.in/" target="_blank" rel="noopener">🏛️ Official Portal</a>
 </div>
 
-<h3>
-मुख्यमंत्री राजश्री योजना
-</h3>
-
-<p>
-बालिकाओं के लिए जन्म से शिक्षा तक
-वित्तीय सहायता संबंधी योजना।
-</p>
-
-<a
-class="official"
-href="https://wcd.rajasthan.gov.in/"
-target="_blank"
-rel="noopener">
-🏛️ Official Portal
-</a>
-
-</div>
-
-
-<!-- AAPKI BETI -->
-
+<!-- 7: AAPKI BETI -->
 <div class="card scheme-card women student">
-
-<div class="card-icon">
-👧
+<div class="card-icon">👧</div>
+<h3>आपकी बेटी योजना</h3>
+<p>सरकारी स्कूलों में कक्षा 1 से 12 तक पढ़ने वाली बीपीएल/अनाथ बालिकाओं को प्रतिवर्ष वार्षिक छात्रवृत्ति।</p>
+<a class="official" href="https://rajshaladarpan.rajasthan.gov.in/" target="_blank" rel="noopener">🏛️ Official Portal</a>
 </div>
 
-<h3>
-आपकी बेटी योजना
-</h3>
-
-<p>
-पात्र छात्राओं के लिए शिक्षा संबंधी
-आर्थिक सहायता।
-</p>
-
-<a
-class="official"
-href="https://rajshaladarpan.rajasthan.gov.in/"
-target="_blank"
-rel="noopener">
-🏛️ Official Portal
-</a>
-
-</div>
-
-
-<!-- PALANHAR -->
-
+<!-- 8: PALANHAR -->
 <div class="card scheme-card women social">
-
-<div class="card-icon">
-❤️
+<div class="card-icon">❤️</div>
+<h3>पालनहार योजना</h3>
+<p>अनाथ एवं पात्र श्रेणियों के बच्चों के पालन-पोषण, वस्त्र एवं शिक्षा हेतु प्रतिमाह सीधी आर्थिक सहायता।</p>
+<a class="official" href="https://www.myscheme.gov.in/" target="_blank" rel="noopener">🏛️ myScheme</a>
+<a class="official green-link" href="https://wa.me/918690653797?text=मुझे%20पालनहार%20योजना%20का%20आवेदन%20करना%20है।" target="_blank" rel="noopener">💬 आवेदन सहायता</a>
 </div>
 
-<h3>
-पालनहार योजना
-</h3>
-
-<p>
-अनाथ एवं पात्र श्रेणियों के बच्चों के
-पालन-पोषण एवं शिक्षा हेतु सहायता।
-</p>
-
-<a
-class="official"
-href="https://www.myscheme.gov.in/"
-target="_blank"
-rel="noopener">
-🏛️ myScheme
-</a>
-
-<a
-class="official green-link"
-href="https://wa.me/918690653797?text=मुझे%20पालनहार%20योजना%20का%20आवेदन%20करना%20है।"
-target="_blank"
-rel="noopener">
-💬 आवेदन सहायता
-</a>
-
-</div>
-
-
-<!-- PENSION -->
-
+<!-- 9: PENSION -->
 <div class="card scheme-card social">
-
-<div class="card-icon">
-👴
+<div class="card-icon">👴</div>
+<h3>वृद्धावस्था / एकल नारी पेंशन</h3>
+<p>पात्र वरिष्ठ नागरिकों एवं एकल महिलाओं के लिए मासिक सामाजिक सुरक्षा पेंशन।</p>
+<a class="official" href="https://ssp.rajasthan.gov.in/" target="_blank" rel="noopener">🏛️ Pension Portal</a>
 </div>
 
-<h3>
-वृद्धावस्था / एकल नारी पेंशन
-</h3>
-
-<p>
-पात्र नागरिकों के लिए सामाजिक
-सुरक्षा पेंशन संबंधी सेवा।
-</p>
-
-<a
-class="official"
-href="https://ssp.rajasthan.gov.in/"
-target="_blank"
-rel="noopener">
-🏛️ Pension Portal
-</a>
-
-</div>
-
-
-<!-- FARMER -->
-
+<!-- 10: FARMER -->
 <div class="card scheme-card farmer">
-
-<div class="card-icon">
-🌾
-</div>
-
-<h3>
-राज किसान कृषि अनुदान
-</h3>
-
-<p>
-कृषि विभाग की विभिन्न अनुदान एवं
-कृषि सहायता योजनाओं की जानकारी।
-</p>
-
-<a
-class="official"
-href="https://rajkisan.rajasthan.gov.in/"
-target="_blank"
-rel="noopener">
-🏛️ RajKisan
-</a>
-
-</div>
-
-
+<div class="card-icon">🌾</div>
+<h3>राज किसान कृषि अनुदान (तारबंदी, फव्वारा, पाइप)</h3>
+<p>कृषि विभाग की फव्वारा सेट, पाइपलाइन, तारबंदी एवं बीज मिनीकिट अनुदान योजनाएं।</p>
+<a class="official" href="https://rajkisan.rajasthan.gov.in/" target="_blank" rel="noopener">🏛️ RajKisan</a>
 </div>
 
 </div>
-
+</div>
 </section>
 
 </div>
@@ -3148,209 +1269,69 @@ rel="noopener">
 <div id="jan" class="page">
 
 <section>
-
 <div class="container">
 
 <div class="section-title">
-
-<h2>
-Jan Aadhaar सेवाएं
-</h2>
-
-<p>
-राजस्थान जन आधार से संबंधित सेवाएं
-</p>
-
+<h2>Jan Aadhaar सेवाएं</h2>
+<p>राजस्थान जन आधार से संबंधित सेवाएं</p>
 </div>
-
 
 <div class="success">
-
-<strong>
-✅ Jan Aadhaar e-KYC:
-</strong>
-
-<br>
-
-Official Jan Aadhaar जानकारी के अनुसार
-परिवार के मुखिया और 5 वर्ष से अधिक आयु
-के सभी सदस्यों की e-KYC प्रक्रिया आवश्यक
-हो सकती है।
-
-5 वर्ष से कम आयु के बच्चों के लिए
-नियम के अनुसार Birth Certificate आदि
-का उपयोग किया जा सकता है।
-
+<strong>✅ Jan Aadhaar e-KYC:</strong><br>
+Official Jan Aadhaar जानकारी के अनुसार परिवार के मुखिया और 5 वर्ष से अधिक आयु के सभी सदस्यों की बायोमेट्रिक प्रमाणीकरण e-KYC आवश्यक है।
+5 वर्ष से कम आयु के बच्चों के लिए नियम के अनुसार Birth Certificate के माध्यम से प्रक्रिया होती है।
 </div>
 
-
+<!-- C/O CHANGE RULE -->
 <div class="warning">
-
-<strong style="color:#b45309;">
-⚠ आधार / जन आधार में पिता / पति नाम संशोधन नियम (C/O Change):
-</strong>
-
-<br>
-
-• <strong>विवाह उपरांत पिता की जगह पति का नाम:</strong>
-आवश्यक दस्तावेज एवं संबंधित official प्रक्रिया
-के अनुसार आवेदन किया जाएगा।
-
-<br>
-
-• <strong>पति की जगह पिता का नाम:</strong>
-आवश्यक पहचान एवं पारिवारिक प्रमाण
-के अनुसार प्रक्रिया की जाएगी।
-
-<br><br>
-
-<strong>
-नोट:
-</strong>
-अंतिम दस्तावेज एवं नियम संबंधित
-Official Portal के वर्तमान नियमों के अनुसार मान्य होंगे।
-
+<strong style="color:#b45309;">⚠ आधार / जन आधार में पिता / पति नाम संशोधन नियम (C/O Change):</strong><br>
+• <strong>विवाह उपरांत पिता की जगह पति का नाम:</strong> महिला व पति दोनों के पहचान प्रमाण पत्र की फोटो प्रति + विवाह प्रमाण पत्र या जन आधार + मोबाइल ओटीपी आवश्यक है।<br>
+• <strong>पति की जगह पिता का नाम:</strong> स्वयं का पहचान प्रमाण + पिता का पहचान प्रमाण + मायके पक्ष का सरकारी प्रमाण (10वीं मार्कशीट/जन आधार) + मोबाइल ओटीपी।
 </div>
-
 
 <div class="grid">
 
-
 <div class="jan-box">
-
-<h3>
-🪪 Jan Aadhaar Enrollment
-</h3>
-
-<p>
-नया Jan Aadhaar परिवार नामांकन करने में सहायता।
-</p>
-
+<h3>🪪 Jan Aadhaar Enrollment</h3>
+<p>नया Jan Aadhaar परिवार नामांकन करने में सहायता।</p>
 <ul class="check-list">
-
-<li>
-✔ मुखिया एवं सदस्यों का पहचान प्रमाण
-</li>
-
-<li>
-✔ मुखिया की बैंक पासबुक / Cancelled Cheque
-</li>
-
-<li>
-✔ जन्म/आयु एवं मूल निवास प्रमाण पत्र
-</li>
-
+<li>✔ मुखिया एवं सदस्यों का पहचान प्रमाण</li>
+<li>✔ मुखिया की बैंक पासबुक / Cancelled Cheque</li>
+<li>✔ जन्म/आयु एवं मूल निवास प्रमाण पत्र</li>
 </ul>
-
 </div>
-
 
 <div class="jan-box">
-
-<h3>
-🔐 Jan Aadhaar e-KYC
-</h3>
-
-<p>
-परिवार के सदस्यों की e-KYC प्रक्रिया में सहायता।
-</p>
-
-<a
-class="official"
-href="https://janaadhaar.rajasthan.gov.in/"
-target="_blank"
-rel="noopener">
-🏛️ Official Portal
-</a>
-
+<h3>🔐 Jan Aadhaar e-KYC</h3>
+<p>परिवार के सदस्यों की बायोमेट्रिक प्रमाणीकरण e-KYC प्रक्रिया में सहायता।</p>
+<a class="official" href="https://janaadhaar.rajasthan.gov.in/" target="_blank" rel="noopener">🏛️ Official Portal</a>
 </div>
-
 
 <div class="jan-box">
-
-<h3>
-✏️ Jan Aadhaar Update
-</h3>
-
-<p>
-नाम, पता, जन्मतिथि, बैंक खाता,
-सदस्य जोड़ना/हटाना।
-</p>
-
-<a
-class="official"
-href="https://janaadhaar.rajasthan.gov.in/"
-target="_blank"
-rel="noopener">
-🏛️ Update Portal
-</a>
-
+<h3>✏️ Jan Aadhaar Update</h3>
+<p>नाम, पता, जन्मतिथि, बैंक खाता, सदस्य जोड़ना/हटाना।</p>
+<a class="official" href="https://janaadhaar.rajasthan.gov.in/" target="_blank" rel="noopener">🏛️ Update Portal</a>
 </div>
-
 
 <div class="jan-box">
-
-<h3>
-💳 Jan Aadhaar e-Card
-</h3>
-
-<p>
-Jan Aadhaar ID जारी होने के बाद
-डिजिटल कार्ड डाउनलोड व कलर प्रिंट।
-</p>
-
-<a
-class="official"
-href="https://janaadhaar.rajasthan.gov.in/"
-target="_blank"
-rel="noopener">
-🌐 Jan Aadhaar
-</a>
-
+<h3>💳 Jan Aadhaar e-Card</h3>
+<p>Jan Aadhaar आईडी जारी होने के बाद डिजिटल कार्ड डाउनलोड व कलर प्रिंट।</p>
+<a class="official" href="https://janaadhaar.rajasthan.gov.in/" target="_blank" rel="noopener">🌐 Jan Aadhaar</a>
 </div>
-
 
 <div class="jan-box">
-
-<h3>
-🔄 Family Split / Transfer
-</h3>
-
-<p>
-विवाह के उपरांत महिला का नाम
-ससुराल के जन आधार में जोड़ना
-या परिवार विभाजन।
-</p>
-
+<h3>🔄 Family Split / Transfer</h3>
+<p>विवाह के उपरांत महिला का नाम ससुराल के जन आधार में जोड़ना या परिवार विभाजन।</p>
 </div>
-
 
 <div class="jan-box">
-
-<h3>
-📢 Jan Aadhaar Official पोर्टल
-</h3>
-
-<p>
-सरकारी नियम एवं वर्तमान updates
-की आधिकारिक जानकारी।
-</p>
-
-<a
-class="official orange-link"
-href="https://janaadhaar.rajasthan.gov.in/"
-target="_blank"
-rel="noopener">
-🔴 Official Updates
-</a>
-
-</div>
-
-
+<h3>📢 Jan Aadhaar Official पोर्टल</h3>
+<p>डीबीटी सब्सिडी स्थिति जांच और सरकारी नियमों की आधिकारिक जानकारी।</p>
+<a class="official orange-link" href="https://janaadhaar.rajasthan.gov.in/" target="_blank" rel="noopener">🔴 Official Updates</a>
 </div>
 
 </div>
-
+</div>
 </section>
 
 </div>
@@ -3363,131 +1344,41 @@ rel="noopener">
 <div id="notice" class="page">
 
 <section>
-
 <div class="container">
 
 <div class="section-title">
-
-<h2>
-जरूरी सूचना
-</h2>
-
-<p>
-आवेदन से पहले ध्यान रखें
-</p>
-
+<h2>जरूरी सूचना</h2>
+<p>आवेदन से पहले ध्यान रखें</p>
 </div>
-
 
 <div class="notice">
-
-<h3>
-💰 शुल्क संबंधी सूचना
-</h3>
-
-<p>
-हर सेवा का शुल्क अलग हो सकता है।
-सरकारी शुल्क, portal fee और e-Mitra
-service fee लागू होने पर अलग-अलग हो सकते हैं।
-</p>
-
+<h3>💰 शुल्क संबंधी सूचना</h3>
+<p>हर सेवा का शुल्क अलग हो सकता है। सरकारी शुल्क, portal fee और e-Mitra service fee लागू होने पर अलग-अलग हो सकते हैं।</p>
 </div>
-
 
 <div class="warning">
-
-<h3>
-⚠️ Online Form Payment
-</h3>
-
-<p>
-कुछ online forms में token/application
-process के कारण शुल्क पहले जमा करना पड़ सकता है।
-भुगतान से पहले आवेदन की जानकारी एवं
-राशि की पुष्टि करें।
-</p>
-
+<h3>⚠️ Online Form Payment</h3>
+<p>कुछ online forms में token/application process के कारण शुल्क पहले जमा करना पड़ता है। भुगतान से पहले आवेदन की जानकारी एवं राशि की पुष्टि करें।</p>
 </div>
-
-
-<div class="info">
-
-<h3>
-🎓 GGTU विद्यार्थियों के लिए
-</h3>
-
-<p>
-GGTU Exam Form, Semester Fee, Time Table,
-Admit Card और Result की वर्तमान जानकारी
-Official GGTU portal पर जांचें।
-</p>
-
-<button
-class="official"
-onclick="showPage('ggtu')">
-GGTU Latest देखें
-</button>
-
-</div>
-
 
 <div class="success">
-
-<h3>
-📄 सामान्य Documents तैयार रखें
-</h3>
-
+<h3>📄 सामान्य Documents तैयार रखें</h3>
 <ul class="check-list">
-
-<li>
-✔ पहचान प्रमाण पत्र
-</li>
-
-<li>
-✔ जन आधार कार्ड
-</li>
-
-<li>
-✔ बैंक पासबुक
-</li>
-
-<li>
-✔ पासपोर्ट साइज 2 फोटो
-</li>
-
-<li>
-✔ 10वीं / 12वीं मार्कशीट
-</li>
-
-<li>
-✔ मूल निवास, जाति व आय प्रमाण पत्र
-</li>
-
+<li>✔ पहचान प्रमाण पत्र (मोबाइल नंबर लिंक सहित)</li>
+<li>✔ जन आधार कार्ड</li>
+<li>✔ बैंक पासबुक (स्पष्ट खाता संख्या व IFSC कोड)</li>
+<li>✔ पासपोर्ट साइज 2 फोटो</li>
+<li>✔ 10वीं / 12वीं मार्कशीट</li>
+<li>✔ मूल निवास, जाति व आय प्रमाण पत्र (यदि लागू हो)</li>
 </ul>
-
 </div>
-
 
 <div class="notice">
-
-<h3>
-🔐 सुरक्षा संबंधी सूचना
-</h3>
-
-<p>
-अपना मोबाइल OTP, Bank OTP, UPI PIN,
-ATM PIN या Password किसी अनजान व्यक्ति
-को न बताएं।
-
-ई-मित्र सेवा के दौरान भी OTP केवल
-संबंधित official process के लिए स्वयं दर्ज करें।
-</p>
-
+<h3>🔐 सुरक्षा संबंधी सूचना</h3>
+<p>अपना मोबाइल OTP, Bank OTP, UPI PIN, ATM PIN या Password किसी अनजान व्यक्ति को न बताएं। ई-मित्र सेवा के दौरान भी OTP सिर्फ संबंधित official process के लिए स्वयं दर्ज कराएं।</p>
 </div>
 
-
 </div>
-
 </section>
 
 </div>
@@ -3500,290 +1391,86 @@ ATM PIN या Password किसी अनजान व्यक्ति
 <div id="contact" class="page">
 
 <section>
-
 <div class="container">
 
 <div class="section-title">
-
-<h2>
-संपर्क करें
-</h2>
-
-<p>
-श्री बालाजी ई-मित्र सेंटर
-</p>
-
+<h2>संपर्क करें</h2>
+<p>श्री बालाजी ई-मित्र सेंटर</p>
 </div>
-
 
 <div class="contact-grid">
 
+<div class="contact-card">
+<h3>📍 सेंटर की जानकारी</h3>
 
-<!-- CONTACT INFORMATION -->
+<div class="contact-item">
+<div>👤</div>
+<div><strong>संचालक</strong><br>Ankit Dangi</div>
+</div>
+
+<div class="contact-item">
+<div>📞</div>
+<div><strong>मोबाइल</strong><br><a href="tel:+918690653797">+91 8690653797</a></div>
+</div>
+
+<div class="contact-item">
+<div>📧</div>
+<div><strong>Email</strong><br><a href="mailto:ankitdangi1707@gmail.com">ankitdangi1707@gmail.com</a></div>
+</div>
+
+<div class="contact-item">
+<div>📍</div>
+<div><strong>पता</strong><br>ग्राम पंचायत - साखथली खुर्द, तहसील - अरनोद,<br>जिला - प्रतापगढ़, राजस्थान - 312615</div>
+</div>
+
+<div class="contact-item">
+<div>🕐</div>
+<div><strong>समय</strong><br>सुबह 8:00 बजे से शाम 8:00 बजे तक</div>
+</div>
+
+<br>
+<a href="https://maps.app.goo.gl/oXuohtgpiF6fRwV58?g_st=ac" target="_blank" rel="noopener" class="btn btn-blue">📍 Google Maps</a>
+</div>
 
 <div class="contact-card">
-
-<h3>
-📍 सेंटर की जानकारी
-</h3>
-
-
-<div class="contact-item">
-
-<div>
-👤
-</div>
-
-<div>
-
-<strong>
-संचालक
-</strong>
-
-<br>
-
-Ankit Dangi
-
-</div>
-
-</div>
-
-
-<div class="contact-item">
-
-<div>
-📞
-</div>
-
-<div>
-
-<strong>
-मोबाइल
-</strong>
-
-<br>
-
-<a href="tel:+918690653797">
-+91 8690653797
-</a>
-
-</div>
-
-</div>
-
-
-<div class="contact-item">
-
-<div>
-📧
-</div>
-
-<div>
-
-<strong>
-Email
-</strong>
-
-<br>
-
-<a href="mailto:ankitdangi1707@gmail.com">
-ankitdangi1707@gmail.com
-</a>
-
-</div>
-
-</div>
-
-
-<div class="contact-item">
-
-<div>
-📍
-</div>
-
-<div>
-
-<strong>
-पता
-</strong>
-
-<br>
-
-ग्राम पंचायत - साखथली खुर्द,
-तहसील - अरनोद,
-<br>
-जिला - प्रतापगढ़,
-राजस्थान - 312615
-
-</div>
-
-</div>
-
-
-<div class="contact-item">
-
-<div>
-🕐
-</div>
-
-<div>
-
-<strong>
-समय
-</strong>
-
-<br>
-
-सुबह 8:00 बजे से शाम 8:00 बजे तक
-
-</div>
-
-</div>
-
-
-<br>
-
-
-<a
-href="https://maps.app.goo.gl/oXuohtgpiF6fRwV58?g_st=ac"
-target="_blank"
-rel="noopener"
-class="btn btn-blue">
-
-📍 Google Maps
-
-</a>
-
-</div>
-
-
-<!-- WHATSAPP -->
-
-<div class="contact-card">
-
-<h3>
-💬 WhatsApp पर पूछताछ
-</h3>
-
+<h3>💬 WhatsApp पर पूछताछ</h3>
 
 <div class="form-group">
-
-<label>
-आपका नाम
-</label>
-
-<input
-type="text"
-id="waName"
-placeholder="अपना नाम लिखें">
-
+<label>आपका नाम</label>
+<input type="text" id="waName" placeholder="अपना नाम लिखें">
 </div>
-
 
 <div class="form-group">
-
-<label>
-मोबाइल नंबर
-</label>
-
-<input
-type="tel"
-id="waMobile"
-placeholder="मोबाइल नंबर">
-
+<label>मोबाइल नंबर</label>
+<input type="tel" id="waMobile" placeholder="मोबाइल नंबर">
 </div>
-
 
 <div class="form-group">
-
-<label>
-कौन सी सेवा चाहिए?
-</label>
-
-<textarea
-id="waMessage"
-placeholder="जैसे GGTU Exam Form, Result, Jan Aadhaar, PAN Card आदि">
-</textarea>
-
+<label>कौन सी सेवा चाहिए?</label>
+<textarea id="waMessage" placeholder="जैसे Jan Aadhaar, PAN Card, योजना या ऑनलाइन फॉर्म"></textarea>
 </div>
 
-
-<button
-class="btn btn-green"
-onclick="sendWhatsApp()">
-
-💬 WhatsApp पर भेजें
-
-</button>
-
-
-<!-- UPI -->
+<button class="btn btn-green" onclick="sendWhatsApp()">💬 WhatsApp पर भेजें</button>
 
 <div class="upi-box">
+<h3>💳 UPI Payment</h3>
+<p class="small">भुगतान करने से पहले राशि की पुष्टि करें:</p>
 
-<h3>
-💳 UPI Payment
-</h3>
-
-<p class="small">
-भुगतान करने से पहले राशि की पुष्टि करें:
-</p>
-
-
-<!-- QR CODE -->
-
-<img
-src="Qr.png"
-class="qr"
-alt="UPI QR Code">
-
-
-<!-- UPI 1 -->
+<img src="Qr.png" class="qr" alt="UPI QR Code">
 
 <div class="upi-row">
-
-<span id="upi1">
-8690653797@slc
-</span>
-
-<button
-class="copy-btn"
-onclick="copyUPI('8690653797@slc')">
-
-Copy
-
-</button>
-
+<span id="upi1">8690653797@slc</span>
+<button class="copy-btn" onclick="copyUPI('8690653797@slc')">Copy</button>
 </div>
-
-
-<!-- UPI 2 -->
 
 <div class="upi-row">
-
-<span id="upi2">
-ankitdangi17@icici
-</span>
-
-<button
-class="copy-btn"
-onclick="copyUPI('ankitdangi17@icici')">
-
-Copy
-
-</button>
-
+<span id="upi2">ankitdangi17@icici</span>
+<button class="copy-btn" onclick="copyUPI('ankitdangi17@icici')">Copy</button>
 </div>
 
-
-<p
-style="font-size:12px;color:#ea580c;margin-top:10px;font-weight:700;">
-
-⚡ भुगतान के बाद transaction screenshot
-WhatsApp पर भेजें।
-
+<p style="font-size:12px;color:#ea580c;margin-top:10px;font-weight:700;">
+⚡ भुगतान के बाद transaction screenshot WhatsApp पर भेजें।
 </p>
-
 </div>
 
 </div>
@@ -3791,7 +1478,6 @@ WhatsApp पर भेजें।
 </div>
 
 </div>
-
 </section>
 
 </div>
@@ -3802,188 +1488,46 @@ WhatsApp पर भेजें।
 ========================================================= -->
 
 <footer>
-
 <div class="container footer-grid">
 
+<div>
+<h3>श्री बालाजी ई-मित्र सेंटर</h3>
+<p>साखथली खुर्द, अरनोद, प्रतापगढ़, राजस्थान - 312615</p>
+<br>
+<p>Jan Aadhaar, PAN Card, सरकारी योजनाएं, Online Forms एवं Digital Services।</p>
+</div>
 
 <div>
+<h3>Quick Links</h3>
+<ul>
+<li><a href="#" onclick="showPage('home');return false;">होम</a></li>
+<li><a href="#" onclick="showPage('services');return false;">सेवाएं</a></li>
+<li><a href="#" onclick="showPage('schemes');return false;">योजनाएं</a></li>
+<li><a href="#" onclick="showPage('jan');return false;">Jan Aadhaar</a></li>
+<li><a href="#" onclick="showPage('contact');return false;">संपर्क</a></li>
+</ul>
+</div>
 
-<h3>
-श्री बालाजी ई-मित्र सेंटर
-</h3>
+<div>
+<h3>Official Portals</h3>
+<ul>
+<li><a href="https://janaadhaar.rajasthan.gov.in/" target="_blank" rel="noopener">Jan Aadhaar</a></li>
+<li><a href="https://recruitment.rajasthan.gov.in/" target="_blank" rel="noopener">Rajasthan Recruitment</a></li>
+<li><a href="https://sso.rajasthan.gov.in/" target="_blank" rel="noopener">Rajasthan SSO</a></li>
+<li><a href="https://ssp.rajasthan.gov.in/" target="_blank" rel="noopener">Social Security Pension</a></li>
+</ul>
+</div>
 
-<p>
-साखथली खुर्द, अरनोद,
-प्रतापगढ़, राजस्थान - 312615
-</p>
+</div>
 
 <br>
 
-<p>
-GGTU Exam Form, Result, Semester Fee,
-Jan Aadhaar, PAN Card, सरकारी योजनाएं,
-Online Forms एवं Digital Services।
+<div class="container" style="text-align:center;border-top:1px solid #57534e;padding-top:20px;">
+<p>© <span id="year">2026</span> श्री बालाजी ई-मित्र सेंटर | Ankit Dangi</p>
+<p style="margin-top:6px;font-size:11px;">
+यह वेबसाइट नागरिक सुविधा एवं सेवा जानकारी के लिए है। सरकारी योजनाओं, फीस, पात्रता, Last Date और notifications के लिए संबंधित Official Portal की वर्तमान जानकारी मान्य होगी।
 </p>
-
 </div>
-
-
-<div>
-
-<h3>
-Quick Links
-</h3>
-
-<ul>
-
-<li>
-<a
-href="#"
-onclick="showPage('home');return false;">
-होम
-</a>
-</li>
-
-<li>
-<a
-href="#"
-onclick="showPage('services');return false;">
-सेवाएं
-</a>
-</li>
-
-<li>
-<a
-href="#"
-onclick="showPage('ggtu');return false;">
-🎓 GGTU
-</a>
-</li>
-
-<li>
-<a
-href="#"
-onclick="showPage('schemes');return false;">
-योजनाएं
-</a>
-</li>
-
-<li>
-<a
-href="#"
-onclick="showPage('jan');return false;">
-Jan Aadhaar
-</a>
-</li>
-
-<li>
-<a
-href="#"
-onclick="showPage('contact');return false;">
-संपर्क
-</a>
-</li>
-
-</ul>
-
-</div>
-
-
-<div>
-
-<h3>
-Official Portals
-</h3>
-
-<ul>
-
-<li>
-<a
-href="https://www.ggtu.ac.in/"
-target="_blank"
-rel="noopener">
-GGTU University
-</a>
-</li>
-
-<li>
-<a
-href="https://ggtuexam.com/"
-target="_blank"
-rel="noopener">
-GGTU Exam Portal
-</a>
-</li>
-
-<li>
-<a
-href="https://janaadhaar.rajasthan.gov.in/"
-target="_blank"
-rel="noopener">
-Jan Aadhaar
-</a>
-</li>
-
-<li>
-<a
-href="https://recruitment.rajasthan.gov.in/"
-target="_blank"
-rel="noopener">
-Rajasthan Recruitment
-</a>
-</li>
-
-<li>
-<a
-href="https://sso.rajasthan.gov.in/"
-target="_blank"
-rel="noopener">
-Rajasthan SSO
-</a>
-</li>
-
-<li>
-<a
-href="https://ssp.rajasthan.gov.in/"
-target="_blank"
-rel="noopener">
-Social Security Pension
-</a>
-</li>
-
-</ul>
-
-</div>
-
-
-</div>
-
-
-<br>
-
-
-<div
-class="container"
-style="text-align:center;border-top:1px solid #57534e;padding-top:20px;">
-
-<p>
-© <span id="year">2026</span>
-श्री बालाजी ई-मित्र सेंटर |
-Ankit Dangi
-</p>
-
-<p
-style="margin-top:6px;font-size:11px;">
-
-यह वेबसाइट नागरिक सुविधा एवं सेवा जानकारी
-के लिए है। सरकारी योजनाओं, फीस, पात्रता,
-Last Date और notifications के लिए संबंधित
-Official Portal की वर्तमान जानकारी मान्य होगी।
-
-</p>
-
-</div>
-
 </footer>
 
 
@@ -3991,16 +1535,7 @@ Official Portal की वर्तमान जानकारी मान्�
      FLOATING WHATSAPP
 ========================================================= -->
 
-<a
-class="whatsapp"
-href="https://wa.me/918690653797"
-target="_blank"
-rel="noopener"
-aria-label="WhatsApp">
-
-💬
-
-</a>
+<a class="whatsapp" href="https://wa.me/918690653797" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
 
 
 <!-- =========================================================
@@ -4008,72 +1543,11 @@ aria-label="WhatsApp">
 ========================================================= -->
 
 <div class="mobile-bar">
-
-<button
-id="m-home"
-class="active"
-onclick="showPage('home')">
-
-<span>
-🏠
-</span>
-
-होम
-
-</button>
-
-
-<button
-id="m-services"
-onclick="showPage('services')">
-
-<span>
-🛠️
-</span>
-
-सेवाएं
-
-</button>
-
-
-<button
-id="m-ggtu"
-onclick="showPage('ggtu')">
-
-<span>
-🎓
-</span>
-
-GGTU
-
-</button>
-
-
-<button
-id="m-schemes"
-onclick="showPage('schemes')">
-
-<span>
-📋
-</span>
-
-योजनाएं
-
-</button>
-
-
-<button
-id="m-contact"
-onclick="showPage('contact')">
-
-<span>
-📞
-</span>
-
-संपर्क
-
-</button>
-
+<button id="m-home" class="active" onclick="showPage('home')"><span>🏠</span>होम</button>
+<button id="m-services" onclick="showPage('services')"><span>🛠️</span>सेवाएं</button>
+<button id="m-schemes" onclick="showPage('schemes')"><span>📋</span>योजनाएं</button>
+<button id="m-jan" onclick="showPage('jan')"><span>🪪</span>Jan Aadhaar</button>
+<button id="m-contact" onclick="showPage('contact')"><span>📞</span>संपर्क</button>
 </div>
 
 
@@ -4083,995 +1557,198 @@ onclick="showPage('contact')">
 
 <script>
 
-
-/* =========================================================
-   LIVE DATE / TIME
-========================================================= */
-
+/* ================= LIVE DATE / TIME ================= */
 function updateLiveDateTime(){
-
     const now = new Date();
+    const date = now.toLocaleDateString("hi-IN",{day:"2-digit",month:"2-digit",year:"numeric"});
+    const time = now.toLocaleTimeString("en-IN",{hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:true});
 
-    const date =
-        now.toLocaleDateString(
-            "hi-IN",
-            {
-                day:"2-digit",
-                month:"2-digit",
-                year:"numeric"
-            }
-        );
-
-    const time =
-        now.toLocaleTimeString(
-            "en-IN",
-            {
-                hour:"2-digit",
-                minute:"2-digit",
-                second:"2-digit",
-                hour12:true
-            }
-        );
-
-
-    const d =
-        document.getElementById("liveDate");
-
-    const t =
-        document.getElementById("liveTime");
-
-
-    if(d){
-        d.textContent = date;
-    }
-
-    if(t){
-        t.textContent = time;
-    }
-
+    const d = document.getElementById("liveDate");
+    const t = document.getElementById("liveTime");
+    if(d) d.textContent = date;
+    if(t) t.textContent = time;
 }
-
 updateLiveDateTime();
+setInterval(updateLiveDateTime, 1000);
 
-setInterval(
-    updateLiveDateTime,
-    1000
-);
-
-
-/* =========================================================
-   VISITOR COUNTER
-========================================================= */
-
+/* ================= VISITOR COUNTER ================= */
 async function initVisitorCounter(){
-
-    const el =
-        document.getElementById("visitCount");
-
+    const el = document.getElementById("visitCount");
     if(!el) return;
 
-
     let base = 1240;
-
-    let local =
-        parseInt(
-            localStorage.getItem(
-                "sb_visit_count"
-            ) || "0",
-            10
-        );
-
+    let local = parseInt(localStorage.getItem("sb_visit_count") || "0", 10);
 
     if(!local){
-
-        local =
-            base +
-            Math.floor(
-                Math.random()*15
-            ) +
-            1;
-
-    }else{
-
+        local = base + Math.floor(Math.random()*15) + 1;
+    } else {
         local += 1;
-
     }
-
-
-    localStorage.setItem(
-        "sb_visit_count",
-        local
-    );
-
-
-    el.textContent =
-        local.toLocaleString("en-IN");
-
+    localStorage.setItem("sb_visit_count", local);
+    el.textContent = local.toLocaleString("en-IN");
 
     try{
-
-        const res =
-            await fetch(
-                "https://api.counterapi.dev/v1/shreebalajiemitra_sakhthali/visits/up"
-            );
-
-
-        const data =
-            await res.json();
-
-
-        if(
-            data &&
-            data.count
-        ){
-
-            el.textContent =
-                (
-                    base +
-                    data.count
-                ).toLocaleString("en-IN");
-
+        const res = await fetch("https://api.counterapi.dev/v1/shreebalajiemitra_sakhthali/visits/up");
+        const data = await res.json();
+        if(data && data.count){
+            el.textContent = (base + data.count).toLocaleString("en-IN");
         }
-
-    }catch(error){
-
-        /*
-         * Local counter already working.
-         */
-
-    }
-
+    }catch(error){}
 }
-
 initVisitorCounter();
 
-
-/* =========================================================
-   PAGE SYSTEM
-========================================================= */
-
+/* ================= PAGE SYSTEM ================= */
 function showPage(pageId){
-
-    document
-        .querySelectorAll(".page")
-        .forEach(
-            function(page){
-
-                page.classList.remove(
-                    "active"
-                );
-
-            }
-        );
-
-
-    const page =
-        document.getElementById(pageId);
-
-
-    if(page){
-
-        page.classList.add(
-            "active"
-        );
-
-    }
-
-
-    const pageMap = {
-
-        home:0,
-
-        services:1,
-
-        ggtu:2,
-
-        schemes:3,
-
-        jan:4,
-
-        notice:5,
-
-        contact:6
-
-    };
-
-
-    /*
-     * Desktop navigation
-     */
-
-    document
-        .querySelectorAll(
-            "#desktopNav button"
-        )
-        .forEach(
-            function(btn){
-
-                btn.classList.remove(
-                    "active"
-                );
-
-            }
-        );
-
-
-    const desktopButtons =
-        document.querySelectorAll(
-            "#desktopNav button"
-        );
-
-
-    if(
-        typeof pageMap[pageId] !==
-        "undefined" &&
-        desktopButtons[
-            pageMap[pageId]
-        ]
-    ){
-
-        desktopButtons[
-            pageMap[pageId]
-        ].classList.add(
-            "active"
-        );
-
-    }
-
-
-    /*
-     * Mobile navigation
-     */
-
-    document
-        .querySelectorAll(
-            ".mobile-bar button"
-        )
-        .forEach(
-            function(btn){
-
-                btn.classList.remove(
-                    "active"
-                );
-
-            }
-        );
-
-
-    const mobileButton =
-        document.getElementById(
-            "m-" + pageId
-        );
-
-
-    if(mobileButton){
-
-        mobileButton.classList.add(
-            "active"
-        );
-
-    }
-
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
+    document.querySelectorAll(".page").forEach(function(page){
+        page.classList.remove("active");
     });
 
+    const page = document.getElementById(pageId);
+    if(page){
+        page.classList.add("active");
+    }
+
+    const pageMap = {
+        home:0,
+        services:1,
+        schemes:2,
+        jan:3,
+        notice:4,
+        contact:5
+    };
+
+    // Desktop Nav Active Sync
+    document.querySelectorAll("#desktopNav button").forEach(function(btn){
+        btn.classList.remove("active");
+    });
+    const desktopButtons = document.querySelectorAll("#desktopNav button");
+    if(typeof pageMap[pageId] !== "undefined" && desktopButtons[pageMap[pageId]]){
+        desktopButtons[pageMap[pageId]].classList.add("active");
+    }
+
+    // Mobile Bar Active Sync
+    document.querySelectorAll(".mobile-bar button").forEach(function(btn){
+        btn.classList.remove("active");
+    });
+    const mobileButton = document.getElementById("m-" + pageId);
+    if(mobileButton){
+        mobileButton.classList.add("active");
+    }
+
+    window.scrollTo({ top:0, behavior:"smooth" });
 }
 
-
-/* =========================================================
-   SHOP STATUS
-========================================================= */
-
+/* ================= SHOP STATUS (8 AM - 8 PM) ================= */
 function updateShopStatus(){
-
-    const hour =
-        new Date().getHours();
-
-
-    const status =
-        document.getElementById(
-            "shopStatus"
-        );
-
-
+    const hour = new Date().getHours();
+    const status = document.getElementById("shopStatus");
     if(!status) return;
 
-
-    if(
-        hour >= 8 &&
-        hour < 20
-    ){
-
-        status.textContent =
-            " 🟢 अभी खुला है";
-
-        status.className =
-            "status-open";
-
+    if(hour >= 8 && hour < 20){
+        status.textContent = " 🟢 अभी खुला है";
+        status.className = "status-open";
     }else{
-
-        status.textContent =
-            " 🔴 अभी बंद है (समय 8 AM - 8 PM)";
-
-        status.className =
-            "status-closed";
-
+        status.textContent = " 🔴 अभी बंद है (समय 8 AM - 8 PM)";
+        status.className = "status-closed";
     }
-
 }
-
 updateShopStatus();
+setInterval(updateShopStatus, 60000);
 
-setInterval(
-    updateShopStatus,
-    60000
-);
-
-
-/* =========================================================
-   SERVICE SEARCH
-========================================================= */
-
+/* ================= SERVICE SEARCH ================= */
 function searchServices(){
-
-    const input =
-        document.getElementById(
-            "serviceSearch"
-        );
-
-
+    const input = document.getElementById("serviceSearch");
     if(!input) return;
+    const value = input.value.toLowerCase();
 
-
-    const value =
-        input.value.toLowerCase();
-
-
-    document
-        .querySelectorAll(
-            ".service-card"
-        )
-        .forEach(
-            function(card){
-
-                const text =
-                    card.innerText
-                        .toLowerCase();
-
-
-                card.style.display =
-                    text.includes(value)
-                    ? ""
-                    : "none";
-
-            }
-        );
-
+    document.querySelectorAll(".service-card").forEach(function(card){
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(value) ? "" : "none";
+    });
 }
 
-
-/* =========================================================
-   SCHEME SEARCH
-========================================================= */
-
+/* ================= SCHEME SEARCH ================= */
 function searchSchemes(){
-
-    const input =
-        document.getElementById(
-            "schemeSearch"
-        );
-
-
+    const input = document.getElementById("schemeSearch");
     if(!input) return;
+    const value = input.value.toLowerCase();
 
-
-    const value =
-        input.value.toLowerCase();
-
-
-    document
-        .querySelectorAll(
-            ".scheme-card"
-        )
-        .forEach(
-            function(card){
-
-                const text =
-                    card.innerText
-                        .toLowerCase();
-
-
-                card.style.display =
-                    text.includes(value)
-                    ? ""
-                    : "none";
-
-            }
-        );
-
+    document.querySelectorAll(".scheme-card").forEach(function(card){
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(value) ? "" : "none";
+    });
 }
 
+/* ================= SCHEME FILTER ================= */
+function filterSchemes(category, button){
+    document.querySelectorAll(".filter-btn").forEach(function(btn){
+        btn.classList.remove("active");
+    });
+    button.classList.add("active");
 
-/* =========================================================
-   SCHEME FILTER
-========================================================= */
-
-function filterSchemes(
-    category,
-    button
-){
-
-    document
-        .querySelectorAll(
-            ".filter-btn"
-        )
-        .forEach(
-            function(btn){
-
-                btn.classList.remove(
-                    "active"
-                );
-
-            }
-        );
-
-
-    button.classList.add(
-        "active"
-    );
-
-
-    document
-        .querySelectorAll(
-            ".scheme-card"
-        )
-        .forEach(
-            function(card){
-
-                if(
-                    category === "all"
-                ){
-
-                    card.style.display =
-                        "";
-
-                }else{
-
-                    card.style.display =
-                        card.classList.contains(
-                            category
-                        )
-                        ? ""
-                        : "none";
-
-                }
-
-            }
-        );
-
+    document.querySelectorAll(".scheme-card").forEach(function(card){
+        if(category === "all"){
+            card.style.display = "";
+        }else{
+            card.style.display = card.classList.contains(category) ? "" : "none";
+        }
+    });
 }
 
-
-/* =========================================================
-   COPY UPI
-========================================================= */
-
+/* ================= COPY UPI ================= */
 function copyUPI(value){
-
-    if(
-        navigator.clipboard &&
-        navigator.clipboard.writeText
-    ){
-
-        navigator.clipboard
-            .writeText(value)
-            .then(
-                function(){
-
-                    alert(
-                        "UPI ID कॉपी हो गई:\n" +
-                        value
-                    );
-
-                }
-            )
-            .catch(
-                function(){
-
-                    alert(
-                        "UPI ID:\n" +
-                        value
-                    );
-
-                }
-            );
-
+    if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(value).then(function(){
+            alert("UPI ID कॉपी हो गई:\n" + value);
+        }).catch(function(){
+            alert("UPI ID:\n" + value);
+        });
     }else{
-
-        alert(
-            "UPI ID:\n" +
-            value
-        );
-
+        alert("UPI ID:\n" + value);
     }
-
 }
 
-
-/* =========================================================
-   WHATSAPP FORM
-========================================================= */
-
+/* ================= WHATSAPP FORM ================= */
 function sendWhatsApp(){
-
-    const name =
-        document.getElementById(
-            "waName"
-        ).value.trim();
-
-
-    const mobile =
-        document.getElementById(
-            "waMobile"
-        ).value.trim();
-
-
-    const message =
-        document.getElementById(
-            "waMessage"
-        ).value.trim();
-
+    const name = document.getElementById("waName").value.trim();
+    const mobile = document.getElementById("waMobile").value.trim();
+    const message = document.getElementById("waMessage").value.trim();
 
     if(!name){
-
-        alert(
-            "कृपया अपना नाम लिखें।"
-        );
-
+        alert("कृपया अपना नाम लिखें।");
         return;
-
     }
-
-
     if(!message){
-
-        alert(
-            "कृपया सेवा की जानकारी लिखें।"
-        );
-
+        alert("कृपया सेवा की जानकारी लिखें।");
         return;
-
     }
 
+    const text = "नमस्ते श्री बालाजी ई-मित्र सेंटर,%0A%0A" +
+                 "नाम: " + encodeURIComponent(name) + "%0A" +
+                 "मोबाइल: " + encodeURIComponent(mobile) + "%0A" +
+                 "सेवा: " + encodeURIComponent(message);
 
-    const text =
-        "नमस्ते श्री बालाजी ई-मित्र सेंटर,%0A%0A" +
-
-        "नाम: " +
-        encodeURIComponent(name) +
-        "%0A" +
-
-        "मोबाइल: " +
-        encodeURIComponent(mobile) +
-        "%0A" +
-
-        "सेवा: " +
-        encodeURIComponent(message);
-
-
-    window.open(
-        "https://wa.me/918690653797?text=" +
-        text,
-        "_blank"
-    );
-
+    window.open("https://wa.me/918690653797?text=" + text, "_blank");
 }
 
-
-/* =========================================================
-   AUTO GGTU LATEST NOTIFICATIONS
-========================================================= */
-
-async function loadGGTUNotices(
-    forceRefresh = false
-){
-
-    const list =
-        document.getElementById(
-            "ggtuNoticeList"
-        );
-
-
-    const lastUpdate =
-        document.getElementById(
-            "ggtuLastUpdate"
-        );
-
-
-    if(!list) return;
-
-
-    /*
-     * Loading
-     */
-
-    list.innerHTML = `
-
-        <div class="ggtu-loading">
-
-            ⏳ GGTU Latest Notifications
-            लोड हो रहे हैं...
-
-        </div>
-
-    `;
-
-
-    try{
-
-
-        /*
-         * Cache busting
-         */
-
-        const cacheVersion =
-            Date.now();
-
-
-        const response =
-            await fetch(
-                "ggtu-notices.json?v=" +
-                cacheVersion,
-                {
-                    cache:"no-store"
-                }
-            );
-
-
-        if(!response.ok){
-
-            throw new Error(
-                "ggtu-notices.json नहीं मिला"
-            );
-
-        }
-
-
-        const data =
-            await response.json();
-
-
-        /*
-         * Empty
-         */
-
-        if(
-            !data ||
-            !Array.isArray(
-                data.notices
-            ) ||
-            data.notices.length === 0
-        ){
-
-            list.innerHTML = `
-
-                <div class="ggtu-empty">
-
-                    📢 अभी कोई GGTU
-                    notification उपलब्ध नहीं है।
-
-                    <br><br>
-
-                    <a
-                        href="https://www.ggtu.ac.in/"
-                        target="_blank"
-                        rel="noopener"
-                        class="official">
-
-                        🌐 GGTU Official Website
-
-                    </a>
-
-                </div>
-
-            `;
-
-
-            if(lastUpdate){
-
-                lastUpdate.textContent =
-                    "🔄 Last Checked: " +
-                    (
-                        data.updated ||
-                        "Unknown"
-                    );
-
-            }
-
-
-            return;
-
-        }
-
-
-        /*
-         * Clear
-         */
-
-        list.innerHTML = "";
-
-
-        /*
-         * Notices
-         */
-
-        data.notices.forEach(
-            function(
-                notice,
-                index
-            ){
-
-                const item =
-                    document.createElement(
-                        "div"
-                    );
-
-
-                item.className =
-                    "ggtu-notice-item";
-
-
-                const content =
-                    document.createElement(
-                        "div"
-                    );
-
-
-                content.className =
-                    "ggtu-notice-content";
-
-
-                const title =
-                    document.createElement(
-                        "div"
-                    );
-
-
-                title.className =
-                    "ggtu-notice-title";
-
-
-                /*
-                 * First 3 = NEW
-                 */
-
-                const badge =
-                    index < 3
-                    ? '<span class="new-badge">NEW</span>'
-                    : "";
-
-
-                title.innerHTML =
-                    badge +
-                    escapeHTML(
-                        notice.title ||
-                        "GGTU Notification"
-                    );
-
-
-                const date =
-                    document.createElement(
-                        "div"
-                    );
-
-
-                date.className =
-                    "ggtu-notice-date";
-
-
-                date.textContent =
-                    "📅 " +
-                    (
-                        notice.date ||
-                        "Latest Update"
-                    );
-
-
-                content.appendChild(
-                    title
-                );
-
-                content.appendChild(
-                    date
-                );
-
-
-                /*
-                 * Official Link
-                 */
-
-                const link =
-                    document.createElement(
-                        "a"
-                    );
-
-
-                link.className =
-                    "ggtu-view-btn";
-
-
-                link.href =
-                    notice.url ||
-                    "https://www.ggtu.ac.in/";
-
-
-                link.target =
-                    "_blank";
-
-
-                link.rel =
-                    "noopener";
-
-
-                link.textContent =
-                    "📄 Official देखें";
-
-
-                item.appendChild(
-                    content
-                );
-
-
-                item.appendChild(
-                    link
-                );
-
-
-                list.appendChild(
-                    item
-                );
-
-            }
-        );
-
-
-        /*
-         * Last update
-         */
-
-        if(lastUpdate){
-
-            lastUpdate.textContent =
-                "🔄 Last Auto Update: " +
-                (
-                    data.updated ||
-                    "Unknown"
-                );
-
-        }
-
-    }
-
-
-    catch(error){
-
-        console.error(
-            "GGTU Notification Error:",
-            error
-        );
-
-
-        list.innerHTML = `
-
-            <div class="ggtu-error">
-
-                ⚠️ GGTU updates अभी
-                load नहीं हो सके।
-
-                <br><br>
-
-                <button
-                    class="official"
-                    onclick="loadGGTUNotices(true)">
-
-                    🔄 दोबारा प्रयास करें
-
-                </button>
-
-                <br><br>
-
-                <a
-                    href="https://www.ggtu.ac.in/"
-                    target="_blank"
-                    rel="noopener"
-                    class="official orange-link">
-
-                    🌐 GGTU Official Website
-
-                </a>
-
-            </div>
-
-        `;
-
-
-        if(lastUpdate){
-
-            lastUpdate.textContent =
-                "GGTU Official Website से सीधे जांचें।";
-
-        }
-
-    }
-
-}
-
-
-/* =========================================================
-   SECURITY: ESCAPE HTML
-========================================================= */
-
-function escapeHTML(value){
-
-    return String(value)
-
-        .replace(
-            /&/g,
-            "&amp;"
-        )
-
-        .replace(
-            /</g,
-            "&lt;"
-        )
-
-        .replace(
-            />/g,
-            "&gt;"
-        )
-
-        .replace(
-            /"/g,
-            "&quot;"
-        )
-
-        .replace(
-            /'/g,
-            "&#039;"
-        );
-
-}
-
-
-/* =========================================================
-   LOAD GGTU AUTOMATICALLY
-========================================================= */
-
-loadGGTUNotices(false);
-
-
-/* =========================================================
-   YEAR
-========================================================= */
-
-const yearEl =
-    document.getElementById(
-        "year"
-    );
-
-
-if(yearEl){
-
-    yearEl.textContent =
-        new Date().getFullYear();
-
+/* ================= YEAR ================= */
+const yearEl = document.getElementById("year");
+if(yearEl) yearEl.textContent = new Date().getFullYear();
+
+/* ================= REGISTER PWA SERVICE WORKER ================= */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('./sw.js')
+      .then(function(reg) {
+        console.log('App Service Worker successfully registered!', reg);
+      })
+      .catch(function(err) {
+        console.log('Service Worker failed:', err);
+      });
+  });
 }
 
 </script>
 
-
 </body>
-   </html>
+</html>
