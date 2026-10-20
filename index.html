@@ -1,295 +1,119 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>श्री बालाजी ई-मित्र सेंटर | साखथली खुर्द, अरनोद</title>
+<title>श्री बालाजी ई-मित्र सेंटर | साखथली खुर्द</title>
 
-<meta name="description"
-content="श्री बालाजी ई-मित्र सेंटर, साखथली खुर्द, अरनोद, प्रतापगढ़ राजस्थान। जन आधार, सरकारी योजनाएं, पेंशन, PAN Card, ऑनलाइन फॉर्म, बिल भुगतान, प्रिंटिंग और डिजिटल सेवाएं।">
+<meta name="description" content="श्री बालाजी ई-मित्र सेंटर, साखथली खुर्द (अरनोद, प्रतापगढ़) - पैन कार्ड, जन आधार, सरकारी योजनाएं, बिल भुगतान व डिजिटल सेवाएं।">
+<meta name="theme-color" content="#b91c1c">
 
-<meta name="keywords"
-content="Shree Balaji eMitra, eMitra Sakhthali Khurd, eMitra Arnod, Jan Aadhaar, PAN Card, Rajasthan Government Schemes, Ankit Dangi">
-
-<meta name="author" content="Ankit Dangi">
-
-<meta property="og:title" content="श्री बालाजी ई-मित्र सेंटर">
-<meta property="og:description" content="जन आधार, सरकारी योजनाएं, पैन कार्ड और डिजिटल सेवाएं">
-<meta property="og:type" content="website">
-
-<!-- PWA App Links -->
+<!-- PWA Manifest -->
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#7c2d12">
 
 <style>
-
-/* =========================================================
-   BASIC
-========================================================= */
-
+/* CSS RESET & VARIABLES */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    scroll-behavior:smooth;
 }
 
 :root{
-    --primary:#7c2d12;
-    --primary2:#c2410c;
-    --orange:#ea580c;
-    --light:#fff7ed;
-    --white:#fff;
-    --dark:#1f2937;
+    --primary:#991b1b;
+    --primary-soft:#fef2f2;
+    --dark:#0f172a;
+    --text:#334155;
     --muted:#64748b;
-    --green:#15803d;
-    --blue:#1d4ed8;
-    --border:#fed7aa;
-    --shadow:0 8px 25px rgba(0,0,0,.10);
+    --bg:#f8fafc;
+    --card:#ffffff;
+    --border:#e2e8f0;
+    --green:#16a34a;
 }
 
 body{
-    font-family:"Noto Sans Devanagari","Segoe UI",Arial,sans-serif;
-    background:#fffaf5;
-    color:var(--dark);
-    line-height:1.6;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans Devanagari",sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.5;
+    padding-bottom:70px;
 }
 
-a{
-    text-decoration:none;
-    color:inherit;
-}
+a{ text-decoration:none; color:inherit; }
 
-button,
-input,
-textarea{
-    font-family:inherit;
-}
-
-.container{
-    width:92%;
-    max-width:1200px;
-    margin:auto;
-}
-
-
-/* =========================================================
-   HEADER
-========================================================= */
-
+/* HEADER */
 header{
-    background:linear-gradient(135deg,#7c2d12,#c2410c,#ea580c);
-    color:#fff;
+    background:#ffffff;
+    border-bottom:1px solid var(--border);
     position:sticky;
     top:0;
-    z-index:999;
-    box-shadow:0 4px 15px rgba(0,0,0,.18);
+    z-index:100;
 }
 
-.header-inner{
-    min-height:72px;
+.header-wrap{
+    max-width:960px;
+    margin:auto;
+    padding:10px 16px;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:12px;
 }
 
-.logo-area{
+.brand{
     display:flex;
     align-items:center;
     gap:10px;
 }
 
-.logo{
-    width:50px;
-    height:50px;
+.brand img{
+    width:42px;
+    height:42px;
     border-radius:50%;
-    background:#fff;
-    padding:4px;
-    object-fit:contain;
+    border:1px solid var(--border);
 }
 
-.logo-text h1{
-    font-size:19px;
+.brand-text h1{
+    font-size:16px;
+    color:var(--primary);
     line-height:1.2;
 }
 
-.logo-text span{
+.brand-text span{
     font-size:11px;
-    opacity:.9;
+    color:var(--muted);
+    font-weight:600;
 }
 
-.header-right{
-    display:flex;
-    align-items:center;
-    gap:7px;
-}
-
-.visitor-badge,
-.live-clock{
-    background:rgba(255,255,255,.14);
-    border:1px solid rgba(255,255,255,.25);
-    border-radius:9px;
-    backdrop-filter:blur(5px);
-}
-
-.visitor-badge{
-    padding:5px 8px;
-    font-size:11px;
-    white-space:nowrap;
-}
-
-.live-clock{
-    min-width:110px;
-    padding:5px 8px;
-    text-align:center;
-    line-height:1.2;
-}
-
-.live-clock span{
-    display:block;
-}
-
-#liveDate{
-    font-size:10px;
-}
-
-#liveTime{
-    font-size:14px;
-    font-weight:700;
-}
-
-.live-clock small{
-    font-size:8px;
-    color:#bbf7d0;
-}
-
-
-/* =========================================================
-   NAV
-========================================================= */
-
+/* TOP NAV */
 nav{
     display:flex;
-    gap:4px;
-    align-items:center;
-    flex-wrap:wrap;
-}
-
-nav button{
-    border:0;
-    background:transparent;
-    color:#fff;
-    padding:8px 10px;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:13px;
-    transition:.2s;
-}
-
-nav button:hover,
-nav button.active{
-    background:rgba(255,255,255,.24);
-    font-weight:700;
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero{
-    background:
-    linear-gradient(rgba(124,45,18,.88),rgba(194,65,12,.88)),
-    url("Logo.png") center/cover;
-    color:#fff;
-    padding:65px 0;
-}
-
-.hero-content{
-    display:grid;
-    grid-template-columns:1.5fr 1fr;
-    gap:30px;
-    align-items:center;
-}
-
-.hero h2{
-    font-size:40px;
-    line-height:1.2;
-    margin-bottom:15px;
-}
-
-.hero p{
-    font-size:17px;
-    margin-bottom:20px;
-}
-
-.hero-buttons{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-}
-
-.btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
     gap:6px;
-    padding:11px 17px;
-    border:0;
-    border-radius:10px;
-    cursor:pointer;
+}
+
+.nav-btn{
+    background:none;
+    border:none;
+    padding:7px 12px;
+    border-radius:6px;
+    font-size:13px;
     font-weight:700;
-    transition:.2s;
+    color:var(--muted);
+    cursor:pointer;
 }
 
-.btn:hover{
-    transform:translateY(-2px);
+.nav-btn.active,
+.nav-btn:hover{
+    background:var(--primary-soft);
+    color:var(--primary);
 }
 
-.btn-white{ background:#fff; color:#9a3412; }
-.btn-green{ background:#16a34a; color:#fff; }
-.btn-blue{ background:#2563eb; color:#fff; }
-.btn-dark{ background:#292524; color:#fff; }
-
-.hero-card{
-    background:rgba(255,255,255,.14);
-    border:1px solid rgba(255,255,255,.3);
-    padding:24px;
-    border-radius:18px;
-    backdrop-filter:blur(8px);
+/* CONTAINER */
+.container{
+    max-width:960px;
+    margin:auto;
+    padding:20px 16px;
 }
-
-
-/* =========================================================
-   STATUS
-========================================================= */
-
-.status-wrap{
-    margin-top:-25px;
-    position:relative;
-    z-index:5;
-}
-
-.status-box{
-    background:#fff;
-    box-shadow:var(--shadow);
-    border-radius:15px;
-    padding:17px 20px;
-    display:flex;
-    justify-content:space-between;
-    gap:15px;
-}
-
-.status-open{ color:#15803d; font-weight:700; }
-.status-closed{ color:#b91c1c; font-weight:700; }
-
-
-/* =========================================================
-   PAGE
-========================================================= */
 
 .page{
     display:none;
@@ -299,1455 +123,476 @@ nav button.active{
     display:block;
 }
 
-section{
-    padding:50px 0;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:28px;
-}
-
-.section-title h2{
-    color:var(--primary);
-    font-size:30px;
-}
-
-.section-title p{
-    color:var(--muted);
-}
-
-
-/* =========================================================
-   CARDS
-========================================================= */
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
+/* CARDS & COMMON */
 .card{
-    background:#fff;
+    background:var(--card);
     border:1px solid var(--border);
-    border-radius:16px;
-    padding:21px;
-    box-shadow:0 5px 18px rgba(0,0,0,.06);
-    transition:.2s;
-}
-
-.card:hover{
-    transform:translateY(-4px);
-    box-shadow:var(--shadow);
-}
-
-.card-icon{
-    font-size:34px;
-    margin-bottom:7px;
-}
-
-.card h3{
-    color:#9a3412;
-    margin-bottom:7px;
-}
-
-.card p{
-    color:#475569;
-    font-size:14px;
-}
-
-.price{
-    color:#15803d;
-    font-size:20px;
-    font-weight:800;
-    margin:8px 0;
-}
-
-.small{
-    font-size:12px;
-    color:#64748b;
-}
-
-
-/* =========================================================
-   BUTTONS
-========================================================= */
-
-.official{
-    display:inline-flex;
-    margin-top:10px;
-    padding:8px 12px;
-    border-radius:8px;
-    background:#1d4ed8;
-    color:#fff;
-    font-size:12px;
-    font-weight:700;
-    border:0;
-    cursor:pointer;
-    text-decoration:none;
-}
-
-.official:hover{
-    background:#1e40af;
-}
-
-.green-link{ background:#15803d!important; }
-.orange-link{ background:#ea580c!important; }
-.dark-link{ background:#292524!important; }
-
-
-/* =========================================================
-   SEARCH
-========================================================= */
-
-.search-box{
-    max-width:650px;
-    margin:0 auto 25px;
-}
-
-.search-box input{
-    width:100%;
-    padding:13px 17px;
-    border:1px solid #fdba74;
     border-radius:12px;
-    outline:none;
-    font-size:15px;
-}
-
-.search-box input:focus{
-    border-color:#ea580c;
-    box-shadow:0 0 0 3px rgba(234,88,12,.1);
-}
-
-
-/* =========================================================
-   NOTICE
-========================================================= */
-
-.notice{
-    border-left:5px solid #ea580c;
-    background:#fff7ed;
-    padding:17px;
-    border-radius:10px;
-    margin-bottom:20px;
-}
-
-.info{
-    border-left:5px solid #2563eb;
-    background:#eff6ff;
-    padding:17px;
-    border-radius:10px;
-    margin-bottom:20px;
-}
-
-.success{
-    border-left:5px solid #16a34a;
-    background:#f0fdf4;
-    padding:17px;
-    border-radius:10px;
-    margin-bottom:20px;
-}
-
-.warning{
-    border-left:5px solid #f59e0b;
-    background:#fffbeb;
-    padding:17px;
-    border-radius:10px;
-    margin-bottom:20px;
-}
-
-
-/* =========================================================
-   LIST
-========================================================= */
-
-.check-list{
-    list-style:none;
-    margin-top:9px;
-}
-
-.check-list li{
-    padding:6px 0;
-    border-bottom:1px dashed #e5e7eb;
-}
-
-.check-list li:last-child{
-    border-bottom:0;
-}
-
-
-/* =========================================================
-   FILTER
-========================================================= */
-
-.filters{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:8px;
-    margin-bottom:25px;
-}
-
-.filter-btn{
-    border:1px solid #fdba74;
-    background:#fff;
-    color:#9a3412;
-    padding:8px 13px;
-    border-radius:20px;
-    cursor:pointer;
-    transition:.2s;
-}
-
-.filter-btn.active,
-.filter-btn:hover{
-    background:#ea580c;
-    color:#fff;
-}
-
-
-/* =========================================================
-   JAN AADHAAR
-========================================================= */
-
-.jan-box{
-    background:#fff;
-    border:1px solid #fed7aa;
-    border-radius:16px;
-    padding:21px;
-    box-shadow:0 5px 18px rgba(0,0,0,.06);
-}
-
-.jan-box h3{
-    color:#9a3412;
-    margin-bottom:10px;
-}
-
-
-/* =========================================================
-   CONTACT
-========================================================= */
-
-.contact-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-}
-
-.contact-card{
-    background:#fff;
-    border-radius:16px;
-    padding:24px;
-    box-shadow:var(--shadow);
-    border:1px solid var(--border);
-}
-
-.contact-item{
-    display:flex;
-    gap:12px;
-    padding:11px 0;
-    border-bottom:1px solid #f1f5f9;
-}
-
-.contact-item:last-child{
-    border-bottom:0;
-}
-
-
-/* =========================================================
-   FORM
-========================================================= */
-
-.form-group{
+    padding:18px;
     margin-bottom:14px;
 }
 
-.form-group label{
-    display:block;
-    margin-bottom:5px;
+.sec-head{
+    font-size:18px;
+    font-weight:800;
+    color:var(--dark);
+    margin:20px 0 12px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    padding:10px 16px;
+    border-radius:8px;
     font-weight:700;
+    font-size:14px;
+    border:none;
+    cursor:pointer;
 }
 
-.form-group input,
-.form-group textarea{
+.btn-main{ background:var(--primary); color:white; }
+.btn-green{ background:var(--green); color:white; }
+.btn-light{ background:var(--primary-soft); color:var(--primary); }
+
+/* HOME HERO */
+.hero{
+    background:linear-gradient(135deg,#991b1b,#dc2626);
+    color:white;
+    border-radius:14px;
+    padding:26px 20px;
+    text-align:center;
+    margin-bottom:18px;
+}
+
+.hero h2{
+    font-size:24px;
+    margin-bottom:8px;
+}
+
+.hero p{
+    font-size:14px;
+    opacity:0.95;
+    max-width:600px;
+    margin:0 auto 16px;
+}
+
+.hero-actions{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.hero-actions .btn{
+    font-size:13px;
+    padding:9px 14px;
+}
+
+/* STATUS PILL */
+.status-pill{
+    display:inline-block;
+    padding:4px 12px;
+    border-radius:50px;
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:10px;
+    background:rgba(255,255,255,0.2);
+}
+
+/* GRIDS */
+.grid-2{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+}
+
+.grid-3{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:14px;
+}
+
+/* PAN CARD BOX */
+.pan-box{
+    border:1.5px solid var(--border);
+    border-radius:10px;
+    padding:16px;
+    background:white;
+}
+
+.pan-box.featured{
+    border-color:var(--primary);
+    background:#fffaf8;
+}
+
+.pan-price{
+    font-size:22px;
+    font-weight:800;
+    color:var(--primary);
+    margin:6px 0;
+}
+
+/* SEARCH */
+.search-input{
     width:100%;
-    padding:11px;
-    border:1px solid #fdba74;
-    border-radius:9px;
+    padding:12px 14px;
+    border:1.5px solid var(--border);
+    border-radius:8px;
+    font-size:14px;
     outline:none;
+    margin-bottom:16px;
+    background:white;
 }
 
-.form-group textarea{
-    min-height:90px;
-    resize:vertical;
+.search-input:focus{
+    border-color:var(--primary);
 }
 
-
-/* =========================================================
-   UPI
-========================================================= */
-
-.upi-box{
-    background:#fff7ed;
-    border:1px dashed #fb923c;
-    padding:15px;
-    border-radius:12px;
-    margin-top:15px;
+/* NOTICE */
+.notice{
+    background:#fffbeb;
+    border-left:4px solid #f59e0b;
+    padding:12px 14px;
+    border-radius:6px;
+    font-size:13px;
+    color:#92400e;
+    margin-bottom:14px;
 }
 
+/* UPI */
 .upi-row{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    gap:10px;
-    background:#fff;
-    padding:9px;
-    border-radius:8px;
+    background:#f1f5f9;
+    padding:8px 12px;
+    border-radius:6px;
+    font-size:13px;
+    font-weight:700;
     margin-top:8px;
 }
 
 .copy-btn{
-    border:0;
-    background:#ea580c;
-    color:#fff;
-    padding:7px 10px;
-    border-radius:7px;
+    background:var(--primary);
+    color:white;
+    border:none;
+    padding:4px 8px;
+    border-radius:4px;
+    font-size:11px;
     cursor:pointer;
-    font-weight:700;
 }
 
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer{
-    background:#292524;
-    color:#fff;
-    padding:35px 0 80px;
-    margin-top:25px;
-}
-
-.footer-grid{
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr;
-    gap:25px;
-}
-
-footer h3{
-    margin-bottom:10px;
-}
-
-footer p,
-footer li{
-    color:#d6d3d1;
-    font-size:13px;
-}
-
-footer ul{
-    list-style:none;
-}
-
-footer li{
-    padding:4px 0;
-}
-
-
-/* =========================================================
-   FLOATING WHATSAPP
-========================================================= */
-
-.whatsapp{
-    position:fixed;
-    right:18px;
-    bottom:78px;
-    width:55px;
-    height:55px;
-    border-radius:50%;
-    background:#16a34a;
-    color:#fff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:27px;
-    box-shadow:0 5px 20px rgba(0,0,0,.25);
-    z-index:9998;
-    text-decoration:none;
-}
-
-
-/* =========================================================
-   MOBILE BAR
-========================================================= */
-
-.mobile-bar{
-    display:none;
+/* MOBILE BOTTOM BAR */
+.mobile-nav{
     position:fixed;
     bottom:0;
     left:0;
     right:0;
-    background:#fff;
-    border-top:1px solid #e5e7eb;
-    box-shadow:0 -4px 15px rgba(0,0,0,.1);
-    z-index:9999;
-    grid-template-columns:repeat(5,1fr);
+    background:#ffffff;
+    border-top:1px solid var(--border);
+    display:none;
+    justify-content:space-around;
+    padding:6px 0;
+    z-index:200;
 }
 
-.mobile-bar button{
-    background:#fff;
-    border:0;
-    padding:7px 2px;
-    font-size:10px;
-    color:#7c2d12;
-    cursor:pointer;
-}
-
-.mobile-bar button.active{
-    color:#ea580c;
+.mobile-nav button{
+    background:none;
+    border:none;
+    font-size:11px;
     font-weight:700;
+    color:var(--muted);
+    cursor:pointer;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:2px;
 }
 
-.mobile-bar span{
-    display:block;
+.mobile-nav button.active{
+    color:var(--primary);
+}
+
+.mobile-nav span{
     font-size:18px;
 }
 
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media(max-width:1100px){
-    .header-inner{
-        flex-wrap:wrap;
-        padding:9px 0;
-    }
-    nav{
-        order:3;
-        width:100%;
-        justify-content:center;
-    }
+/* RESPONSIVE */
+@media(max-width:768px){
+    nav{ display:none; }
+    .mobile-nav{ display:flex; }
+    .grid-2{ grid-template-columns:1fr; }
+    .hero h2{ font-size:20px; }
 }
-
-@media(max-width:900px){
-    .hero-content{
-        grid-template-columns:1fr;
-    }
-    .grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-    .footer-grid{
-        grid-template-columns:1fr 1fr;
-    }
-}
-
-@media(max-width:650px){
-    .header-inner{
-        min-height:62px;
-        flex-wrap:nowrap;
-        padding:6px 0;
-    }
-    .logo{
-        width:41px;
-        height:41px;
-    }
-    .logo-area{
-        gap:7px;
-        min-width:0;
-    }
-    .logo-text h1{
-        font-size:13px;
-        white-space:nowrap;
-    }
-    .logo-text span{
-        font-size:8px;
-        white-space:nowrap;
-    }
-    nav{
-        display:none;
-    }
-    .header-right{
-        gap:4px;
-    }
-    .visitor-badge{
-        padding:3px 5px;
-        font-size:8px;
-    }
-    .live-clock{
-        min-width:80px;
-        padding:3px;
-    }
-    #liveDate{
-        font-size:7px;
-    }
-    #liveTime{
-        font-size:10px;
-    }
-    .live-clock small{
-        font-size:6px;
-    }
-    .hero{
-        padding:40px 0;
-    }
-    .hero h2{
-        font-size:25px;
-    }
-    .hero p{
-        font-size:14px;
-    }
-    .grid{
-        grid-template-columns:1fr;
-    }
-    .contact-grid{
-        grid-template-columns:1fr;
-    }
-    .footer-grid{
-        grid-template-columns:1fr;
-    }
-    .status-box{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-    section{
-        padding:35px 0;
-    }
-    .mobile-bar{
-        display:grid;
-    }
-    footer{
-        padding-bottom:90px;
-    }
-    .whatsapp{
-        right:14px;
-        bottom:74px;
-    }
-}
-
-@media print{
-    header,
-    .mobile-bar,
-    .whatsapp,
-    footer{
-        display:none!important;
-    }
-    .page{
-        display:block!important;
-    }
-}
-
 </style>
 </head>
-
-
 <body>
 
-
-<!-- =========================================================
-     HEADER
-========================================================= -->
-
+<!-- HEADER -->
 <header>
+    <div class="header-wrap">
+        <div class="brand">
+            <img src="Logo.png" alt="श्री बालाजी ई-मित्र लोगो">
+            <div class="brand-text">
+                <h1>श्री बालाजी ई-मित्र सेंटर</h1>
+                <span>साखथली खुर्द, अरनोद</span>
+            </div>
+        </div>
 
-<div class="container header-inner">
-
-<div class="logo-area">
-<img src="Logo.png" class="logo" alt="श्री बालाजी ई-मित्र सेंटर">
-<div class="logo-text">
-<h1>श्री बालाजी ई-मित्र सेंटर</h1>
-<span>साखथली खुर्द, अरनोद, प्रतापगढ़</span>
-</div>
-</div>
-
-<div class="header-right">
-<div class="visitor-badge">
-👁️ <span id="visitCount">...</span>
-</div>
-
-<div class="live-clock">
-<span id="liveDate">--/--/----</span>
-<span id="liveTime">--:--:--</span>
-<small>🟢 LIVE</small>
-</div>
-</div>
-
-<nav id="desktopNav">
-<button class="active" onclick="showPage('home')">होम</button>
-<button onclick="showPage('services')">सेवाएं</button>
-<button onclick="showPage('schemes')">योजनाएं</button>
-<button onclick="showPage('jan')">Jan Aadhaar</button>
-<button onclick="showPage('notice')">सूचना</button>
-<button onclick="showPage('contact')">संपर्क</button>
-</nav>
-
-</div>
-
+        <nav>
+            <button class="nav-btn active" onclick="showTab('home', this)">1. होम</button>
+            <button class="nav-btn" onclick="showTab('services', this)">2. सेवाएं व योजनाएं</button>
+            <button class="nav-btn" onclick="showTab('contact', this)">3. संपर्क व भुगतान</button>
+        </nav>
+    </div>
 </header>
 
-
-<!-- =========================================================
-     HOME
-========================================================= -->
-
-<div id="home" class="page active">
-
-<section class="hero">
-<div class="container hero-content">
-
-<div>
-<h2>आपके गांव की डिजिटल सेवा का भरोसेमंद केंद्र</h2>
-<p>
-Jan Aadhaar, PAN Card, सरकारी योजनाएं, Online Forms, Bill Payment, छात्रवृत्ति और Digital Services।
-</p>
-
-<div class="hero-buttons">
-<a href="tel:+918690653797" class="btn btn-white">📞 कॉल करें</a>
-<a href="https://wa.me/918690653797?text=नमस्ते%20मुझे%20ई-मित्र%20सेवा%20की%20जानकारी%20चाहिए।" target="_blank" rel="noopener" class="btn btn-green">💬 WhatsApp</a>
-<a href="https://maps.app.goo.gl/oXuohtgpiF6fRwV58?g_st=ac" target="_blank" rel="noopener" class="btn btn-blue">📍 Google Maps</a>
-</div>
-</div>
-
-<div class="hero-card">
-<h3>🕐 सेवा समय</h3>
-<p>सुबह 8:00 बजे से शाम 8:00 बजे तक</p>
-<br>
-<p>📍 ग्राम पंचायत - साखथली खुर्द</p>
-<p>📌 तहसील - अरनोद</p>
-<p>📌 जिला - प्रतापगढ़, राजस्थान - 312615</p>
-</div>
-
-</div>
-</section>
-
-<div class="container status-wrap">
-<div class="status-box">
-<div>
-<strong>दुकान की स्थिति:</strong>
-<span id="shopStatus">जांच हो रही है...</span>
-</div>
-<div>
-<strong>आज का समय:</strong>
-08:00 AM - 08:00 PM
-</div>
-</div>
-</div>
-
-<!-- MAIN SERVICES -->
-<section>
-<div class="container">
-<div class="section-title">
-<h2>मुख्य सेवाएं</h2>
-<p>श्री बालाजी ई-मित्र सेंटर पर उपलब्ध प्रमुख सेवाएं</p>
-</div>
-
-<div class="grid">
-
-<div class="card">
-<div class="card-icon">🪪</div>
-<h3>Jan Aadhaar & e-KYC</h3>
-<p>Enrollment, e-KYC, Update, C/O सुधार एवं Family Services।</p>
-<button class="official" onclick="showPage('jan')">जानकारी देखें</button>
-</div>
-
-<div class="card">
-<div class="card-icon">📋</div>
-<h3>सरकारी जनकल्याण योजनाएं</h3>
-<p>युवा स्वरोजगार, अनुप्रति, पालनहार, संबल, किसान योजनाएं।</p>
-<button class="official" onclick="showPage('schemes')">योजनाएं देखें</button>
-</div>
-
-<div class="card">
-<div class="card-icon">💳</div>
-<h3>PAN Card (हार्ड / सॉफ्ट)</h3>
-<p>New PAN एवं PAN Correction (फीस पहले जमा अनिवार्य)।</p>
-<button class="official" onclick="showPage('services')">सेवा देखें</button>
-</div>
-
-<div class="card">
-<div class="card-icon">📑</div>
-<h3>Online Forms & छात्रवृत्ति</h3>
-<p>सरकारी भर्ती, कॉलेज, छात्रवृत्ति एवं अन्य online forms।</p>
-<button class="official" onclick="showPage('services')">Forms देखें</button>
-</div>
-
-<div class="card">
-<div class="card-icon">👴</div>
-<h3>पेंशन वार्षिक भौतिक सत्यापन</h3>
-<p>सामाजिक सुरक्षा पेंशन सत्यापन एवं स्टेटस जांच।</p>
-<button class="official" onclick="showPage('notice')">जानकारी देखें</button>
-</div>
-
-<div class="card">
-<div class="card-icon">💡</div>
-<h3>Digital Services</h3>
-<p>Bill Payment, Recharge, AEPS नकद निकासी, Print व Scan।</p>
-<button class="official" onclick="showPage('services')">सभी सेवाएं</button>
-</div>
-
-</div>
-</div>
-</section>
-
-</div>
-
-
-<!-- =========================================================
-     SERVICES
-========================================================= -->
-
-<div id="services" class="page">
-
-<section>
 <div class="container">
 
-<div class="section-title">
-<h2>ई-मित्र एवं डिजिटल सेवाएं</h2>
-<p>अपनी जरूरत की सेवा खोजें</p>
-</div>
-
-<div class="notice">
-<strong>📢 जरूरी सूचना:</strong> सरकारी पोर्टल पर ऑनलाइन टोकन जनरेट होने के कारण पैन कार्ड व ऑनलाइन फॉर्म्स का <strong>शुल्क आवेदन से पहले जमा कराना अनिवार्य है</strong>।
-</div>
-
-<div class="search-box">
-<input type="text" id="serviceSearch" placeholder="🔎 सेवा खोजें... जैसे PAN, छात्रवृत्ति, Jan Aadhaar, बिजली" onkeyup="searchServices()">
-</div>
-
-<div class="grid" id="serviceGrid">
-
-<!-- PAN HARD -->
-<div class="card service-card">
-<div class="card-icon">🪪</div>
-<h3>पैन कार्ड (Hard Copy + Soft)</h3>
-<p>ओरिजिनल पीवीसी प्लास्टिक कार्ड डाक से घर आएगा व डिजिटल पीडीएफ ईमेल पर।</p>
-<div class="price">₹250</div>
-<p class="small">आवश्यक: पहचान प्रमाण + 2 पासपोर्ट फोटो + हस्ताक्षर</p>
-</div>
-
-<!-- PAN SOFT -->
-<div class="card service-card">
-<div class="card-icon">📄</div>
-<h3>पैन कार्ड (Soft Copy केवल)</h3>
-<p>डिजिटल e-PAN कार्ड सीधे ईमेल पर प्राप्त होगा (3 से 5 कार्य दिवसों में)।</p>
-<div class="price">₹200</div>
-<p class="small">आवश्यक: पहचान प्रमाण + फोटो + मोबाइल OTP</p>
-</div>
-
-<!-- SCHOLARSHIP -->
-<div class="card service-card">
-<div class="card-icon">🎓</div>
-<h3>छात्रवृत्ति फॉर्म (Scholarship)</h3>
-<p>उत्तर मैट्रिक छात्रवृत्ति (SJE), NSP एवं मुख्यमंत्री उच्च शिक्षा छात्रवृत्ति।</p>
-<p class="small">दस्तावेज: जन आधार, आय प्रमाण पत्र, 10वीं/12वीं अंकतालिका</p>
-</div>
-
-<!-- AYUSHMAN -->
-<div class="card service-card">
-<div class="card-icon">🏥</div>
-<h3>Ayushman Bharat Card</h3>
-<p>प्रतिवर्ष 5 लाख तक का कैशलेस सरकारी व निजी उपचार।</p>
-<p class="small">दस्तावेज: पहचान प्रमाण + राशन कार्ड / जन आधार</p>
-</div>
-
-<!-- E-SHRAM -->
-<div class="card service-card">
-<div class="card-icon">👷</div>
-<h3>e-Shram Card</h3>
-<p>असंगठित मजदूरों व किसानों हेतु बीमा व सरकारी योजनाएं।</p>
-<p class="small">दस्तावेज: पहचान प्रमाण + बैंक पासबुक</p>
-</div>
-
-<!-- LABOUR CARD -->
-<div class="card service-card">
-<div class="card-icon">🔨</div>
-<h3>श्रमिक कार्ड (लेबर डायरी)</h3>
-<p>छात्रवृत्ति, प्रसूति सहायता एवं शुभशक्ति योजना अनुदान।</p>
-<p class="small">दस्तावेज: 90 दिन कार्य प्रमाण + जन आधार</p>
-</div>
-
-<!-- ABHA CARD -->
-<div class="card service-card">
-<div class="card-icon">🩺</div>
-<h3>ABHA Health ID</h3>
-<p>डिजिटल स्वास्थ्य खाता जिसमें सभी मेडिकल जांचें सुरक्षित रहती हैं।</p>
-<p class="small">दस्तावेज: पहचान प्रमाण + मोबाइल OTP</p>
-</div>
-
-<!-- APAAR -->
-<div class="card service-card">
-<div class="card-icon">🆔</div>
-<h3>APAAR / ABC ID</h3>
-<p>कॉलेज व स्कूल विद्यार्थियों के लिए अनिवार्य डिजिटल एकेडमिक आईडी।</p>
-<p class="small">दस्तावेज: पहचान प्रमाण + स्कूल/कॉलेज रोल नंबर</p>
-</div>
-
-<!-- JAN AADHAAR -->
-<div class="card service-card">
-<div class="card-icon">🪪</div>
-<h3>Jan Aadhaar Services</h3>
-<p>Enrollment, e-KYC, सदस्य जोड़ना एवं पारिवारिक विवरण सुधार।</p>
-</div>
-
-<!-- BILL PAYMENT -->
-<div class="card service-card">
-<div class="card-icon">💡</div>
-<h3>बिजली व पानी बिल</h3>
-<p>डिस्कॉम बिजली बिल एवं जलदाय बिल तुरंत ऑनलाइन भुगतान व रसीद।</p>
-</div>
-
-<div class="card service-card">
-<div class="card-icon">📱</div>
-<h3>Mobile / DTH Recharge</h3>
-<p>मोबाइल एवं DTH तुरंत ऑनलाइन रिचार्ज सेवा।</p>
-</div>
-
-<div class="card service-card">
-<div class="card-icon">📑</div>
-<h3>Online Recruitment Forms</h3>
-<p>सरकारी भर्ती, OTR, Application फॉर्म एवं Admit Card।</p>
-<a class="official" href="https://recruitment.rajasthan.gov.in/" target="_blank" rel="noopener">Recruitment Portal</a>
-</div>
-
-<div class="card service-card">
-<div class="card-icon">📜</div>
-<h3>मूल निवास / जाति प्रमाण पत्र</h3>
-<p>तहसील स्तरीय ऑनलाइन डिजिटल प्रमाण पत्र आवेदन।</p>
-</div>
-
-<div class="card service-card">
-<div class="card-icon">🖨️</div>
-<h3>Printing / Photocopy</h3>
-<p>Color Print, Photocopy, Scan एवं High-Quality Lamination।</p>
-</div>
-
-<div class="card service-card">
-<div class="card-icon">📸</div>
-<h3>Passport Size Photo</h3>
-<p>अर्जेंट पासपोर्ट साइज डिजिटल फोटो सेवा।</p>
-</div>
-
-<div class="card service-card">
-<div class="card-icon">💰</div>
-<h3>AEPS (नकद निकासी)</h3>
-<p>बायोमेट्रिक प्रमाणीकरण से किसी भी बैंक खाते से रुपये निकालना व बैलेंस चेक।</p>
-</div>
-
-</div>
-</div>
-</section>
-
-</div>
-
-
-<!-- =========================================================
-     SCHEMES
-========================================================= -->
-
-<div id="schemes" class="page">
-
-<section>
-<div class="container">
-
-<div class="section-title">
-<h2>राजस्थान सरकारी योजनाएं</h2>
-<p>योजना की अंतिम पात्रता एवं नियम Official Portal पर जांचें</p>
-</div>
-
-<div class="notice">
-<strong>⚠️ जरूरी जानकारी:</strong> योजनाओं की पात्रता, राशि, दस्तावेज और Last Date समय के साथ बदल सकती है। आवेदन से पहले Official Portal पर वर्तमान जानकारी जांचें।
-</div>
-
-<div class="search-box">
-<input type="text" id="schemeSearch" placeholder="🔎 योजना खोजें... जैसे स्वरोजगार, अनुप्रति, पालनहार" onkeyup="searchSchemes()">
-</div>
-
-<div class="filters">
-<button class="filter-btn active" onclick="filterSchemes('all',this)">सभी</button>
-<button class="filter-btn" onclick="filterSchemes('farmer',this)">किसान</button>
-<button class="filter-btn" onclick="filterSchemes('student',this)">विद्यार्थी</button>
-<button class="filter-btn" onclick="filterSchemes('women',this)">महिला/बालिका</button>
-<button class="filter-btn" onclick="filterSchemes('youth',this)">युवा/रोजगार</button>
-<button class="filter-btn" onclick="filterSchemes('social',this)">सामाजिक सुरक्षा</button>
-</div>
-
-<div class="grid" id="schemeGrid">
-
-<!-- 1: MMYSY -->
-<div class="card scheme-card youth">
-<div class="card-icon">💼</div>
-<h3>मुख्यमंत्री युवा स्वरोजगार योजना (MMYSY)</h3>
-<p>युवाओं को नया व्यवसाय शुरू करने हेतु ₹10 लाख तक का ब्याज-मुक्त ऋण (ब्याज राज्य सरकार वहन करती है)।</p>
-<a class="official" href="https://ssoapps2.rajasthan.gov.in/mysy/Form.aspx" target="_blank" rel="noopener">🏛️ Official Portal</a>
-<a class="official green-link" href="https://wa.me/918690653797?text=मुझे%20युवा%20स्वरोजगार%20योजना%20का%20आवेदन%20करना%20है।" target="_blank" rel="noopener">💬 आवेदन सहायता</a>
-</div>
-
-<!-- 2: YUVA SAMBAL -->
-<div class="card scheme-card youth">
-<div class="card-icon">👨‍💼</div>
-<h3>मुख्यमंत्री युवा संबल योजना (बेरोजगारी भत्ता)</h3>
-<p>स्नातक बेरोजगार युवाओं को आर्थिक सहायता: पुरुषों को ₹4,000/माह एवं महिलाओं को ₹4,500/माह।</p>
-<a class="official" href="https://employment.rajasthan.gov.in/" target="_blank" rel="noopener">🏛️ Official Website</a>
-<a class="official green-link" href="https://wa.me/918690653797?text=मुझे%20बेरोजगारी%20भत्ता%20का%20आवेदन%20करना%20है।" target="_blank" rel="noopener">💬 आवेदन सहायता</a>
-</div>
-
-<!-- 3: ANUPRATI -->
-<div class="card scheme-card student">
-<div class="card-icon">🎓</div>
-<h3>मुख्यमंत्री अनुप्रति कोचिंग योजना</h3>
-<p>प्रतियोगी परीक्षाओं (UPSC, RAS, REET, Police, NEET, JEE) हेतु प्रतिष्ठित संस्थानों में फ्री कोचिंग व आवास भत्ता।</p>
-<a class="official" href="https://sso.rajasthan.gov.in/" target="_blank" rel="noopener">🏛️ Rajasthan SSO</a>
-<a class="official green-link" href="https://wa.me/918690653797?text=मुझे%20अनुप्रति%20कोचिंग%20योजना%20की%20जानकारी%20चाहिए।" target="_blank" rel="noopener">💬 आवेदन सहायता</a>
-</div>
-
-<!-- 4: GARGI -->
-<div class="card scheme-card student women">
-<div class="card-icon">🎒</div>
-<h3>गार्गी पुरस्कार</h3>
-<p>10वीं बोर्ड परीक्षा में 75% या अधिक अंक प्राप्त करने वाली पात्र छात्राओं को प्रोत्साहन राशि व प्रमाण पत्र।</p>
-<a class="official" href="https://rajshaladarpan.rajasthan.gov.in/" target="_blank" rel="noopener">🏛️ Official Portal</a>
-</div>
-
-<!-- 5: SCOOTY -->
-<div class="card scheme-card student women">
-<div class="card-icon">🛵</div>
-<h3>कालीबाई भील मेधावी छात्रा स्कूटी योजना</h3>
-<p>पात्र मेधावी छात्राओं को उच्च शिक्षा के लिए प्रोत्साहन स्वरूप निशुल्क स्कूटी वितरण।</p>
-<a class="official" href="https://hte.rajasthan.gov.in/" target="_blank" rel="noopener">🏛️ Higher Education</a>
-</div>
-
-<!-- 6: RAJSHREE -->
-<div class="card scheme-card women">
-<div class="card-icon">👧</div>
-<h3>मुख्यमंत्री राजश्री योजना</h3>
-<p>बालिका के जन्म से लेकर 12वीं कक्षा तक कुल ₹50,000 की वित्तीय सहायता 6 चरणों में दी जाती है।</p>
-<a class="official" href="https://wcd.rajasthan.gov.in/" target="_blank" rel="noopener">🏛️ Official Portal</a>
-</div>
-
-<!-- 7: AAPKI BETI -->
-<div class="card scheme-card women student">
-<div class="card-icon">👧</div>
-<h3>आपकी बेटी योजना</h3>
-<p>सरकारी स्कूलों में कक्षा 1 से 12 तक पढ़ने वाली बीपीएल/अनाथ बालिकाओं को प्रतिवर्ष वार्षिक छात्रवृत्ति।</p>
-<a class="official" href="https://rajshaladarpan.rajasthan.gov.in/" target="_blank" rel="noopener">🏛️ Official Portal</a>
-</div>
-
-<!-- 8: PALANHAR -->
-<div class="card scheme-card women social">
-<div class="card-icon">❤️</div>
-<h3>पालनहार योजना</h3>
-<p>अनाथ एवं पात्र श्रेणियों के बच्चों के पालन-पोषण, वस्त्र एवं शिक्षा हेतु प्रतिमाह सीधी आर्थिक सहायता।</p>
-<a class="official" href="https://www.myscheme.gov.in/" target="_blank" rel="noopener">🏛️ myScheme</a>
-<a class="official green-link" href="https://wa.me/918690653797?text=मुझे%20पालनहार%20योजना%20का%20आवेदन%20करना%20है।" target="_blank" rel="noopener">💬 आवेदन सहायता</a>
-</div>
-
-<!-- 9: PENSION -->
-<div class="card scheme-card social">
-<div class="card-icon">👴</div>
-<h3>वृद्धावस्था / एकल नारी पेंशन</h3>
-<p>पात्र वरिष्ठ नागरिकों एवं एकल महिलाओं के लिए मासिक सामाजिक सुरक्षा पेंशन।</p>
-<a class="official" href="https://ssp.rajasthan.gov.in/" target="_blank" rel="noopener">🏛️ Pension Portal</a>
-</div>
-
-<!-- 10: FARMER -->
-<div class="card scheme-card farmer">
-<div class="card-icon">🌾</div>
-<h3>राज किसान कृषि अनुदान (तारबंदी, फव्वारा, पाइप)</h3>
-<p>कृषि विभाग की फव्वारा सेट, पाइपलाइन, तारबंदी एवं बीज मिनीकिट अनुदान योजनाएं।</p>
-<a class="official" href="https://rajkisan.rajasthan.gov.in/" target="_blank" rel="noopener">🏛️ RajKisan</a>
-</div>
-
-</div>
-</div>
-</section>
-
-</div>
-
-
-<!-- =========================================================
-     JAN AADHAAR
-========================================================= -->
-
-<div id="jan" class="page">
-
-<section>
-<div class="container">
-
-<div class="section-title">
-<h2>Jan Aadhaar सेवाएं</h2>
-<p>राजस्थान जन आधार से संबंधित सेवाएं</p>
-</div>
-
-<div class="success">
-<strong>✅ Jan Aadhaar e-KYC:</strong><br>
-Official Jan Aadhaar जानकारी के अनुसार परिवार के मुखिया और 5 वर्ष से अधिक आयु के सभी सदस्यों की बायोमेट्रिक प्रमाणीकरण e-KYC आवश्यक है।
-5 वर्ष से कम आयु के बच्चों के लिए नियम के अनुसार Birth Certificate के माध्यम से प्रक्रिया होती है।
-</div>
-
-<!-- C/O CHANGE RULE -->
-<div class="warning">
-<strong style="color:#b45309;">⚠ आधार / जन आधार में पिता / पति नाम संशोधन नियम (C/O Change):</strong><br>
-• <strong>विवाह उपरांत पिता की जगह पति का नाम:</strong> महिला व पति दोनों के पहचान प्रमाण पत्र की फोटो प्रति + विवाह प्रमाण पत्र या जन आधार + मोबाइल ओटीपी आवश्यक है।<br>
-• <strong>पति की जगह पिता का नाम:</strong> स्वयं का पहचान प्रमाण + पिता का पहचान प्रमाण + मायके पक्ष का सरकारी प्रमाण (10वीं मार्कशीट/जन आधार) + मोबाइल ओटीपी।
-</div>
-
-<div class="grid">
-
-<div class="jan-box">
-<h3>🪪 Jan Aadhaar Enrollment</h3>
-<p>नया Jan Aadhaar परिवार नामांकन करने में सहायता।</p>
-<ul class="check-list">
-<li>✔ मुखिया एवं सदस्यों का पहचान प्रमाण</li>
-<li>✔ मुखिया की बैंक पासबुक / Cancelled Cheque</li>
-<li>✔ जन्म/आयु एवं मूल निवास प्रमाण पत्र</li>
-</ul>
-</div>
-
-<div class="jan-box">
-<h3>🔐 Jan Aadhaar e-KYC</h3>
-<p>परिवार के सदस्यों की बायोमेट्रिक प्रमाणीकरण e-KYC प्रक्रिया में सहायता।</p>
-<a class="official" href="https://janaadhaar.rajasthan.gov.in/" target="_blank" rel="noopener">🏛️ Official Portal</a>
-</div>
-
-<div class="jan-box">
-<h3>✏️ Jan Aadhaar Update</h3>
-<p>नाम, पता, जन्मतिथि, बैंक खाता, सदस्य जोड़ना/हटाना।</p>
-<a class="official" href="https://janaadhaar.rajasthan.gov.in/" target="_blank" rel="noopener">🏛️ Update Portal</a>
-</div>
-
-<div class="jan-box">
-<h3>💳 Jan Aadhaar e-Card</h3>
-<p>Jan Aadhaar आईडी जारी होने के बाद डिजिटल कार्ड डाउनलोड व कलर प्रिंट।</p>
-<a class="official" href="https://janaadhaar.rajasthan.gov.in/" target="_blank" rel="noopener">🌐 Jan Aadhaar</a>
-</div>
-
-<div class="jan-box">
-<h3>🔄 Family Split / Transfer</h3>
-<p>विवाह के उपरांत महिला का नाम ससुराल के जन आधार में जोड़ना या परिवार विभाजन।</p>
-</div>
-
-<div class="jan-box">
-<h3>📢 Jan Aadhaar Official पोर्टल</h3>
-<p>डीबीटी सब्सिडी स्थिति जांच और सरकारी नियमों की आधिकारिक जानकारी।</p>
-<a class="official orange-link" href="https://janaadhaar.rajasthan.gov.in/" target="_blank" rel="noopener">🔴 Official Updates</a>
-</div>
-
-</div>
-</div>
-</section>
-
-</div>
-
-
-<!-- =========================================================
-     NOTICE
-========================================================= -->
-
-<div id="notice" class="page">
-
-<section>
-<div class="container">
-
-<div class="section-title">
-<h2>जरूरी सूचना</h2>
-<p>आवेदन से पहले ध्यान रखें</p>
-</div>
-
-<div class="notice">
-<h3>💰 शुल्क संबंधी सूचना</h3>
-<p>हर सेवा का शुल्क अलग हो सकता है। सरकारी शुल्क, portal fee और e-Mitra service fee लागू होने पर अलग-अलग हो सकते हैं।</p>
-</div>
-
-<div class="warning">
-<h3>⚠️ Online Form Payment</h3>
-<p>कुछ online forms में token/application process के कारण शुल्क पहले जमा करना पड़ता है। भुगतान से पहले आवेदन की जानकारी एवं राशि की पुष्टि करें।</p>
-</div>
-
-<div class="success">
-<h3>📄 सामान्य Documents तैयार रखें</h3>
-<ul class="check-list">
-<li>✔ पहचान प्रमाण पत्र (मोबाइल नंबर लिंक सहित)</li>
-<li>✔ जन आधार कार्ड</li>
-<li>✔ बैंक पासबुक (स्पष्ट खाता संख्या व IFSC कोड)</li>
-<li>✔ पासपोर्ट साइज 2 फोटो</li>
-<li>✔ 10वीं / 12वीं मार्कशीट</li>
-<li>✔ मूल निवास, जाति व आय प्रमाण पत्र (यदि लागू हो)</li>
-</ul>
-</div>
-
-<div class="notice">
-<h3>🔐 सुरक्षा संबंधी सूचना</h3>
-<p>अपना मोबाइल OTP, Bank OTP, UPI PIN, ATM PIN या Password किसी अनजान व्यक्ति को न बताएं। ई-मित्र सेवा के दौरान भी OTP सिर्फ संबंधित official process के लिए स्वयं दर्ज कराएं।</p>
-</div>
-
-</div>
-</section>
-
-</div>
-
-
-<!-- =========================================================
-     CONTACT
-========================================================= -->
-
-<div id="contact" class="page">
-
-<section>
-<div class="container">
-
-<div class="section-title">
-<h2>संपर्क करें</h2>
-<p>श्री बालाजी ई-मित्र सेंटर</p>
-</div>
-
-<div class="contact-grid">
-
-<div class="contact-card">
-<h3>📍 सेंटर की जानकारी</h3>
-
-<div class="contact-item">
-<div>👤</div>
-<div><strong>संचालक</strong><br>Ankit Dangi</div>
-</div>
-
-<div class="contact-item">
-<div>📞</div>
-<div><strong>मोबाइल</strong><br><a href="tel:+918690653797">+91 8690653797</a></div>
-</div>
-
-<div class="contact-item">
-<div>📧</div>
-<div><strong>Email</strong><br><a href="mailto:ankitdangi1707@gmail.com">ankitdangi1707@gmail.com</a></div>
-</div>
-
-<div class="contact-item">
-<div>📍</div>
-<div><strong>पता</strong><br>ग्राम पंचायत - साखथली खुर्द, तहसील - अरनोद,<br>जिला - प्रतापगढ़, राजस्थान - 312615</div>
-</div>
-
-<div class="contact-item">
-<div>🕐</div>
-<div><strong>समय</strong><br>सुबह 8:00 बजे से शाम 8:00 बजे तक</div>
-</div>
-
-<br>
-<a href="https://maps.app.goo.gl/oXuohtgpiF6fRwV58?g_st=ac" target="_blank" rel="noopener" class="btn btn-blue">📍 Google Maps</a>
-</div>
-
-<div class="contact-card">
-<h3>💬 WhatsApp पर पूछताछ</h3>
-
-<div class="form-group">
-<label>आपका नाम</label>
-<input type="text" id="waName" placeholder="अपना नाम लिखें">
-</div>
-
-<div class="form-group">
-<label>मोबाइल नंबर</label>
-<input type="tel" id="waMobile" placeholder="मोबाइल नंबर">
-</div>
-
-<div class="form-group">
-<label>कौन सी सेवा चाहिए?</label>
-<textarea id="waMessage" placeholder="जैसे Jan Aadhaar, PAN Card, योजना या ऑनलाइन फॉर्म"></textarea>
-</div>
-
-<button class="btn btn-green" onclick="sendWhatsApp()">💬 WhatsApp पर भेजें</button>
-
-<div class="upi-box">
-<h3>💳 UPI Payment</h3>
-<p class="small">भुगतान करने से पहले राशि की पुष्टि करें:</p>
-
-<img src="Qr.png" class="qr" alt="UPI QR Code">
-
-<div class="upi-row">
-<span id="upi1">8690653797@slc</span>
-<button class="copy-btn" onclick="copyUPI('8690653797@slc')">Copy</button>
-</div>
-
-<div class="upi-row">
-<span id="upi2">ankitdangi17@icici</span>
-<button class="copy-btn" onclick="copyUPI('ankitdangi17@icici')">Copy</button>
-</div>
-
-<p style="font-size:12px;color:#ea580c;margin-top:10px;font-weight:700;">
-⚡ भुगतान के बाद transaction screenshot WhatsApp पर भेजें।
-</p>
-</div>
-
-</div>
-
-</div>
-
-</div>
-</section>
-
-</div>
-
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
-<footer>
-<div class="container footer-grid">
-
-<div>
-<h3>श्री बालाजी ई-मित्र सेंटर</h3>
-<p>साखथली खुर्द, अरनोद, प्रतापगढ़, राजस्थान - 312615</p>
-<br>
-<p>Jan Aadhaar, PAN Card, सरकारी योजनाएं, Online Forms एवं Digital Services।</p>
-</div>
-
-<div>
-<h3>Quick Links</h3>
-<ul>
-<li><a href="#" onclick="showPage('home');return false;">होम</a></li>
-<li><a href="#" onclick="showPage('services');return false;">सेवाएं</a></li>
-<li><a href="#" onclick="showPage('schemes');return false;">योजनाएं</a></li>
-<li><a href="#" onclick="showPage('jan');return false;">Jan Aadhaar</a></li>
-<li><a href="#" onclick="showPage('contact');return false;">संपर्क</a></li>
-</ul>
-</div>
-
-<div>
-<h3>Official Portals</h3>
-<ul>
-<li><a href="https://janaadhaar.rajasthan.gov.in/" target="_blank" rel="noopener">Jan Aadhaar</a></li>
-<li><a href="https://recruitment.rajasthan.gov.in/" target="_blank" rel="noopener">Rajasthan Recruitment</a></li>
-<li><a href="https://sso.rajasthan.gov.in/" target="_blank" rel="noopener">Rajasthan SSO</a></li>
-<li><a href="https://ssp.rajasthan.gov.in/" target="_blank" rel="noopener">Social Security Pension</a></li>
-</ul>
-</div>
-
-</div>
-
-<br>
-
-<div class="container" style="text-align:center;border-top:1px solid #57534e;padding-top:20px;">
-<p>© <span id="year">2026</span> श्री बालाजी ई-मित्र सेंटर | Ankit Dangi</p>
-<p style="margin-top:6px;font-size:11px;">
-यह वेबसाइट नागरिक सुविधा एवं सेवा जानकारी के लिए है। सरकारी योजनाओं, फीस, पात्रता, Last Date और notifications के लिए संबंधित Official Portal की वर्तमान जानकारी मान्य होगी।
-</p>
-</div>
-</footer>
-
-
-<!-- =========================================================
-     FLOATING WHATSAPP
-========================================================= -->
-
-<a class="whatsapp" href="https://wa.me/918690653797" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
-
-
-<!-- =========================================================
-     MOBILE BAR
-========================================================= -->
-
-<div class="mobile-bar">
-<button id="m-home" class="active" onclick="showPage('home')"><span>🏠</span>होम</button>
-<button id="m-services" onclick="showPage('services')"><span>🛠️</span>सेवाएं</button>
-<button id="m-schemes" onclick="showPage('schemes')"><span>📋</span>योजनाएं</button>
-<button id="m-jan" onclick="showPage('jan')"><span>🪪</span>Jan Aadhaar</button>
-<button id="m-contact" onclick="showPage('contact')"><span>📞</span>संपर्क</button>
-</div>
-
-
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
-
+<!-- ================= TAB 1: HOME ================= -->
+<main id="home" class="page active">
+    <div class="hero">
+        <span class="status-pill" id="shopStatus">दुकान की स्थिति...</span>
+        <h2>श्री बालाजी ई-मित्र सेंटर</h2>
+        <p>साखथली खुर्द में नया पैन कार्ड, जन आधार e-KYC, सरकारी योजनाएं, बिजली बिल व ऑनलाइन फॉर्म्स की भरोसेमंद सेवा।</p>
+        <div class="hero-actions">
+            <button class="btn btn-light" onclick="showTab('services', document.querySelectorAll('.nav-btn')[1])">📋 सेवाएं देखें</button>
+            <a href="tel:+918690653797" class="btn btn-main" style="background:#ffffff; color:#991b1b;">📞 कॉल करें</a>
+            <a href="https://wa.me/918690653797" target="_blank" class="btn btn-green">💬 WhatsApp</a>
+        </div>
+    </div>
+
+    <div class="grid-2">
+        <div class="card">
+            <h3 style="font-size:15px; margin-bottom:8px; color:var(--primary);">⏰ दुकान का समय</h3>
+            <p style="font-size:13px; color:var(--text);"><strong>सोमवार - शनिवार:</strong> सुबह 8:00 AM से रात 8:00 PM</p>
+            <p style="font-size:13px; color:var(--text);"><strong>रविवार:</strong> सुबह 9:00 AM से शाम 7:00 PM</p>
+        </div>
+
+        <div class="card">
+            <h3 style="font-size:15px; margin-bottom:8px; color:var(--primary);">📍 मुख्य पता</h3>
+            <p style="font-size:13px; color:var(--text);">ग्राम पंचायत - साखथली खुर्द, तहसील - अरनोद</p>
+            <p style="font-size:13px; color:var(--text);">जिला - प्रतापगढ़, राजस्थान (पिन: 312615)</p>
+        </div>
+    </div>
+
+    <div class="card" style="margin-top:10px;">
+        <h3 style="font-size:15px; margin-bottom:6px; color:var(--dark);">📢 जरूरी सूचना</h3>
+        <p style="font-size:13px; color:var(--muted);">
+            सरकारी पोर्टल पर ऑनलाइन टोकन जनरेट होने के कारण पैन कार्ड व सरकारी फॉर्म्स का <strong>शुल्क आवेदन से पहले जमा कराना अनिवार्य है</strong>।
+        </p>
+    </div>
+</main>
+
+<!-- ================= TAB 2: SERVICES & SCHEMES ================= -->
+<main id="services" class="page">
+    <input type="text" id="searchBox" class="search-input" placeholder="🔍 सेवा या योजना खोजें (जैसे: PAN, आधार, संबल, पेंशन...)" onkeyup="filterItems()">
+
+    <!-- PAN CARD SECTION -->
+    <div class="sec-head">🪪 नया पैन कार्ड आवेदन (PAN Card)</div>
+    <div class="grid-2" style="margin-bottom:20px;">
+        <div class="pan-box">
+            <h4 style="font-size:15px;">सॉफ्ट कॉपी (e-PAN केवल)</h4>
+            <div class="pan-price">₹200</div>
+            <p style="font-size:12px; color:var(--muted);">डिजिटल e-PAN कार्ड सीधे ईमेल/व्हाट्सएप पर प्राप्त होगा (3-5 दिन में)।</p>
+            <p style="font-size:12px; color:var(--primary); margin-top:6px;">दस्तावेज: आधार कार्ड + फोटो + मोबाइल OTP</p>
+        </div>
+
+        <div class="pan-box featured">
+            <h4 style="font-size:15px;">हार्ड कॉपी + सॉफ्ट कॉपी (Plastic Card)</h4>
+            <div class="pan-price">₹250</div>
+            <p style="font-size:12px; color:var(--muted);">ओरिजिनल पीवीसी कार्ड डाक से घर आएगा व डिजिटल पीडीएफ भी मिलेगी।</p>
+            <p style="font-size:12px; color:var(--primary); margin-top:6px;">दस्तावेज: आधार कार्ड + 2 फोटो + हस्ताक्षर</p>
+        </div>
+    </div>
+
+    <!-- AADHAAR C/O RULE -->
+    <div class="notice">
+        <strong>⚠️ आधार में पिता / पति नाम संशोधन नियम:</strong><br>
+        • <strong>शादी के बाद पिता की जगह पति का नाम:</strong> महिला व पति दोनों के आधार कार्ड की प्रति + विवाह प्रमाण पत्र या जन आधार + मोबाइल ओटीपी आवश्यक है।<br>
+        • <strong>पति की जगह पिता का नाम:</strong> स्वयं का आधार + पिता का आधार + 10वीं मार्कशीट/जन आधार + मोबाइल ओटीपी।
+    </div>
+
+    <!-- ALL SERVICES & SCHEMES GRID -->
+    <div class="sec-head">📋 प्रमुख डिजिटल सेवाएं एवं सरकारी योजनाएं</div>
+    <div class="grid-3" id="serviceGrid">
+        <div class="card s-item">
+            <h4 style="font-size:14px; margin-bottom:4px;">Jan Aadhaar Services</h4>
+            <p style="font-size:12px; color:var(--muted);">नया परिवार नामांकन, e-KYC, सदस्य जोड़ना एवं पारिवारिक विवरण सुधार।</p>
+        </div>
+
+        <div class="card s-item">
+            <h4 style="font-size:14px; margin-bottom:4px;">मुख्यमंत्री युवा स्वरोजगार योजना (MMYSY)</h4>
+            <p style="font-size:12px; color:var(--muted);">नया व्यवसाय शुरू करने हेतु ₹10 लाख तक का 100% ब्याज-मुक्त ऋण सहायता।</p>
+        </div>
+
+        <div class="card s-item">
+            <h4 style="font-size:14px; margin-bottom:4px;">मुख्यमंत्री युवा संबल (बेरोजगारी भत्ता)</h4>
+            <p style="font-size:12px; color:var(--muted);">स्नातक बेरोजगार युवाओं को आर्थिक भत्ता: पुरुषों को ₹4,000 व महिलाओं को ₹4,500/माह।</p>
+        </div>
+
+        <div class="card s-item">
+            <h4 style="font-size:14px; margin-bottom:4px;">मुख्यमंत्री अनुप्रति कोचिंग योजना</h4>
+            <p style="font-size:12px; color:var(--muted);">प्रतियोगी परीक्षाओं (UPSC, RAS, REET, Police) हेतु प्रतिष्ठित संस्थानों में फ्री कोचिंग।</p>
+        </div>
+
+        <div class="card s-item">
+            <h4 style="font-size:14px; margin-bottom:4px;">पालनहार एवं राजश्री योजना</h4>
+            <p style="font-size:12px; color:var(--muted);">अनाथ/पात्र बच्चों को मासिक सहायता एवं बालिकाओं को चरणबद्ध आर्थिक संबल।</p>
+        </div>
+
+        <div class="card s-item">
+            <h4 style="font-size:14px; margin-bottom:4px;">आयुष्मान व आभा हेल्थ कार्ड</h4>
+            <p style="font-size:12px; color:var(--muted);">₹5 लाख तक कैशलेस उपचार कार्ड व डिजिटल स्वास्थ्य पहचान पत्र (ABHA ID)।</p>
+        </div>
+
+        <div class="card s-item">
+            <h4 style="font-size:14px; margin-bottom:4px;">ई-श्रम व श्रमिक कार्ड (लेबर डायरी)</h4>
+            <p style="font-size:12px; color:var(--muted);">मजदूर डायरी छात्रवृत्ति, प्रसूति सहायता व दुर्घटना बीमा पंजीयन।</p>
+        </div>
+
+        <div class="card s-item">
+            <h4 style="font-size:14px; margin-bottom:4px;">APAAR / ABC स्टूडेंट आईडी</h4>
+            <p style="font-size:12px; color:var(--muted);">स्कूल व कॉलेज विद्यार्थियों के लिए अनिवार्य डिजिटल एकेडमिक क्रेडिट आईडी।</p>
+        </div>
+
+        <div class="card s-item">
+            <h4 style="font-size:14px; margin-bottom:4px;">बिजली व पानी बिल भुगतान</h4>
+            <p style="font-size:12px; color:var(--muted);">डिस्कॉम बिजली एवं जलदाय बिल तुरंत ऑनलाइन भुगतान व पक्की रसीद।</p>
+        </div>
+
+        <div class="card s-item">
+            <h4 style="font-size:14px; margin-bottom:4px;">पेंशन वार्षिक भौतिक सत्यापन</h4>
+            <p style="font-size:12px; color:var(--muted);">सामाजिक सुरक्षा पेंशन का बायोमेट्रिक सत्यापन व जीवन प्रमाण पत्र।</p>
+        </div>
+
+        <div class="card s-item">
+            <h4 style="font-size:14px; margin-bottom:4px;">AEPS नकद निकासी (Banking)</h4>
+            <p style="font-size:12px; color:var(--muted);">आधार अंगूठे से किसी भी बैंक खाते से रुपये निकालना व बैलेंस जांच।</p>
+        </div>
+
+        <div class="card s-item">
+            <h4 style="font-size:14px; margin-bottom:4px;">कलर प्रिंट, फोटो व ऑनलाइन फॉर्म</h4>
+            <p style="font-size:12px; color:var(--muted);">सरकारी भर्ती आवेदन, पासपोर्ट साइज फोटो, लेमिनेशन व फोटोकॉपी।</p>
+        </div>
+    </div>
+</main>
+
+<!-- ================= TAB 3: CONTACT & PAY ================= -->
+<main id="contact" class="page">
+    <div class="grid-2">
+        <div class="card">
+            <div class="sec-head" style="margin-top:0;">📍 केंद्र का पता व संपर्क</div>
+            <p style="font-size:13px; margin-bottom:12px;">
+                <strong>श्री बालाजी ई-मित्र सेंटर</strong><br>
+                ग्राम - <strong>साखथली खुर्द</strong>, तहसील - अरनोद<br>
+                जिला - प्रतापगढ़ (राजस्थान) - 312615
+            </p>
+            <p style="font-size:13px; margin-bottom:4px;"><strong>📞 अंकित डांगी:</strong> <a href="tel:+918690653797">+91 8690653797</a></p>
+            <p style="font-size:13px; margin-bottom:14px;"><strong>📧 Email:</strong> ankitdangi1707@gmail.com</p>
+
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                <a href="tel:+918690653797" class="btn btn-main">📞 कॉल करें</a>
+                <a href="https://maps.app.goo.gl/oXuohtgpiF6fRwV58?g_st=ac" target="_blank" class="btn btn-light">🗺️ Google Maps</a>
+            </div>
+        </div>
+
+        <div class="card" style="text-align:center;">
+            <div class="sec-head" style="margin-top:0; justify-content:center;">💳 ऑनलाइन भुगतान (UPI)</div>
+            <p style="font-size:12px; color:var(--muted);">पैन कार्ड व सेवा शुल्क हेतु QR स्कैन करें या UPI कॉपी करें:</p>
+            
+            <img src="Qr.png" alt="UPI QR Code" style="width:160px; height:160px; margin:10px auto; display:block; border-radius:8px; border:1px solid var(--border);">
+
+            <div class="upi-row">
+                <span>8690653797@slc</span>
+                <button class="copy-btn" onclick="copyUPI('8690653797@slc')">Copy</button>
+            </div>
+
+            <div class="upi-row">
+                <span>ankitdangi17@icici</span>
+                <button class="copy-btn" onclick="copyUPI('ankitdangi17@icici')">Copy</button>
+            </div>
+
+            <p style="font-size:11px; color:#ea580c; margin-top:10px; font-weight:700;">
+                ⚡ भुगतान के बाद स्क्रीनशॉट व्हाट्सएप पर अवश्य भेजें।
+            </p>
+        </div>
+    </div>
+</main>
+
+</div>
+
+<!-- MOBILE BOTTOM NAVIGATION -->
+<div class="mobile-nav">
+    <button class="active" onclick="showTab('home', this)"><span>🏠</span>होम</button>
+    <button onclick="showTab('services', this)"><span>🛠️</span>सेवाएं</button>
+    <button onclick="showTab('contact', this)"><span>📍</span>संपर्क</button>
+    <button onclick="window.open('https://wa.me/918690653797')"><span style="color:#16a34a;">💬</span>चैट</button>
+</div>
+
+<!-- JAVASCRIPT -->
 <script>
+// TAB SWITCHER
+function showTab(tabId, el){
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.mobile-nav button').forEach(b => b.classList.remove('active'));
 
-/* ================= LIVE DATE / TIME ================= */
-function updateLiveDateTime(){
-    const now = new Date();
-    const date = now.toLocaleDateString("hi-IN",{day:"2-digit",month:"2-digit",year:"numeric"});
-    const time = now.toLocaleTimeString("en-IN",{hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:true});
+    const target = document.getElementById(tabId);
+    if(target) target.classList.add('active');
 
-    const d = document.getElementById("liveDate");
-    const t = document.getElementById("liveTime");
-    if(d) d.textContent = date;
-    if(t) t.textContent = time;
-}
-updateLiveDateTime();
-setInterval(updateLiveDateTime, 1000);
+    // Desktop nav sync
+    const map = { 'home':0, 'services':1, 'contact':2 };
+    const dTabs = document.querySelectorAll('.nav-btn');
+    if(dTabs[map[tabId]]) dTabs[map[tabId]].classList.add('active');
 
-/* ================= VISITOR COUNTER ================= */
-async function initVisitorCounter(){
-    const el = document.getElementById("visitCount");
-    if(!el) return;
+    // Mobile nav sync
+    const mTabs = document.querySelectorAll('.mobile-nav button');
+    if(mTabs[map[tabId]]) mTabs[map[tabId]].classList.add('active');
 
-    let base = 1240;
-    let local = parseInt(localStorage.getItem("sb_visit_count") || "0", 10);
-
-    if(!local){
-        local = base + Math.floor(Math.random()*15) + 1;
-    } else {
-        local += 1;
-    }
-    localStorage.setItem("sb_visit_count", local);
-    el.textContent = local.toLocaleString("en-IN");
-
-    try{
-        const res = await fetch("https://api.counterapi.dev/v1/shreebalajiemitra_sakhthali/visits/up");
-        const data = await res.json();
-        if(data && data.count){
-            el.textContent = (base + data.count).toLocaleString("en-IN");
-        }
-    }catch(error){}
-}
-initVisitorCounter();
-
-/* ================= PAGE SYSTEM ================= */
-function showPage(pageId){
-    document.querySelectorAll(".page").forEach(function(page){
-        page.classList.remove("active");
-    });
-
-    const page = document.getElementById(pageId);
-    if(page){
-        page.classList.add("active");
-    }
-
-    const pageMap = {
-        home:0,
-        services:1,
-        schemes:2,
-        jan:3,
-        notice:4,
-        contact:5
-    };
-
-    // Desktop Nav Active Sync
-    document.querySelectorAll("#desktopNav button").forEach(function(btn){
-        btn.classList.remove("active");
-    });
-    const desktopButtons = document.querySelectorAll("#desktopNav button");
-    if(typeof pageMap[pageId] !== "undefined" && desktopButtons[pageMap[pageId]]){
-        desktopButtons[pageMap[pageId]].classList.add("active");
-    }
-
-    // Mobile Bar Active Sync
-    document.querySelectorAll(".mobile-bar button").forEach(function(btn){
-        btn.classList.remove("active");
-    });
-    const mobileButton = document.getElementById("m-" + pageId);
-    if(mobileButton){
-        mobileButton.classList.add("active");
-    }
-
-    window.scrollTo({ top:0, behavior:"smooth" });
+    window.scrollTo({ top:0, behavior:'smooth' });
 }
 
-/* ================= SHOP STATUS (8 AM - 8 PM) ================= */
-function updateShopStatus(){
-    const hour = new Date().getHours();
-    const status = document.getElementById("shopStatus");
-    if(!status) return;
-
-    if(hour >= 8 && hour < 20){
-        status.textContent = " 🟢 अभी खुला है";
-        status.className = "status-open";
-    }else{
-        status.textContent = " 🔴 अभी बंद है (समय 8 AM - 8 PM)";
-        status.className = "status-closed";
-    }
-}
-updateShopStatus();
-setInterval(updateShopStatus, 60000);
-
-/* ================= SERVICE SEARCH ================= */
-function searchServices(){
-    const input = document.getElementById("serviceSearch");
-    if(!input) return;
-    const value = input.value.toLowerCase();
-
-    document.querySelectorAll(".service-card").forEach(function(card){
+// LIVE FILTER
+function filterItems(){
+    const q = document.getElementById('searchBox').value.toLowerCase();
+    document.querySelectorAll('.s-item').forEach(card => {
         const text = card.innerText.toLowerCase();
-        card.style.display = text.includes(value) ? "" : "none";
+        card.style.display = text.includes(q) ? 'block' : 'none';
     });
 }
 
-/* ================= SCHEME SEARCH ================= */
-function searchSchemes(){
-    const input = document.getElementById("schemeSearch");
-    if(!input) return;
-    const value = input.value.toLowerCase();
-
-    document.querySelectorAll(".scheme-card").forEach(function(card){
-        const text = card.innerText.toLowerCase();
-        card.style.display = text.includes(value) ? "" : "none";
-    });
+// COPY UPI
+function copyUPI(val){
+    navigator.clipboard.writeText(val);
+    alert('UPI ID कॉपी हो गई: ' + val);
 }
 
-/* ================= SCHEME FILTER ================= */
-function filterSchemes(category, button){
-    document.querySelectorAll(".filter-btn").forEach(function(btn){
-        btn.classList.remove("active");
-    });
-    button.classList.add("active");
-
-    document.querySelectorAll(".scheme-card").forEach(function(card){
-        if(category === "all"){
-            card.style.display = "";
-        }else{
-            card.style.display = card.classList.contains(category) ? "" : "none";
-        }
-    });
-}
-
-/* ================= COPY UPI ================= */
-function copyUPI(value){
-    if(navigator.clipboard && navigator.clipboard.writeText){
-        navigator.clipboard.writeText(value).then(function(){
-            alert("UPI ID कॉपी हो गई:\n" + value);
-        }).catch(function(){
-            alert("UPI ID:\n" + value);
-        });
+// SHOP STATUS (8 AM - 8 PM)
+function updateStatus(){
+    const h = new Date().getHours();
+    const el = document.getElementById('shopStatus');
+    if(h >= 8 && h < 20){
+        el.textContent = '🟢 अभी दुकान खुली है (8 AM - 8 PM)';
+        el.style.color = '#15803d';
     }else{
-        alert("UPI ID:\n" + value);
+        el.textContent = '🔴 अभी दुकान बंद है (8 AM - 8 PM)';
+        el.style.color = '#b91c1c';
     }
 }
+updateStatus();
 
-/* ================= WHATSAPP FORM ================= */
-function sendWhatsApp(){
-    const name = document.getElementById("waName").value.trim();
-    const mobile = document.getElementById("waMobile").value.trim();
-    const message = document.getElementById("waMessage").value.trim();
-
-    if(!name){
-        alert("कृपया अपना नाम लिखें।");
-        return;
-    }
-    if(!message){
-        alert("कृपया सेवा की जानकारी लिखें।");
-        return;
-    }
-
-    const text = "नमस्ते श्री बालाजी ई-मित्र सेंटर,%0A%0A" +
-                 "नाम: " + encodeURIComponent(name) + "%0A" +
-                 "मोबाइल: " + encodeURIComponent(mobile) + "%0A" +
-                 "सेवा: " + encodeURIComponent(message);
-
-    window.open("https://wa.me/918690653797?text=" + text, "_blank");
+// PWA SERVICE WORKER
+if('serviceWorker' in navigator){
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(()=>{});
+    });
 }
-
-/* ================= YEAR ================= */
-const yearEl = document.getElementById("year");
-if(yearEl) yearEl.textContent = new Date().getFullYear();
-
-/* ================= REGISTER PWA SERVICE WORKER ================= */
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('./sw.js')
-      .then(function(reg) {
-        console.log('App Service Worker successfully registered!', reg);
-      })
-      .catch(function(err) {
-        console.log('Service Worker failed:', err);
-      });
-  });
-}
-
 </script>
 
 </body>
